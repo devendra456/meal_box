@@ -1,0 +1,66 @@
+{
+  "status":200,
+  "success": true,
+  "data": [
+    {
+      "id": 1,
+      "isPlanActive": true,
+      "restaurantName": "Cabrio Restuarants",
+      "mealType": "Weekly meal",
+      "validity": "2nd Week - September 2021",
+      "menus": [
+        "Veg Sandwich",
+        "Chicken Sandwich ",
+        "Panner Rolls",
+        "Chicken Biryani",
+        "Dumplings",
+        "Chicken Burger"
+      ]
+    },
+    {
+      "id": 1,
+      "isPlanActive": false,
+      "restaurantName": "He Bellevue Restaurant",
+      "mealType": "Monthly meal",
+      "validity": "1nd Week - September 2021",
+      "menus": [
+        "Veg Sandwich",
+        "Chicken Sandwich ",
+        "Panner Rolls",
+        "Chicken Biryani",
+        "Dumplings",
+        "Chicken Burger"
+      ]
+    },
+    {
+      "id": 1,
+      "isPlanActive": true,
+      "restaurantName": "Al Khayam Restaurant",
+      "mealType": "Daily meal",
+      "validity": "3nd Week - September 2021",
+      "menus": [
+        "Veg Sandwich",
+        "Chicken Sandwich ",
+        "Panner Rolls",
+        "Chicken Biryani",
+        "Dumplings",
+        "Chicken Burger"
+      ]
+    },
+    {
+      "id": 1,
+      "isPlanActive": false,
+      "restaurantName": "p jais fine dine restaurant",
+      "mealType": "Yearly meal",
+      "validity": "4nd Week - September 2021",
+      "menus": [
+        "Veg Sandwich",
+        "Chicken Sandwich ",
+        "Panner Rolls",
+        "Chicken Biryani",
+        "Dumplings",
+        "Chicken Burger"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "status":200,
+  "success": true,
+  "data": [
+    {
+      "id":1,
+      "userName":"Mohd Sameer",
+      "profilePic":"",
+      "schoolName":"Al Danah International School",
+      "registrationId":"#08727D",
+      "city":"Riyadh",
+      "region":"Central"
+    },
+    {
+      "id":1,
+      "userName":"Mohd Abeer",
+      "profilePic":"",
+      "schoolName":"Einstein Public School",
+      "registrationId":"#DJD0EWQ",
+      "city":"Lucknow",
+      "region":"India"
+    },
+    {
+      "id":1,
+      "userName":"Devendra",
+      "profilePic":"",
+      "schoolName":"S.V.M. Inter Collage",
+      "registrationId":"#JD63823",
+      "city":"Pratapgarh",
+      "region":"India"
+    },
+    {
+      "id":1,
+      "userName":"Uday",
+      "profilePic":"",
+      "schoolName":"Al Danah International School",
+      "registrationId":"#LSS89203",
+      "city":"Allahabad",
+      "region":"India"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+  <defs>
+    <clipPath id="clip-Artboard_1">
+      <rect width="50" height="50"/>
+    </clipPath>
+  </defs>
+  <g id="Artboard_1" clip-path="url(#clip-Artboard_1)">
+    <path id="Path_8333" d="M54.861,40.993H49.592V60.3H41.609v-19.3h-3.8V34.209h3.8v-4.39c0-3.139,1.491-8.055,8.054-8.055l5.914.025v6.585H51.286a1.625,1.625,0,0,0-1.693,1.849v3.993h5.966Z" transform="translate(-21.77 -16.01)" fill="#fff"/>
+  </g>
+</svg>

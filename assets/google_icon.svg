@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+  <defs>
+    <clipPath id="clip-Artboard_2">
+      <rect width="50" height="50"/>
+    </clipPath>
+  </defs>
+  <g id="Artboard_2"  clip-path="url(#clip-Artboard_2)">
+    <g id="search" transform="translate(7.329 7.329)">
+      <path id="Path_8250"  d="M7.681,149.853l-1.206,4.5-4.409.093a17.36,17.36,0,0,1-.128-16.182h0l3.926.72,1.72,3.9a10.342,10.342,0,0,0,.1,6.963Z" transform="translate(0 -128.908)" fill="#fbbb00"/>
+      <path id="Path_8251"  d="M278.273,208.176a17.323,17.323,0,0,1-6.178,16.751h0l-4.945-.252-.7-4.369a10.328,10.328,0,0,0,4.444-5.274h-9.266v-6.856h16.646Z" transform="translate(-243.918 -194.084)" fill="#518ef8"/>
+      <path id="Path_8252"  d="M56.621,319.307h0a17.335,17.335,0,0,1-26.113-5.3l5.616-4.6a10.306,10.306,0,0,0,14.852,5.277Z" transform="translate(-28.444 -288.464)" fill="#28b446"/>
+      <path id="Path_8253"  d="M55.077,3.99l-5.614,4.6a10.305,10.305,0,0,0-15.193,5.4L28.625,9.36h0A17.333,17.333,0,0,1,55.077,3.99Z" transform="translate(-26.686)" fill="#f14336"/>
+    </g>
+  </g>
+</svg>

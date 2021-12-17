@@ -1,0 +1,46 @@
+{
+  "status": 200,
+  "success": true,
+  "data": [
+    {
+      "id": 1,
+      "schoolName": "S.V.M. International School"
+    },
+    {
+      "id": 2,
+      "schoolName": "Al Taj International School"
+    },
+    {
+      "id": 3,
+      "schoolName": "Einstein International School Lalganj"
+    },
+    {
+      "id": 4,
+      "schoolName": "Ram Manohar Lohiya Avadh Visvviddyalay"
+    },
+    {
+      "id": 5,
+      "schoolName": "Rajkiya Polytechnic Premdhar Patti Raniganj Pratapgarh"
+    },
+    {
+      "id": 6,
+      "schoolName": "Children Paradise School Sagra Sunderpur"
+    },
+    {
+      "id": 7,
+      "schoolName": "I.I.T. Kanpur Utter Pradesh"
+    },
+    {
+      "id": 8,
+      "schoolName": "Amit Public School Raniganj Kaithaula Pratapgarh"
+    },
+    {
+      "id": 9,
+      "schoolName": "Sharkar Lal Uchchatar Madyamic viddyalay"
+    },
+    {
+      "id": 10,
+      "schoolName": "Mufed Model Public School"
+    }
+  ]
+}

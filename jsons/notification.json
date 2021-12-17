@@ -1,0 +1,36 @@
+{
+  "status":200,
+  "success": true,
+  "data": [
+    {
+      "id": 1,
+      "isNew": true,
+      "time": "8 min ago",
+      "content": "New deal arrives in this month from Cabrio Restuarants on exclusive price Hurry Up New deal arrives in this"
+    },
+    {
+      "id": 2,
+      "isNew": false,
+      "time": "4 min ago",
+      "content": "month from Cabrio Restuarants on exclusive price Hurry Up"
+    },
+    {
+      "id": 3,
+      "isNew": true,
+      "time": "30 sec ago",
+      "content": "New deal arrives in this month from Cabrio Restuarants on exclusive price Hurry Up"
+    },
+    {
+      "id": 4,
+      "isNew": true,
+      "time": "1 hou ago",
+      "content": "New deal arrives in this month from Cabrio Restuarants on"
+    },
+    {
+      "id": 5,
+      "isNew": false,
+      "time": "10 min ago",
+      "content": "will only be taken when the widget built for the first time. horizontal_calendar will manage the Subsequent dates selection and un selection"
+    }
+  ]
+}

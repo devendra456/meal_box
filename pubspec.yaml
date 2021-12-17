@@ -1,0 +1,37 @@
+name: meal_box
+version: 1.0.0+1
+publish_to: none
+description: A new Flutter project.
+environment: 
+  sdk: '>=2.12.0 <3.0.0'
+
+dependencies:
+  get: 4.3.8
+  flutter_svg: ^0.23.0+1
+  pin_code_fields: ^7.3.0
+  cached_network_image: ^3.2.0
+  get_storage: ^2.0.3
+  connectivity: ^3.0.6
+  qr_flutter: ^4.0.0
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+dev_dependencies: 
+  flutter_lints: ^1.0.0
+  flutter_test: 
+    sdk: flutter
+
+flutter: 
+  uses-material-design: true
+  assets:
+    - assets/
+    - jsons/
+  fonts:
+    - family: SF_PRO
+      fonts:
+        - asset: fonts/SFPRODISPLAYBOLD.OTF
+        - asset: fonts/SFPRODISPLAYMEDIUM.OTF
+        - asset: fonts/SFPRODISPLAYREGULAR.OTF
+

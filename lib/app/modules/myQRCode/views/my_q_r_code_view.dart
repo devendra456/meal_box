@@ -44,6 +44,7 @@ class MyQRCodeView extends GetView<MyQRCodeController> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       body: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
         padding: const EdgeInsets.symmetric(vertical: 32),
         child: Column(
           children: [

@@ -106,6 +106,7 @@ class AppTranslations extends Translations {
           "OK": "OK",
           "Done": "Done",
           "NewUserRegisteredSuccessfully!": "New User Registered Successfully!",
+          "SendMoney": "Send Money",
         },
         'ar_SA': {
           "MyMealPlan": "My Meal Plan",
@@ -209,6 +210,7 @@ class AppTranslations extends Translations {
           "OK": "OK",
           "Done": "Done",
           "NewUserRegisteredSuccessfully!": "New User Registered Successfully!",
+          "SendMoney": "Send Money",
         },
       };
 }

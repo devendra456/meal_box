@@ -1,20 +1,8 @@
 import 'package:get/get.dart';
+import 'package:meal_box/app/routes/app_pages.dart';
 
 class MyQRCodeController extends GetxController {
-  //TODO: Implement MyQRCodeController
-
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  void scanQRCode() {
+    Get.toNamed(Routes.QR_CODE_SCANNER);
   }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {}
-  void increment() => count.value++;
 }

@@ -179,7 +179,9 @@ class MealForOthersView extends GetView<MealForOthersController> {
                                 SizedBox(
                                   height: 36,
                                   child: TextButton.icon(
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      controller.viewHistory();
+                                    },
                                     style: ButtonStyle(
                                       shape: MaterialStateProperty.all<
                                           RoundedRectangleBorder>(
@@ -241,7 +243,9 @@ class MealForOthersView extends GetView<MealForOthersController> {
                           : null,
                       top: 12,
                       child: InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          controller.removeUser(data.data[index]);
+                        },
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           mainAxisSize: MainAxisSize.max,

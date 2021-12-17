@@ -28,6 +28,8 @@ import 'package:meal_box/app/modules/myQRCode/bindings/my_q_r_code_binding.dart'
 import 'package:meal_box/app/modules/myQRCode/views/my_q_r_code_view.dart';
 import 'package:meal_box/app/modules/profile/bindings/profile_binding.dart';
 import 'package:meal_box/app/modules/profile/views/profile_view.dart';
+import 'package:meal_box/app/modules/qrCodeScanner/bindings/qr_code_scanner_binding.dart';
+import 'package:meal_box/app/modules/qrCodeScanner/views/qr_code_scanner_view.dart';
 import 'package:meal_box/app/modules/register/bindings/register_binding.dart';
 import 'package:meal_box/app/modules/register/views/register_view.dart';
 import 'package:meal_box/app/modules/splash/bindings/splash_binding.dart';
@@ -120,6 +122,11 @@ class AppPages {
       name: _Paths.ADD_USER,
       page: () => AddUserView(),
       binding: AddUserBinding(),
+    ),
+    GetPage(
+      name: _Paths.QR_CODE_SCANNER,
+      page: () => QrCodeScannerView(),
+      binding: QrCodeScannerBinding(),
     ),
   ];
 }

@@ -20,6 +20,7 @@ abstract class Routes {
   static const MY_Q_R_CODE = _Paths.MY_Q_R_CODE;
   static const HISTORY = _Paths.HISTORY;
   static const ADD_USER = _Paths.ADD_USER;
+  static const QR_CODE_SCANNER = _Paths.QR_CODE_SCANNER;
 }
 
 abstract class _Paths {
@@ -39,4 +40,5 @@ abstract class _Paths {
   static const MY_Q_R_CODE = '/my-q-r-code';
   static const HISTORY = '/history';
   static const ADD_USER = '/add-user';
+  static const QR_CODE_SCANNER = '/qr-code-scanner';
 }

@@ -26,7 +26,9 @@ class MyQRCodeView extends GetView<MyQRCodeController> {
         ),
       ),
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {},
+        onPressed: () {
+          controller.scanQRCode();
+        },
         icon: Icon(
           Icons.qr_code_scanner_rounded,
           color: AppTheme.white,

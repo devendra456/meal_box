@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:meal_box/app/modules/MealForOthers/models/user_list_model.dart';
 import 'package:meal_box/app/modules/MealForOthers/providers/user_list_provider.dart';
+import 'package:meal_box/app/modules/MealForOthers/views/user_remove_dialog_view.dart';
 import 'package:meal_box/app/routes/app_pages.dart';
 
 class MealForOthersController extends GetxController
@@ -24,5 +25,13 @@ class MealForOthersController extends GetxController
         change(null, status: RxStatus.error());
       },
     );
+  }
+
+  void removeUser(Datum data) {
+    Get.dialog(UserRemoveDialogView(data));
+  }
+
+  void viewHistory() {
+    Get.toNamed(Routes.HISTORY);
   }
 }

@@ -98,6 +98,14 @@ class AppTranslations extends Translations {
           "City": "City",
           "RegistrationID": "Registration ID",
           "Remove": "Remove",
+          "Cancel": "Cancel",
+          "AreYouSureWantToRemoveThisUser?": "Are You Sure Want To Remove This "
+              "User?",
+          "UNIQUE_ID": "UNIQUE ID",
+          "GenerateID": "Generate ID",
+          "OK": "OK",
+          "Done": "Done",
+          "NewUserRegisteredSuccessfully!": "New User Registered Successfully!",
         },
         'ar_SA': {
           "MyMealPlan": "My Meal Plan",
@@ -193,6 +201,14 @@ class AppTranslations extends Translations {
           "City": "City",
           "RegistrationID": "Registration ID",
           "Remove": "Remove",
+          "Cancel": "Cancel",
+          "AreYouSureWantToRemoveThisUser?": "Are You Sure Want To Remove This "
+              "User?",
+          "UNIQUE_ID": "UNIQUE ID",
+          "GenerateID": "Generate ID",
+          "OK": "OK",
+          "Done": "Done",
+          "NewUserRegisteredSuccessfully!": "New User Registered Successfully!",
         },
       };
 }

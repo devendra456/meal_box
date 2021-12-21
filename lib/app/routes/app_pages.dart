@@ -26,12 +26,16 @@ import 'package:meal_box/app/modules/login/bindings/login_binding.dart';
 import 'package:meal_box/app/modules/login/views/login_view.dart';
 import 'package:meal_box/app/modules/myQRCode/bindings/my_q_r_code_binding.dart';
 import 'package:meal_box/app/modules/myQRCode/views/my_q_r_code_view.dart';
+import 'package:meal_box/app/modules/offerHistory/bindings/offer_history_binding.dart';
+import 'package:meal_box/app/modules/offerHistory/views/offer_history_view.dart';
 import 'package:meal_box/app/modules/profile/bindings/profile_binding.dart';
 import 'package:meal_box/app/modules/profile/views/profile_view.dart';
 import 'package:meal_box/app/modules/qrCodeScanner/bindings/qr_code_scanner_binding.dart';
 import 'package:meal_box/app/modules/qrCodeScanner/views/qr_code_scanner_view.dart';
 import 'package:meal_box/app/modules/register/bindings/register_binding.dart';
 import 'package:meal_box/app/modules/register/views/register_view.dart';
+import 'package:meal_box/app/modules/sendMoney/bindings/send_money_binding.dart';
+import 'package:meal_box/app/modules/sendMoney/views/send_money_view.dart';
 import 'package:meal_box/app/modules/splash/bindings/splash_binding.dart';
 import 'package:meal_box/app/modules/splash/views/splash_view.dart';
 
@@ -127,6 +131,16 @@ class AppPages {
       name: _Paths.QR_CODE_SCANNER,
       page: () => QrCodeScannerView(),
       binding: QrCodeScannerBinding(),
+    ),
+    GetPage(
+      name: _Paths.SEND_MONEY,
+      page: () => SendMoneyView(),
+      binding: SendMoneyBinding(),
+    ),
+    GetPage(
+      name: _Paths.OFFER_HISTORY,
+      page: () => OfferHistoryView(),
+      binding: OfferHistoryBinding(),
     ),
   ];
 }

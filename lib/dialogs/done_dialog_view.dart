@@ -39,6 +39,7 @@ class DoneDialogView extends GetView {
                   color: AppTheme.black3,
                   fontSize: 14,
                 ),
+                textAlign: TextAlign.center,
               ),
             ),
             Container(

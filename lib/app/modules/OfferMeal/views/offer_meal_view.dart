@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:meal_box/commans/common_widgets.dart';
+import 'package:meal_box/commons/common_widgets.dart';
 import 'package:meal_box/configs/app_theme.dart';
 import 'package:meal_box/utils/my_storage.dart';
 
@@ -17,8 +17,43 @@ class OfferMealView extends GetView<OfferMealController> {
         title: "OfferMeal".tr,
         actionButton: historyButton(),
       ),
-      body: controller.obx((data) {
-        if (data!.data.isNotEmpty) {
+      floatingActionButton: Container(
+        height: 48,
+        decoration: ShapeDecoration(
+            shape: const StadiumBorder(),
+            gradient: LinearGradient(
+                colors: [AppTheme.accentColor1, AppTheme.accentColor2],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter),
+            shadows: [
+              BoxShadow(
+                  color: AppTheme.black3,
+                  offset: const Offset(0, 1),
+                  blurRadius: 4,
+                  spreadRadius: 0.5)
+            ]),
+        child: MaterialButton(
+          onPressed: () {
+            controller.goToSendMoneyPage();
+          },
+          padding: const EdgeInsets.symmetric(
+            horizontal: 32,
+          ),
+          height: 48,
+          shape: const StadiumBorder(),
+          child: Text(
+            "Donate 4 student",
+            style: TextStyle(
+              color: AppTheme.white,
+              fontWeight: FontWeight.w700,
+              fontSize: 14,
+            ),
+          ),
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      body: Obx(() {
+        if (controller.usersList.isNotEmpty) {
           return ListView.builder(
             itemBuilder: (context, index) {
               return Padding(
@@ -57,7 +92,8 @@ class OfferMealView extends GetView<OfferMealController> {
                                           Flexible(
                                             flex: 1,
                                             child: Text(
-                                              data.data[index].userName,
+                                              controller
+                                                  .usersList[index].userName,
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w600,
                                                 color: AppTheme.black1,
@@ -75,7 +111,7 @@ class OfferMealView extends GetView<OfferMealController> {
                                         height: 6,
                                       ),
                                       Text(
-                                        data.data[index].schoolName,
+                                        controller.usersList[index].schoolName,
                                         style: TextStyle(
                                           color: AppTheme.black2,
                                           fontSize: 12,
@@ -96,8 +132,8 @@ class OfferMealView extends GetView<OfferMealController> {
                                           ),
                                           children: [
                                             TextSpan(
-                                              text: data
-                                                  .data[index].registrationId,
+                                              text: controller.usersList[index]
+                                                  .registrationId,
                                               style: TextStyle(
                                                 color: AppTheme.black2,
                                               ),
@@ -123,7 +159,8 @@ class OfferMealView extends GetView<OfferMealController> {
                                                 ),
                                                 children: [
                                                   TextSpan(
-                                                    text: data.data[index].city,
+                                                    text: controller
+                                                        .usersList[index].city,
                                                     style: TextStyle(
                                                       color: AppTheme.black2,
                                                     ),
@@ -147,8 +184,9 @@ class OfferMealView extends GetView<OfferMealController> {
                                                 ),
                                                 children: [
                                                   TextSpan(
-                                                    text:
-                                                        data.data[index].region,
+                                                    text: controller
+                                                        .usersList[index]
+                                                        .region,
                                                     style: TextStyle(
                                                       color: AppTheme.black2,
                                                     ),
@@ -194,7 +232,7 @@ class OfferMealView extends GetView<OfferMealController> {
                                       width: 13,
                                     ),
                                     label: Text(
-                                      data.data[index].mobile,
+                                      controller.usersList[index].mobile,
                                       style: TextStyle(
                                         color: AppTheme.black1,
                                         fontSize: 13,
@@ -237,16 +275,15 @@ class OfferMealView extends GetView<OfferMealController> {
                     Positioned(
                       left: MyStorage().get(MyStorage.appLocale) == "en"
                           ? null
-                          : 0,
+                          : -4,
                       right: MyStorage().get(MyStorage.appLocale) == "en"
-                          ? 0
+                          ? -4
                           : null,
                       top: -4,
                       child: Checkbox(
-                        value: data.data[index].isSelected,
+                        value: controller.usersList[index].isSelected,
                         onChanged: (bool? value) {
-                          data.data[index].isSelected =
-                              !data.data[index].isSelected;
+                          controller.onChange(index);
                         },
                       ),
                     ),
@@ -254,7 +291,7 @@ class OfferMealView extends GetView<OfferMealController> {
                 ),
               );
             },
-            itemCount: data.data.length,
+            itemCount: controller.usersList.length,
             physics: const BouncingScrollPhysics(),
             padding: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
           );
@@ -344,7 +381,7 @@ class OfferMealView extends GetView<OfferMealController> {
             ]),
         child: MaterialButton(
           onPressed: () {
-            //controller.goToCreateNewPage();
+            controller.goToOfferHistoryPage();
           },
           padding: const EdgeInsets.all(0),
           shape: const StadiumBorder(),

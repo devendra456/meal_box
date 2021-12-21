@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:meal_box/app/modules/register/views/field_spacing_view.dart';
-import 'package:meal_box/commans/common_widgets.dart';
+import 'package:meal_box/commons/common_widgets.dart';
 import 'package:meal_box/configs/app_theme.dart';
 
 import '../controllers/add_user_controller.dart';

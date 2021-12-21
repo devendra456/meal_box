@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:meal_box/commans/common_widgets.dart';
+import 'package:meal_box/commons/common_widgets.dart';
 import 'package:meal_box/configs/app_theme.dart';
 
 import '../controllers/history_controller.dart';

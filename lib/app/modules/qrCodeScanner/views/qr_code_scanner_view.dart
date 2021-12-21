@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:meal_box/commans/common_widgets.dart';
+import 'package:meal_box/commons/common_widgets.dart';
 import 'package:meal_box/configs/app_theme.dart';
 import 'package:meal_box/utils/my_storage.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';

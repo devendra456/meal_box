@@ -21,6 +21,8 @@ abstract class Routes {
   static const HISTORY = _Paths.HISTORY;
   static const ADD_USER = _Paths.ADD_USER;
   static const QR_CODE_SCANNER = _Paths.QR_CODE_SCANNER;
+  static const SEND_MONEY = _Paths.SEND_MONEY;
+  static const OFFER_HISTORY = _Paths.OFFER_HISTORY;
 }
 
 abstract class _Paths {
@@ -41,4 +43,6 @@ abstract class _Paths {
   static const HISTORY = '/history';
   static const ADD_USER = '/add-user';
   static const QR_CODE_SCANNER = '/qr-code-scanner';
+  static const SEND_MONEY = '/send-money';
+  static const OFFER_HISTORY = '/offer-history';
 }

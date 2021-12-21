@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:meal_box/commans/static_strings.dart';
+import 'package:meal_box/commons/static_strings.dart';
 import 'package:meal_box/configs/app_theme.dart';
 
 import '../controllers/splash_controller.dart';

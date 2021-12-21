@@ -188,9 +188,7 @@ class UserRemoveDialogView extends GetView {
                     borderRadius: BorderRadius.circular(4),
                   ),
                   child: MaterialButton(
-                    onPressed: () {
-                      controller.goToCreateUser();
-                    },
+                    onPressed: () {},
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(4),
                     ),

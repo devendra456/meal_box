@@ -1,6 +1,4 @@
-import 'package:get/get.dart';
-
-import '../controllers/change_password_controller.dart';
+import 'package:meal_box/imports.dart';
 
 class ChangePasswordBinding extends Bindings {
   @override

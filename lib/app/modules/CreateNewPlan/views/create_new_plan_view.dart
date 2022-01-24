@@ -1,12 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
-import 'package:meal_box/app/modules/CreateNewPlan/views/daily_plan_view.dart';
-import 'package:meal_box/app/modules/CreateNewPlan/views/weekly_plan_view.dart';
-import 'package:meal_box/commons/common_widgets.dart';
-import 'package:meal_box/configs/app_theme.dart';
-
-import '../controllers/create_new_plan_controller.dart';
+import 'package:meal_box/imports.dart';
 
 class CreateNewPlanView extends GetView<CreateNewPlanController> {
   const CreateNewPlanView({Key? key}) : super(key: key);
@@ -14,7 +6,7 @@ class CreateNewPlanView extends GetView<CreateNewPlanController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CommonWidgets.appHeader(title: "CreateNewPlan".tr),
+      appBar: CommonWidgets.appHeader(title: StringKeys.createNewPlan.tr),
       body: Column(
         children: [
           Container(
@@ -28,16 +20,16 @@ class CreateNewPlanView extends GetView<CreateNewPlanController> {
             ),
             child: Row(
               children: [
-                SvgPicture.asset(
-                  "assets/school_image.svg",
+                Images.svgImageViewAsset(
                   height: 32,
                   width: 32,
+                  imagePath: Assets.schoolImage,
                 ),
                 Expanded(
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16.0),
                     child: Text(
-                      "Al Danah International School.",
+                      StaticStrings.createNewSchoolName,
                       maxLines: 2,
                       style: TextStyle(color: AppTheme.black2, fontSize: 14),
                     ),
@@ -47,24 +39,25 @@ class CreateNewPlanView extends GetView<CreateNewPlanController> {
                   onPressed: () {
                     controller.changeSchoolName();
                   },
-                  child: Text("Change".tr),
+                  child: Text(StringKeys.change.tr),
                 )
               ],
             ),
             decoration: BoxDecoration(
-                border: Border.all(color: AppTheme.black3, width: 0.4),
-                borderRadius: BorderRadius.circular(4),
-                color: AppTheme.white,
-                boxShadow: [
-                  BoxShadow(
-                    color: AppTheme.black4,
-                    spreadRadius: 0.5,
-                    blurRadius: 2,
-                  ),
-                  BoxShadow(
-                    color: AppTheme.white,
-                  )
-                ]),
+              border: Border.all(color: AppTheme.black3, width: 0.4),
+              borderRadius: BorderRadius.circular(4),
+              color: AppTheme.white,
+              boxShadow: [
+                BoxShadow(
+                  color: AppTheme.black4,
+                  spreadRadius: 0.5,
+                  blurRadius: 2,
+                ),
+                BoxShadow(
+                  color: AppTheme.white,
+                )
+              ],
+            ),
           ),
           Obx(
             () => Row(
@@ -77,7 +70,7 @@ class CreateNewPlanView extends GetView<CreateNewPlanController> {
                   },
                 ),
                 Text(
-                  "DailyPlan".tr,
+                  StringKeys.dailyPlan.tr,
                   style: TextStyle(
                     fontWeight: FontWeight.w600,
                     color: AppTheme.black1,
@@ -91,7 +84,7 @@ class CreateNewPlanView extends GetView<CreateNewPlanController> {
                   },
                 ),
                 Text(
-                  "WeeklyPlan".tr,
+                  StringKeys.weeklyPlan.tr,
                   style: TextStyle(
                     fontWeight: FontWeight.w600,
                     color: AppTheme.black1,

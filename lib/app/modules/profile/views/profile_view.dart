@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:meal_box/app/modules/register/views/field_spacing_view.dart';
 import 'package:meal_box/commons/common_widgets.dart';
+import 'package:meal_box/commons/images.dart';
 import 'package:meal_box/configs/app_theme.dart';
 
 import '../controllers/profile_controller.dart';
@@ -27,7 +28,7 @@ class ProfileView extends GetView<ProfileController> {
                     SizedBox(
                       child: Material(
                         child: ClipRRect(
-                          child: CommonWidgets.imageView(),
+                          child: Images.networkImageView(),
                           borderRadius: BorderRadius.circular(40),
                         ),
                         elevation: 2,
@@ -90,8 +91,7 @@ class ProfileView extends GetView<ProfileController> {
               Material(
                 elevation: 1,
                 color: Colors.white,
-                shape: StadiumBorder(
-                    side: BorderSide(color: AppTheme.black1, width: 0.1)),
+                shape: StadiumBorder(side: BorderSide(color: AppTheme.black1, width: 0.1)),
                 child: TextField(
                   decoration: InputDecoration(
                     border: InputBorder.none,
@@ -110,8 +110,7 @@ class ProfileView extends GetView<ProfileController> {
               Material(
                 elevation: 1,
                 color: Colors.white,
-                shape: StadiumBorder(
-                    side: BorderSide(color: AppTheme.black1, width: 0.1)),
+                shape: StadiumBorder(side: BorderSide(color: AppTheme.black1, width: 0.1)),
                 child: TextField(
                   decoration: InputDecoration(
                     border: InputBorder.none,
@@ -130,8 +129,7 @@ class ProfileView extends GetView<ProfileController> {
               Material(
                 elevation: 1,
                 color: Colors.white,
-                shape: StadiumBorder(
-                    side: BorderSide(color: AppTheme.black1, width: 0.1)),
+                shape: StadiumBorder(side: BorderSide(color: AppTheme.black1, width: 0.1)),
                 child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 24),
                   height: 48,
@@ -154,8 +152,7 @@ class ProfileView extends GetView<ProfileController> {
               Material(
                 elevation: 1,
                 color: Colors.white,
-                shape: StadiumBorder(
-                    side: BorderSide(color: AppTheme.black1, width: 0.1)),
+                shape: StadiumBorder(side: BorderSide(color: AppTheme.black1, width: 0.1)),
                 child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 24),
                   height: 48,
@@ -178,8 +175,7 @@ class ProfileView extends GetView<ProfileController> {
               Material(
                 elevation: 1,
                 color: Colors.white,
-                shape: StadiumBorder(
-                    side: BorderSide(color: AppTheme.black1, width: 0.1)),
+                shape: StadiumBorder(side: BorderSide(color: AppTheme.black1, width: 0.1)),
                 child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 24),
                   height: 48,
@@ -189,8 +185,7 @@ class ProfileView extends GetView<ProfileController> {
                         child: Text(
                           "School/Organization".tr,
                           maxLines: 1,
-                          style:
-                              TextStyle(fontSize: 14, color: AppTheme.black3),
+                          style: TextStyle(fontSize: 14, color: AppTheme.black3),
                         ),
                       ),
                       TextButton(
@@ -213,23 +208,14 @@ class ProfileView extends GetView<ProfileController> {
                     width: double.infinity,
                     decoration: ShapeDecoration(
                       shape: const StadiumBorder(),
-                      gradient: LinearGradient(
-                          colors: [
-                            AppTheme.accentColor1,
-                            AppTheme.accentColor2
-                          ],
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter),
+                      gradient: LinearGradient(colors: [AppTheme.accentColor1, AppTheme.accentColor2], begin: Alignment.topCenter, end: Alignment.bottomCenter),
                     ),
                     child: MaterialButton(
                       shape: const StadiumBorder(),
                       onPressed: () {},
                       child: Text(
                         "save&change".tr,
-                        style: TextStyle(
-                            color: AppTheme.white,
-                            fontWeight: FontWeight.w700,
-                            fontSize: 14),
+                        style: TextStyle(color: AppTheme.white, fontWeight: FontWeight.w700, fontSize: 14),
                       ),
                     ),
                   ),

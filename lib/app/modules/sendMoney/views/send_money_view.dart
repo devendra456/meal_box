@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:meal_box/commons/common_widgets.dart';
+import 'package:meal_box/commons/images.dart';
 import 'package:meal_box/configs/app_theme.dart';
 
 import '../controllers/send_money_controller.dart';
@@ -93,7 +94,7 @@ class SendMoneyView extends GetView<SendMoneyController> {
                       children: [
                         SizedBox(
                           child: ClipRRect(
-                            child: CommonWidgets.imageView(),
+                            child: Images.networkImageView(),
                             borderRadius: BorderRadius.circular(4),
                           ),
                           height: 72,

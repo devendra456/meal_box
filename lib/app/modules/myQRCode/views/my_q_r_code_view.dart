@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:meal_box/commons/common_widgets.dart';
+import 'package:meal_box/commons/images.dart';
 import 'package:meal_box/configs/app_theme.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
@@ -54,7 +55,7 @@ class MyQRCodeView extends GetView<MyQRCodeController> {
             SizedBox(
               child: Material(
                 child: ClipRRect(
-                  child: CommonWidgets.imageView(),
+                  child: Images.networkImageView(),
                   borderRadius: BorderRadius.circular(40),
                 ),
                 elevation: 2,

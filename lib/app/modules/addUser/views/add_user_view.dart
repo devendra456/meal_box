@@ -1,11 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
-import 'package:meal_box/app/modules/register/views/field_spacing_view.dart';
-import 'package:meal_box/commons/common_widgets.dart';
-import 'package:meal_box/configs/app_theme.dart';
-
-import '../controllers/add_user_controller.dart';
+import 'package:meal_box/imports.dart';
 
 class AddUserView extends GetView<AddUserController> {
   const AddUserView({Key? key}) : super(key: key);
@@ -13,14 +6,14 @@ class AddUserView extends GetView<AddUserController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CommonWidgets.appHeader(title: "Meals For Others"),
+      appBar: CommonWidgets.appHeader(title: StringKeys.mealForOthers.tr),
       body: Scaffold(
         body: SafeArea(
           child: Stack(
             fit: StackFit.expand,
             children: [
               Positioned(
-                child: SvgPicture.asset("assets/foreground.svg"),
+                child: Images.svgImageViewAsset(imagePath: Assets.foregroundImage),
                 top: 48,
                 right: -104,
               ),
@@ -37,17 +30,13 @@ class AddUserView extends GetView<AddUserController> {
                       Material(
                         elevation: 1,
                         color: Colors.white,
-                        shape: StadiumBorder(
-                            side:
-                                BorderSide(color: AppTheme.black1, width: 0.1)),
+                        shape: StadiumBorder(side: BorderSide(color: AppTheme.black1, width: 0.1)),
                         child: TextField(
                           decoration: InputDecoration(
                             border: InputBorder.none,
-                            hintText: "FullName".tr,
-                            hintStyle:
-                                TextStyle(fontSize: 14, color: AppTheme.black3),
-                            contentPadding:
-                                const EdgeInsets.symmetric(horizontal: 24),
+                            hintText: StringKeys.fullName.tr,
+                            hintStyle: TextStyle(fontSize: 14, color: AppTheme.black3),
+                            contentPadding: const EdgeInsets.symmetric(horizontal: 24),
                           ),
                           keyboardType: TextInputType.name,
                           autocorrect: true,
@@ -60,17 +49,13 @@ class AddUserView extends GetView<AddUserController> {
                       Material(
                         elevation: 1,
                         color: Colors.white,
-                        shape: StadiumBorder(
-                            side:
-                                BorderSide(color: AppTheme.black1, width: 0.1)),
+                        shape: StadiumBorder(side: BorderSide(color: AppTheme.black1, width: 0.1)),
                         child: TextField(
                           decoration: InputDecoration(
                             border: InputBorder.none,
-                            hintText: "PhoneNumber".tr,
-                            hintStyle:
-                                TextStyle(fontSize: 14, color: AppTheme.black3),
-                            contentPadding:
-                                const EdgeInsets.symmetric(horizontal: 24),
+                            hintText: StringKeys.phoneNumber.tr,
+                            hintStyle: TextStyle(fontSize: 14, color: AppTheme.black3),
+                            contentPadding: const EdgeInsets.symmetric(horizontal: 24),
                           ),
                           keyboardType: TextInputType.phone,
                           autocorrect: true,
@@ -83,18 +68,15 @@ class AddUserView extends GetView<AddUserController> {
                       Material(
                         elevation: 1,
                         color: Colors.white,
-                        shape: StadiumBorder(
-                            side:
-                                BorderSide(color: AppTheme.black1, width: 0.1)),
+                        shape: StadiumBorder(side: BorderSide(color: AppTheme.black1, width: 0.1)),
                         child: Container(
                           padding: const EdgeInsets.symmetric(horizontal: 24),
                           height: 48,
                           child: Row(
                             children: [
                               Text(
-                                "ChooseCity".tr,
-                                style: TextStyle(
-                                    fontSize: 14, color: AppTheme.black3),
+                                StringKeys.chooseCity.tr,
+                                style: TextStyle(fontSize: 14, color: AppTheme.black3),
                               ),
                               const Spacer(),
                               Icon(
@@ -109,18 +91,15 @@ class AddUserView extends GetView<AddUserController> {
                       Material(
                         elevation: 1,
                         color: Colors.white,
-                        shape: StadiumBorder(
-                            side:
-                                BorderSide(color: AppTheme.black1, width: 0.1)),
+                        shape: StadiumBorder(side: BorderSide(color: AppTheme.black1, width: 0.1)),
                         child: Container(
                           padding: const EdgeInsets.symmetric(horizontal: 24),
                           height: 48,
                           child: Row(
                             children: [
                               Text(
-                                "ChooseRegion".tr,
-                                style: TextStyle(
-                                    fontSize: 14, color: AppTheme.black3),
+                                StringKeys.chooseRegion.tr,
+                                style: TextStyle(fontSize: 14, color: AppTheme.black3),
                               ),
                               const Spacer(),
                               Icon(
@@ -135,9 +114,7 @@ class AddUserView extends GetView<AddUserController> {
                       Material(
                         elevation: 1,
                         color: Colors.white,
-                        shape: StadiumBorder(
-                            side:
-                                BorderSide(color: AppTheme.black1, width: 0.1)),
+                        shape: StadiumBorder(side: BorderSide(color: AppTheme.black1, width: 0.1)),
                         child: Container(
                           padding: const EdgeInsets.symmetric(horizontal: 24),
                           height: 48,
@@ -145,17 +122,16 @@ class AddUserView extends GetView<AddUserController> {
                             children: [
                               Expanded(
                                 child: Text(
-                                  "School/Organization".tr,
+                                  StringKeys.schoolOrganization.tr,
                                   maxLines: 1,
-                                  style: TextStyle(
-                                      fontSize: 14, color: AppTheme.black3),
+                                  style: TextStyle(fontSize: 14, color: AppTheme.black3),
                                 ),
                               ),
                               TextButton(
                                   onPressed: () {
                                     controller.openSchoolDialog();
                                   },
-                                  child: Text("Choose".tr))
+                                  child: Text(StringKeys.choose.tr))
                             ],
                           ),
                         ),
@@ -164,9 +140,7 @@ class AddUserView extends GetView<AddUserController> {
                       Material(
                         elevation: 1,
                         color: Colors.white,
-                        shape: StadiumBorder(
-                            side:
-                                BorderSide(color: AppTheme.black1, width: 0.1)),
+                        shape: StadiumBorder(side: BorderSide(color: AppTheme.black1, width: 0.1)),
                         child: Container(
                           padding: const EdgeInsets.symmetric(horizontal: 24),
                           height: 48,
@@ -174,17 +148,16 @@ class AddUserView extends GetView<AddUserController> {
                             children: [
                               Expanded(
                                 child: Text(
-                                  "UNIQUE_ID".tr,
+                                  StringKeys.uniqueID.tr,
                                   maxLines: 1,
-                                  style: TextStyle(
-                                      fontSize: 14, color: AppTheme.black3),
+                                  style: TextStyle(fontSize: 14, color: AppTheme.black3),
                                 ),
                               ),
                               TextButton(
                                   onPressed: () {
                                     //controller.openSchoolDialog();
                                   },
-                                  child: Text("GenerateID".tr))
+                                  child: Text(StringKeys.generateID.tr))
                             ],
                           ),
                         ),
@@ -200,13 +173,7 @@ class AddUserView extends GetView<AddUserController> {
                             width: double.infinity,
                             decoration: ShapeDecoration(
                               shape: const StadiumBorder(),
-                              gradient: LinearGradient(
-                                  colors: [
-                                    AppTheme.accentColor1,
-                                    AppTheme.accentColor2
-                                  ],
-                                  begin: Alignment.topCenter,
-                                  end: Alignment.bottomCenter),
+                              gradient: kLinearGradient,
                             ),
                             child: MaterialButton(
                               shape: const StadiumBorder(),
@@ -214,11 +181,8 @@ class AddUserView extends GetView<AddUserController> {
                                 controller.register();
                               },
                               child: Text(
-                                "Register".tr,
-                                style: TextStyle(
-                                    color: AppTheme.white,
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 14),
+                                StringKeys.register.tr,
+                                style: TextStyle(color: AppTheme.white, fontWeight: FontWeight.w700, fontSize: 14),
                               ),
                             ),
                           ),

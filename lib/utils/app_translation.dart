@@ -1,35 +1,89 @@
 import 'package:get/get.dart';
+import 'package:meal_box/string_keys.dart';
 
 class AppTranslations extends Translations {
   @override
   Map<String, Map<String, String>> get keys => {
         'en_US': {
-          "MyMealPlan": "My Meal Plan",
-          "OfferMeal": "Offer Meal",
-          "MealForOthers": "Meal For Others",
-          "Profile": "Profile",
-          "ChangePassword": "Change Password",
-          "Wallet": "Wallet",
-          "MyQRCode": "My QR Code",
-          "History": "History",
-          "Logout": "Logout",
-          "Dashboard": "Dashboard",
-          "Notification": "Notification",
-          "Setting": "Setting",
-          "Welcome": "Welcome,",
-          "Step": "Step ",
-          "of": " of ",
-          "introScreenContent1":
-              "The restaurant will develop meal plans on weekly and monthly "
-                  "basis. These plans will be offered to all the schools.",
-          "introScreenContent2":
-              "Schools may provide an approval or a rejection. Approved meal plans remain on the school's website.",
-          "introScreenContent3":
-              "Students can login and look through the meals. They can book the meals through this application.",
-          "introScreenContent4":
-              "Charity will provide the complete cost of the meal to students wallets who are unable to afford it",
-          "NEXT": "NEXT",
-          "SKIP": "SKIP",
+          /*-----------------------Commons-------------------------------*/
+
+          StringKeys.appName: "Meal Box",
+          StringKeys.fullName: "Full Name",
+          StringKeys.phoneNumber: "Phone Number",
+          StringKeys.chooseCity: "Choose City",
+          StringKeys.chooseRegion: "Choose Region",
+          StringKeys.schoolOrganization: "School/Organization",
+          StringKeys.choose: "Choose",
+          StringKeys.uniqueID: "UNIQUE ID",
+          StringKeys.generateID: "Generate ID",
+          StringKeys.ok: "OK",
+          StringKeys.register: "Register",
+          StringKeys.change: "Change",
+          StringKeys.mealForOthers: "Meals For Others",
+
+          /*-----------------------Add User Screen-------------------------------*/
+
+          StringKeys.done: "Done",
+          StringKeys.newUserRegisteredSuccessfully: "New User Registered Successfully!",
+
+          /*-----------------------Change Password Screen-------------------------------*/
+          /*-----------------------Crate New Plan Screen-------------------------------*/
+
+          StringKeys.createNewPlan: "Create New Plan",
+          StringKeys.dailyPlan: "Daily Plan",
+          StringKeys.weeklyPlan: "Weekly Plan",
+
+          /*-----------------------History Screen-------------------------------*/
+
+          StringKeys.history: "History",
+          StringKeys.currentPlan: "Current Plan",
+          StringKeys.planExpired: "Plan Expired",
+          StringKeys.viewDetails: "View Details",
+          StringKeys.historyNotFound: "History Not Found",
+
+          /*-----------------------Home Screen-------------------------------*/
+
+          StringKeys.offerMeal: "Offer Meal",
+          StringKeys.myMealPlan: "My Meal Plan",
+          StringKeys.newNotification: "New",
+          StringKeys.clearAll: "Clear All",
+          StringKeys.notificationNotFound: "Notification not found",
+          StringKeys.profile: "Profile",
+          StringKeys.changePassword: "Change Password",
+          StringKeys.wallet: "Wallet",
+          StringKeys.myQRCode: "My QR Code",
+          StringKeys.logout: "Logout",
+          StringKeys.dashboard: "Dashboard",
+          StringKeys.notification: "Notification",
+          StringKeys.setting: "Setting",
+          StringKeys.welcome: "Welcome,",
+
+          /*-----------------------Intro Screen-------------------------------*/
+
+          StringKeys.step: "Step ",
+          StringKeys.of: " of ",
+          StringKeys.introScreenContent1: "The restaurant will develop meal plans on weekly and monthly basis. These plans will be offered to all the schools.",
+          StringKeys.introScreenContent2: "Schools may provide an approval or a rejection. Approved meal plans remain on the school's website.",
+          StringKeys.introScreenContent3: "Students can login and look through the meals. They can book the meals through this application.",
+          StringKeys.introScreenContent4: "Charity will provide the complete cost of the meal to students wallets who are unable to afford it",
+          StringKeys.next: "NEXT",
+          StringKeys.skip: "SKIP",
+
+          /*-----------------------Login Screen-------------------------------*/
+          /*-----------------------Login With OTP Screen-------------------------------*/
+          /*-----------------------Meal For Others Screen-------------------------------*/
+          /*-----------------------My Meal Plan Screen-------------------------------*/
+          /*-----------------------My QR Code Screen-------------------------------*/
+          /*-----------------------Offer History Screen-------------------------------*/
+          /*-----------------------Offer Meal Screen-------------------------------*/
+          /*-----------------------OTP Verify Screen-------------------------------*/
+          /*-----------------------Profile Screen-------------------------------*/
+          /*-----------------------QR Code Scanner Screen-------------------------------*/
+          /*-----------------------Register Screen-------------------------------*/
+          /*-----------------------Send Money Screen-------------------------------*/
+          /*-----------------------Splash Screen-------------------------------*/
+
+          StringKeys.dailyFreshDelivery: "Daily fresh delivery",
           "PleaseLoginToYourMealApp": "Please login to your meal app",
           "Email": "Email",
           "Password": "Password",
@@ -37,11 +91,9 @@ class AppTranslations extends Translations {
           "ForgetPassword": "Forget Password?",
           "LOGIN": "LOGIN",
           "NotHaveAccountYet": "Not have account yet?",
-          "Register": "Register",
           "Or": "Or",
           "EnterYourPhoneNumber": "Enter Your Phone Number",
-          "loginWithOTPDisclaimer":
-              "*A 4 digit OTP will be sent via SMS to\nverify your mobile number!*",
+          "loginWithOTPDisclaimer": "*A 4 digit OTP will be sent via SMS to\nverify your mobile number!*",
           "GET_OTP": "GET OTP",
           "OTPVerification": "OTP Verification",
           "EnterTheOTPSentTo": "Enter the OTP sent to ",
@@ -55,12 +107,6 @@ class AppTranslations extends Translations {
           "SEND_REQUEST": "SEND REQUEST",
           "Registration": "Registration",
           "PleaseFillTheCoupleOfDetails": "Please fill the couple of details",
-          "FullName": "Full Name",
-          "PhoneNumber": "Phone Number",
-          "ChooseCity": "Choose City",
-          "ChooseRegion": "Choose Region",
-          "School/Organization": "School/Organization",
-          "Choose": "Choose",
           "ConfirmPassword": "Confirm Password",
           "SIGN_UP": "SIGN UP",
           "HaveAnAccount": "Have an account?",
@@ -68,24 +114,12 @@ class AppTranslations extends Translations {
           "SearchSchools/Organization": "Search Schools/Organization",
           "NotFound": "Not Found?",
           "AddRequestHere": "Add request here",
-          "DailyFreshDelivery": "Daily fresh delivery",
           "AddMeal": "Add Meal",
-          "CurrentPlan": "Current Plan",
-          "PlanExpired": "Plan Expired",
-          "ViewDetails": "View Details",
           "NoMealPlanSelected": "No Meal Plan Selected",
           "CREATE_NEW_MEAL_PLAN": "CREATE NEW MEAL PLAN",
-          "ClearAll": "Clear All",
-          "new": "New",
-          "notificationNotFound": "Notification not found",
-          "Change": "Change",
-          "CreateNewPlan": "Create New Plan",
-          "DailyPlan": "Daily Plan",
-          "WeeklyPlan": "Weekly Plan",
           "save&change": "Save & Change",
           "ScanQRCode": "Scan QR Code",
           "somethingWentWrong": "Uh oh! Something went wrong...",
-          "HistoryNotFound": "History Not Found",
           "YES": "YES",
           "NO": "NO",
           "Are_you_sure?": "Are you sure?",
@@ -101,14 +135,12 @@ class AppTranslations extends Translations {
           "Cancel": "Cancel",
           "AreYouSureWantToRemoveThisUser?": "Are You Sure Want To Remove This "
               "User?",
-          "UNIQUE_ID": "UNIQUE ID",
-          "GenerateID": "Generate ID",
-          "OK": "OK",
-          "Done": "Done",
-          "NewUserRegisteredSuccessfully!": "New User Registered Successfully!",
           "SendMoney": "Send Money",
         },
         'ar_SA': {
+          /*-----------------------Commons-------------------------------*/
+
+          StringKeys.appName: "Meal Box",
           "MyMealPlan": "My Meal Plan",
           "OfferMeal": "Offer Meal",
           "MealForOthers": "Meal For Others",
@@ -124,14 +156,10 @@ class AppTranslations extends Translations {
           "Welcome": "Welcome,",
           "Step": "Step ",
           "of": " of ",
-          "introScreenContent1":
-              "The restaurant will develop meal plans on weekly and monthly basis. These plans will be offered to all the schools.",
-          "introScreenContent2":
-              "Schools may provide an approval or a rejection. Approved meal plans remain on the school's website.",
-          "introScreenContent3":
-              "Students can login and look through the meals. They can book the meals through this application.",
-          "introScreenContent4":
-              "Charity will provide the complete cost of the meal to students wallets who are unable to afford it",
+          "introScreenContent1": "The restaurant will develop meal plans on weekly and monthly basis. These plans will be offered to all the schools.",
+          "introScreenContent2": "Schools may provide an approval or a rejection. Approved meal plans remain on the school's website.",
+          "introScreenContent3": "Students can login and look through the meals. They can book the meals through this application.",
+          "introScreenContent4": "Charity will provide the complete cost of the meal to students wallets who are unable to afford it",
           "NEXT": "NEXT",
           "SKIP": "SKIP",
           "PleaseLoginToYourMealApp": "Please login to your meal app",
@@ -144,8 +172,7 @@ class AppTranslations extends Translations {
           "Register": "Register",
           "Or": "Or",
           "EnterYourPhoneNumber": "Enter Your Phone Number",
-          "loginWithOTPDisclaimer":
-              "*A 4 digit OTP will be sent via SMS to\nverify your mobile number!*",
+          "loginWithOTPDisclaimer": "*A 4 digit OTP will be sent via SMS to\nverify your mobile number!*",
           "GET_OTP": "GET OTP",
           "OTPVerification": "OTP Verification",
           "EnterTheOTPSentTo": "Enter the OTP sent to ",

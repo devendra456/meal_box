@@ -1,7 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:meal_box/configs/app_theme.dart';
-import 'package:meal_box/utils/my_storage.dart';
+
+import 'package:meal_box/imports.dart';
 
 class LanguageChooseView extends GetView {
   const LanguageChooseView({Key? key}) : super(key: key);
@@ -18,18 +16,15 @@ class LanguageChooseView extends GetView {
           children: [
             ListTile(
               onTap: () {
-                Locale updatedLocale = const Locale('en', 'US');
-                MyStorage().insert(MyStorage.appLocale, 'en');
-                Get.updateLocale(updatedLocale);
-                Get.back();
+                onTapEnglish();
               },
               title: Text(
-                "English",
+                StaticStrings.english,
                 style: TextStyle(color: AppTheme.black1),
               ),
               leading: CircleAvatar(
                 child: Text(
-                  "EN",
+                  StaticStrings.englishCode,
                   style: TextStyle(
                       color: AppTheme.white, fontWeight: FontWeight.bold),
                 ),
@@ -38,15 +33,12 @@ class LanguageChooseView extends GetView {
             ),
             ListTile(
               onTap: () {
-                Locale updatedLocale = const Locale('ar', 'SA');
-                MyStorage().insert(MyStorage.appLocale, 'ar');
-                Get.updateLocale(updatedLocale);
-                Get.back();
+                onTapArabic();
               },
-              title: const Text("عربى"),
+              title: const Text(StaticStrings.arabic,),
               leading: CircleAvatar(
                 child: Text(
-                  "ع",
+                  StaticStrings.arabicCode,
                   style: TextStyle(
                       color: AppTheme.white, fontWeight: FontWeight.bold),
                 ),
@@ -57,5 +49,19 @@ class LanguageChooseView extends GetView {
         ),
       ),
     );
+  }
+
+  void onTapEnglish() {
+    Locale updatedLocale = const Locale('en', 'US');
+    MyStorage().insert(MyStorage.appLocale, 'en');
+    Get.updateLocale(updatedLocale);
+    Get.back();
+  }
+
+  void onTapArabic() {
+    Locale updatedLocale = const Locale('ar', 'SA');
+    MyStorage().insert(MyStorage.appLocale, 'ar');
+    Get.updateLocale(updatedLocale);
+    Get.back();
   }
 }

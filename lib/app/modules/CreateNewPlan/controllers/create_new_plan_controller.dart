@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
-import 'package:get/get.dart';
-import 'package:meal_box/app/modules/register/views/school_dialog_view.dart';
+import 'package:meal_box/imports.dart';
 
 class CreateNewPlanController extends GetxController {
   var selectedRadio = 0.obs;

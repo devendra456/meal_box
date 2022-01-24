@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:meal_box/commons/common_widgets.dart';
+import 'package:meal_box/commons/images.dart';
 import 'package:meal_box/configs/app_theme.dart';
 import 'package:meal_box/utils/my_storage.dart';
 
@@ -21,17 +22,8 @@ class OfferMealView extends GetView<OfferMealController> {
         height: 48,
         decoration: ShapeDecoration(
             shape: const StadiumBorder(),
-            gradient: LinearGradient(
-                colors: [AppTheme.accentColor1, AppTheme.accentColor2],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter),
-            shadows: [
-              BoxShadow(
-                  color: AppTheme.black3,
-                  offset: const Offset(0, 1),
-                  blurRadius: 4,
-                  spreadRadius: 0.5)
-            ]),
+            gradient: LinearGradient(colors: [AppTheme.accentColor1, AppTheme.accentColor2], begin: Alignment.topCenter, end: Alignment.bottomCenter),
+            shadows: [BoxShadow(color: AppTheme.black3, offset: const Offset(0, 1), blurRadius: 4, spreadRadius: 0.5)]),
         child: MaterialButton(
           onPressed: () {
             controller.goToSendMoneyPage();
@@ -73,7 +65,7 @@ class OfferMealView extends GetView<OfferMealController> {
                               children: [
                                 SizedBox(
                                   child: ClipRRect(
-                                    child: CommonWidgets.imageView(),
+                                    child: Images.networkImageView(),
                                     borderRadius: BorderRadius.circular(4),
                                   ),
                                   height: 72,
@@ -84,16 +76,14 @@ class OfferMealView extends GetView<OfferMealController> {
                                 ),
                                 Expanded(
                                   child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
                                       Row(
                                         children: [
                                           Flexible(
                                             flex: 1,
                                             child: Text(
-                                              controller
-                                                  .usersList[index].userName,
+                                              controller.usersList[index].userName,
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w600,
                                                 color: AppTheme.black1,
@@ -132,8 +122,7 @@ class OfferMealView extends GetView<OfferMealController> {
                                           ),
                                           children: [
                                             TextSpan(
-                                              text: controller.usersList[index]
-                                                  .registrationId,
+                                              text: controller.usersList[index].registrationId,
                                               style: TextStyle(
                                                 color: AppTheme.black2,
                                               ),
@@ -159,8 +148,7 @@ class OfferMealView extends GetView<OfferMealController> {
                                                 ),
                                                 children: [
                                                   TextSpan(
-                                                    text: controller
-                                                        .usersList[index].city,
+                                                    text: controller.usersList[index].city,
                                                     style: TextStyle(
                                                       color: AppTheme.black2,
                                                     ),
@@ -184,9 +172,7 @@ class OfferMealView extends GetView<OfferMealController> {
                                                 ),
                                                 children: [
                                                   TextSpan(
-                                                    text: controller
-                                                        .usersList[index]
-                                                        .region,
+                                                    text: controller.usersList[index].region,
                                                     style: TextStyle(
                                                       color: AppTheme.black2,
                                                     ),
@@ -220,8 +206,7 @@ class OfferMealView extends GetView<OfferMealController> {
                                       //controller.viewHistory();
                                     },
                                     style: ButtonStyle(
-                                      shape: MaterialStateProperty.all<
-                                          RoundedRectangleBorder>(
+                                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                                         const RoundedRectangleBorder(),
                                       ),
                                     ),
@@ -246,8 +231,7 @@ class OfferMealView extends GetView<OfferMealController> {
                                   child: TextButton.icon(
                                     onPressed: () {},
                                     style: ButtonStyle(
-                                      shape: MaterialStateProperty.all<
-                                          RoundedRectangleBorder>(
+                                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                                         const RoundedRectangleBorder(),
                                       ),
                                     ),
@@ -273,12 +257,8 @@ class OfferMealView extends GetView<OfferMealController> {
                       ),
                     ),
                     Positioned(
-                      left: MyStorage().get(MyStorage.appLocale) == "en"
-                          ? null
-                          : -4,
-                      right: MyStorage().get(MyStorage.appLocale) == "en"
-                          ? -4
-                          : null,
+                      left: MyStorage().get(MyStorage.appLocale) == "en" ? null : -4,
+                      right: MyStorage().get(MyStorage.appLocale) == "en" ? -4 : null,
                       top: -4,
                       child: Checkbox(
                         value: controller.usersList[index].isSelected,
@@ -320,20 +300,8 @@ class OfferMealView extends GetView<OfferMealController> {
                   height: 40,
                   decoration: ShapeDecoration(
                       shape: const StadiumBorder(),
-                      gradient: LinearGradient(
-                          colors: [
-                            AppTheme.accentColor1,
-                            AppTheme.accentColor2
-                          ],
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter),
-                      shadows: [
-                        BoxShadow(
-                            color: AppTheme.black3,
-                            offset: const Offset(0.5, 0.5),
-                            blurRadius: 1,
-                            spreadRadius: 0.5)
-                      ]),
+                      gradient: LinearGradient(colors: [AppTheme.accentColor1, AppTheme.accentColor2], begin: Alignment.topCenter, end: Alignment.bottomCenter),
+                      shadows: [BoxShadow(color: AppTheme.black3, offset: const Offset(0.5, 0.5), blurRadius: 1, spreadRadius: 0.5)]),
                   child: MaterialButton(
                     onPressed: () {
                       //controller.goToCreateUser();
@@ -342,10 +310,7 @@ class OfferMealView extends GetView<OfferMealController> {
                     shape: const StadiumBorder(),
                     child: Text(
                       "CREATE_NEW_USER".tr,
-                      style: TextStyle(
-                          color: AppTheme.white,
-                          fontWeight: FontWeight.w700,
-                          fontSize: 14),
+                      style: TextStyle(color: AppTheme.white, fontWeight: FontWeight.w700, fontSize: 14),
                     ),
                   ),
                 ),
@@ -359,26 +324,13 @@ class OfferMealView extends GetView<OfferMealController> {
 
   Widget historyButton() {
     return Container(
-      padding: EdgeInsets.only(
-          left: MyStorage().get(MyStorage.appLocale) == "en" ? 4 : 16,
-          right: MyStorage().get(MyStorage.appLocale) == "en" ? 16 : 4,
-          top: 16,
-          bottom: 16),
+      padding: EdgeInsets.only(left: MyStorage().get(MyStorage.appLocale) == "en" ? 4 : 16, right: MyStorage().get(MyStorage.appLocale) == "en" ? 16 : 4, top: 16, bottom: 16),
       child: Container(
         width: 72,
         decoration: ShapeDecoration(
             shape: const StadiumBorder(),
-            gradient: LinearGradient(
-                colors: [AppTheme.accentColor1, AppTheme.accentColor2],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter),
-            shadows: [
-              BoxShadow(
-                  color: AppTheme.black3,
-                  offset: const Offset(0.5, 0.5),
-                  blurRadius: 1,
-                  spreadRadius: 0.5)
-            ]),
+            gradient: LinearGradient(colors: [AppTheme.accentColor1, AppTheme.accentColor2], begin: Alignment.topCenter, end: Alignment.bottomCenter),
+            shadows: [BoxShadow(color: AppTheme.black3, offset: const Offset(0.5, 0.5), blurRadius: 1, spreadRadius: 0.5)]),
         child: MaterialButton(
           onPressed: () {
             controller.goToOfferHistoryPage();
@@ -399,10 +351,7 @@ class OfferMealView extends GetView<OfferMealController> {
               ),
               Text(
                 "History".tr,
-                style: TextStyle(
-                    color: AppTheme.white,
-                    fontWeight: FontWeight.w700,
-                    fontSize: 10),
+                style: TextStyle(color: AppTheme.white, fontWeight: FontWeight.w700, fontSize: 10),
               ),
               const SizedBox(
                 width: 4,

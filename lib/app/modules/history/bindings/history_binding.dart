@@ -1,6 +1,4 @@
-import 'package:get/get.dart';
-
-import '../controllers/history_controller.dart';
+import 'package:meal_box/imports.dart';
 
 class HistoryBinding extends Bindings {
   @override

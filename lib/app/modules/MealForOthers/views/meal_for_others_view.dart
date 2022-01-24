@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:meal_box/commons/common_widgets.dart';
+import 'package:meal_box/commons/images.dart';
 import 'package:meal_box/configs/app_theme.dart';
 import 'package:meal_box/utils/my_storage.dart';
 
@@ -39,7 +40,7 @@ class MealForOthersView extends GetView<MealForOthersController> {
                               children: [
                                 SizedBox(
                                   child: ClipRRect(
-                                    child: CommonWidgets.imageView(),
+                                    child: Images.networkImageView(),
                                     borderRadius: BorderRadius.circular(4),
                                   ),
                                   height: 72,
@@ -50,8 +51,7 @@ class MealForOthersView extends GetView<MealForOthersController> {
                                 ),
                                 Expanded(
                                   child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
                                       Row(
                                         children: [
@@ -97,8 +97,7 @@ class MealForOthersView extends GetView<MealForOthersController> {
                                           ),
                                           children: [
                                             TextSpan(
-                                              text: data
-                                                  .data[index].registrationId,
+                                              text: data.data[index].registrationId,
                                               style: TextStyle(
                                                 color: AppTheme.black2,
                                               ),
@@ -148,8 +147,7 @@ class MealForOthersView extends GetView<MealForOthersController> {
                                                 ),
                                                 children: [
                                                   TextSpan(
-                                                    text:
-                                                        data.data[index].region,
+                                                    text: data.data[index].region,
                                                     style: TextStyle(
                                                       color: AppTheme.black2,
                                                     ),
@@ -183,8 +181,7 @@ class MealForOthersView extends GetView<MealForOthersController> {
                                       controller.viewHistory();
                                     },
                                     style: ButtonStyle(
-                                      shape: MaterialStateProperty.all<
-                                          RoundedRectangleBorder>(
+                                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                                         const RoundedRectangleBorder(),
                                       ),
                                     ),
@@ -208,8 +205,7 @@ class MealForOthersView extends GetView<MealForOthersController> {
                                   child: TextButton.icon(
                                     onPressed: () {},
                                     style: ButtonStyle(
-                                      shape: MaterialStateProperty.all<
-                                          RoundedRectangleBorder>(
+                                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                                         const RoundedRectangleBorder(),
                                       ),
                                     ),
@@ -221,8 +217,7 @@ class MealForOthersView extends GetView<MealForOthersController> {
                                     label: Text(
                                       "CreateNewPlan".tr,
                                       style: const TextStyle(
-                                        color:
-                                            Color.fromARGB(255, 90, 153, 239),
+                                        color: Color.fromARGB(255, 90, 153, 239),
                                         fontSize: 13,
                                       ),
                                     ),
@@ -235,12 +230,8 @@ class MealForOthersView extends GetView<MealForOthersController> {
                       ),
                     ),
                     Positioned(
-                      left: MyStorage().get(MyStorage.appLocale) == "en"
-                          ? null
-                          : 12,
-                      right: MyStorage().get(MyStorage.appLocale) == "en"
-                          ? 12
-                          : null,
+                      left: MyStorage().get(MyStorage.appLocale) == "en" ? null : 12,
+                      right: MyStorage().get(MyStorage.appLocale) == "en" ? 12 : null,
                       top: 12,
                       child: InkWell(
                         onTap: () {
@@ -299,20 +290,8 @@ class MealForOthersView extends GetView<MealForOthersController> {
                   height: 40,
                   decoration: ShapeDecoration(
                       shape: const StadiumBorder(),
-                      gradient: LinearGradient(
-                          colors: [
-                            AppTheme.accentColor1,
-                            AppTheme.accentColor2
-                          ],
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter),
-                      shadows: [
-                        BoxShadow(
-                            color: AppTheme.black3,
-                            offset: const Offset(0.5, 0.5),
-                            blurRadius: 1,
-                            spreadRadius: 0.5)
-                      ]),
+                      gradient: LinearGradient(colors: [AppTheme.accentColor1, AppTheme.accentColor2], begin: Alignment.topCenter, end: Alignment.bottomCenter),
+                      shadows: [BoxShadow(color: AppTheme.black3, offset: const Offset(0.5, 0.5), blurRadius: 1, spreadRadius: 0.5)]),
                   child: MaterialButton(
                     onPressed: () {
                       controller.goToCreateUser();
@@ -321,10 +300,7 @@ class MealForOthersView extends GetView<MealForOthersController> {
                     shape: const StadiumBorder(),
                     child: Text(
                       "CREATE_NEW_USER".tr,
-                      style: TextStyle(
-                          color: AppTheme.white,
-                          fontWeight: FontWeight.w700,
-                          fontSize: 14),
+                      style: TextStyle(color: AppTheme.white, fontWeight: FontWeight.w700, fontSize: 14),
                     ),
                   ),
                 ),
@@ -338,26 +314,13 @@ class MealForOthersView extends GetView<MealForOthersController> {
 
   Widget adduser() {
     return Container(
-      padding: EdgeInsets.only(
-          left: MyStorage().get(MyStorage.appLocale) == "en" ? 4 : 16,
-          right: MyStorage().get(MyStorage.appLocale) == "en" ? 16 : 4,
-          top: 16,
-          bottom: 16),
+      padding: EdgeInsets.only(left: MyStorage().get(MyStorage.appLocale) == "en" ? 4 : 16, right: MyStorage().get(MyStorage.appLocale) == "en" ? 16 : 4, top: 16, bottom: 16),
       child: Container(
         width: 72,
         decoration: ShapeDecoration(
             shape: const StadiumBorder(),
-            gradient: LinearGradient(
-                colors: [AppTheme.accentColor1, AppTheme.accentColor2],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter),
-            shadows: [
-              BoxShadow(
-                  color: AppTheme.black3,
-                  offset: const Offset(0.5, 0.5),
-                  blurRadius: 1,
-                  spreadRadius: 0.5)
-            ]),
+            gradient: LinearGradient(colors: [AppTheme.accentColor1, AppTheme.accentColor2], begin: Alignment.topCenter, end: Alignment.bottomCenter),
+            shadows: [BoxShadow(color: AppTheme.black3, offset: const Offset(0.5, 0.5), blurRadius: 1, spreadRadius: 0.5)]),
         child: MaterialButton(
           onPressed: () {
             controller.goToCreateUser();
@@ -374,10 +337,7 @@ class MealForOthersView extends GetView<MealForOthersController> {
               ),
               Text(
                 "AddUser".tr,
-                style: TextStyle(
-                    color: AppTheme.white,
-                    fontWeight: FontWeight.w700,
-                    fontSize: 10),
+                style: TextStyle(color: AppTheme.white, fontWeight: FontWeight.w700, fontSize: 10),
               ),
               const SizedBox(
                 width: 4,

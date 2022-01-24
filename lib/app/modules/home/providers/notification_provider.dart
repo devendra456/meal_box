@@ -1,11 +1,9 @@
-import 'dart:convert';
 
-import 'package:flutter/services.dart';
-import 'package:meal_box/app/modules/home/models/notification_model.dart';
+import 'package:meal_box/imports.dart';
 
 class NotificationProvider {
   Future<NotificationModel> getNotifications() async {
-    final response = await rootBundle.loadString("jsons/notification.json");
+    final response = await rootBundle.loadString(Assets.notificationJSON);
 
     return NotificationModel.fromJson(jsonDecode(response));
   }

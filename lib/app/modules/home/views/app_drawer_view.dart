@@ -1,9 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
-import 'package:meal_box/app/modules/home/controllers/app_drawer_controller.dart';
-import 'package:meal_box/commons/common_widgets.dart';
-import 'package:meal_box/configs/app_theme.dart';
+import 'package:meal_box/imports.dart';
 
 class AppDrawerView extends GetView<AppDrawerController> {
   const AppDrawerView({Key? key}) : super(key: key);
@@ -24,7 +19,7 @@ class AppDrawerView extends GetView<AppDrawerController> {
                       width: 16,
                     ),
                     ClipOval(
-                      child: CommonWidgets.imageView(height: 64, width: 64),
+                      child: Images.networkImageView(height: 64, width: 64),
                     ),
                     const SizedBox(
                       width: 16,
@@ -34,23 +29,16 @@ class AppDrawerView extends GetView<AppDrawerController> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "Devendra Maurya",
-                            style: TextStyle(
-                                color: AppTheme.black1,
-                                fontSize: 18,
-                                fontWeight: FontWeight.w600),
+                            StaticStrings.name,
+                            style: TextStyle(color: AppTheme.black1, fontSize: 18, fontWeight: FontWeight.w600),
                             maxLines: 1,
                           ),
                           const SizedBox(
                             height: 4,
                           ),
                           Text(
-                            "S. V. M. Inter Collage Sagra Sundarpur "
-                            "Pratapgarh (U.P.)",
-                            style: TextStyle(
-                                color: AppTheme.black3,
-                                fontSize: 14,
-                                fontWeight: FontWeight.w300),
+                            StaticStrings.schoolName,
+                            style: TextStyle(color: AppTheme.black3, fontSize: 14, fontWeight: FontWeight.w300),
                             maxLines: 2,
                           ),
                         ],
@@ -67,16 +55,12 @@ class AppDrawerView extends GetView<AppDrawerController> {
                     Container(
                       height: 32,
                       width: 32,
-                      decoration: controller.langCode == 'en'
-                          ? controller.unselectedBoxDecoration
-                          : controller.selectedBoxDecoration,
+                      decoration: controller.langCode == 'en' ? controller.unselectedBoxDecoration : controller.selectedBoxDecoration,
                       child: Center(
                         child: Text(
-                          "ع",
+                          StaticStrings.arabicCode,
                           style: TextStyle(
-                            color: controller.langCode == 'en'
-                                ? AppTheme.black1
-                                : AppTheme.white,
+                            color: controller.langCode == 'en' ? AppTheme.black1 : AppTheme.white,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -89,8 +73,8 @@ class AppDrawerView extends GetView<AppDrawerController> {
                       onPressed: () {
                         controller.changeLanguage();
                       },
-                      icon: SvgPicture.asset(
-                        "assets/arrow_icon.svg",
+                      icon: Images.svgImageViewAsset(
+                        imagePath: Assets.arrowIcon,
                         width: 20,
                         height: 20,
                       ),
@@ -101,16 +85,12 @@ class AppDrawerView extends GetView<AppDrawerController> {
                     Container(
                       height: 32,
                       width: 32,
-                      decoration: controller.langCode == 'ar'
-                          ? controller.unselectedBoxDecoration
-                          : controller.selectedBoxDecoration,
+                      decoration: controller.langCode == 'ar' ? controller.unselectedBoxDecoration : controller.selectedBoxDecoration,
                       child: Center(
                         child: Text(
-                          "EN",
+                          StaticStrings.englishCode,
                           style: TextStyle(
-                            color: controller.langCode == 'en'
-                                ? AppTheme.white
-                                : AppTheme.black1,
+                            color: controller.langCode == 'en' ? AppTheme.white : AppTheme.black1,
                             fontWeight: FontWeight.w600,
                           ),
                         ),
@@ -123,13 +103,13 @@ class AppDrawerView extends GetView<AppDrawerController> {
                 onTap: () {
                   controller.onTapDrawerListItem(1);
                 },
-                leading: SvgPicture.asset(
-                  "assets/profile_icon.svg",
-                  width: 18,
-                  height: 18,
+                leading: Images.svgImageViewAsset(
+                  imagePath: Assets.profileIcon,
+                  width: 20,
+                  height: 20,
                 ),
                 title: Text(
-                  "Profile".tr,
+                  StringKeys.profile.tr,
                   style: TextStyle(color: AppTheme.black1, fontSize: 16),
                 ),
                 horizontalTitleGap: 0,
@@ -142,13 +122,13 @@ class AppDrawerView extends GetView<AppDrawerController> {
                 onTap: () {
                   controller.onTapDrawerListItem(2);
                 },
-                leading: SvgPicture.asset(
-                  "assets/change_password_icon.svg",
-                  width: 18,
-                  height: 18,
+                leading: Images.svgImageViewAsset(
+                  imagePath: Assets.changePasswordIcon,
+                  width: 20,
+                  height: 20,
                 ),
                 title: Text(
-                  "ChangePassword".tr,
+                  StringKeys.changePassword.tr,
                   style: TextStyle(color: AppTheme.black1, fontSize: 16),
                 ),
                 horizontalTitleGap: 0,
@@ -161,13 +141,13 @@ class AppDrawerView extends GetView<AppDrawerController> {
                 onTap: () {
                   controller.onTapDrawerListItem(3);
                 },
-                leading: SvgPicture.asset(
-                  "assets/my_qr_code_icon.svg",
-                  width: 18,
-                  height: 18,
+                leading: Images.svgImageViewAsset(
+                  imagePath: Assets.myQRCodeIcon,
+                  width: 20,
+                  height: 20,
                 ),
                 title: Text(
-                  "MyQRCode".tr,
+                  StringKeys.myQRCode.tr,
                   style: TextStyle(color: AppTheme.black1, fontSize: 16),
                 ),
                 horizontalTitleGap: 0,
@@ -180,13 +160,13 @@ class AppDrawerView extends GetView<AppDrawerController> {
                 onTap: () {
                   controller.onTapDrawerListItem(4);
                 },
-                leading: SvgPicture.asset(
-                  "assets/history_icon.svg",
-                  width: 18,
-                  height: 18,
+                leading: Images.svgImageViewAsset(
+                  imagePath: Assets.historyIcon,
+                  width: 20,
+                  height: 20,
                 ),
                 title: Text(
-                  "History".tr,
+                  StringKeys.history.tr,
                   style: TextStyle(color: AppTheme.black1, fontSize: 16),
                 ),
                 horizontalTitleGap: 0,
@@ -199,13 +179,13 @@ class AppDrawerView extends GetView<AppDrawerController> {
                 onTap: () {
                   controller.onTapLogout();
                 },
-                leading: SvgPicture.asset(
-                  "assets/logout_icon.svg",
-                  width: 18,
-                  height: 18,
+                leading: Images.svgImageViewAsset(
+                  imagePath: Assets.logoutIcon,
+                  width: 20,
+                  height: 20,
                 ),
                 title: Text(
-                  "Logout".tr,
+                  StringKeys.logout.tr,
                   style: TextStyle(color: AppTheme.black1, fontSize: 16),
                 ),
                 horizontalTitleGap: 0,

@@ -1,10 +1,8 @@
-import 'package:flutter/material.dart';
-
-import 'package:get/get.dart';
-
-import '../controllers/change_password_controller.dart';
+import 'package:meal_box/imports.dart';
 
 class ChangePasswordView extends GetView<ChangePasswordController> {
+  const ChangePasswordView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

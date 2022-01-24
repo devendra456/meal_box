@@ -1,30 +1,6 @@
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:meal_box/configs/app_theme.dart';
-import 'package:meal_box/utils/my_storage.dart';
+import 'package:meal_box/imports.dart';
 
 class CommonWidgets {
-  static Widget imageView({
-    double height = double.infinity,
-    double width = double.infinity,
-    String imageUrl = "https://picsum.photos/1920/1080",
-    BoxFit boxFit = BoxFit.cover,
-  }) {
-    return CachedNetworkImage(
-      height: height,
-      width: width,
-      imageUrl: imageUrl,
-      placeholder: (context, url) =>
-          const Center(child: CircularProgressIndicator()),
-      errorWidget: (context, url, error) => Icon(
-        Icons.error,
-        color: AppTheme.black3,
-      ),
-      fit: boxFit,
-    );
-  }
-
   static AppBar appHeader({
     required final String title,
     final Widget actionButton = const SizedBox(),
@@ -38,8 +14,8 @@ class CommonWidgets {
         child: Card(
           elevation: 2.0,
           margin: EdgeInsets.only(
-            left: MyStorage().get(MyStorage.appLocale) == "en" ? 16 : 8,
-            right: MyStorage().get(MyStorage.appLocale) == "en" ? 8 : 16,
+            left: !kIsAppRTL ? 16 : 8,
+            right: !kIsAppRTL ? 8 : 16,
             bottom: 12,
             top: 12,
           ),
@@ -52,8 +28,7 @@ class CommonWidgets {
       ),
       title: Text(
         title,
-        style: TextStyle(
-            color: AppTheme.black1, fontSize: 18, fontWeight: FontWeight.w700),
+        style: TextStyle(color: AppTheme.black1, fontSize: 18, fontWeight: FontWeight.w700),
       ),
       centerTitle: true,
       actions: [actionButton],

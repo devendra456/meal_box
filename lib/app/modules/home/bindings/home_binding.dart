@@ -1,12 +1,4 @@
-import 'package:get/get.dart';
-import 'package:meal_box/app/modules/home/controllers/app_drawer_controller.dart';
-import 'package:meal_box/app/modules/home/controllers/bottom_navigation_controller.dart';
-import 'package:meal_box/app/modules/home/controllers/dashboard_tab_controller.dart';
-import 'package:meal_box/app/modules/home/controllers/notification_tab_controller.dart';
-import 'package:meal_box/app/modules/home/controllers/setting_tab_controller.dart';
-import 'package:meal_box/app/modules/home/controllers/wallet_tab_controller.dart';
-
-import '../controllers/home_controller.dart';
+import 'package:meal_box/imports.dart';
 
 class HomeBinding extends Bindings {
   @override
@@ -23,12 +15,8 @@ class HomeBinding extends Bindings {
     Get.lazyPut<DashboardTabController>(
       () => DashboardTabController(),
     );
-    Get.lazyPut<BottomNavigationController>(
-      () => BottomNavigationController(),
-    );
-    Get.lazyPut<HomeController>(
-      () => HomeController(),
-    );
+    Get.put(HomeController());
     Get.put(AppDrawerController());
+    Get.put(BottomNavigationController());
   }
 }

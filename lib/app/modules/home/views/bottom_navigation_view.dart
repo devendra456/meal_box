@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
-import 'package:meal_box/app/modules/home/controllers/bottom_navigation_controller.dart';
-import 'package:meal_box/configs/app_theme.dart';
+import 'package:meal_box/imports.dart';
 
 class BottomNavigationView extends GetView<BottomNavigationController> {
   const BottomNavigationView({Key? key}) : super(key: key);
@@ -30,62 +26,56 @@ class BottomNavigationView extends GetView<BottomNavigationController> {
               BottomNavigationBarItem(
                   icon: Padding(
                     padding: const EdgeInsets.all(3.0),
-                    child: SvgPicture.asset(
-                      "assets/home_icon.svg",
-                      color: controller.selectedIndex.value == 0
-                          ? AppTheme.accentColor1
-                          : AppTheme.black3,
+                    child: Images.svgImageViewAsset(
+                      imagePath: Assets.homeIcon,
                       height: 22,
                       width: 22,
+                      color: controller.selectedIndex.value == 0 ? AppTheme.accentColor1 : AppTheme.black3,
                     ),
                   ),
-                  label: "Dashboard".tr),
+                  label: StringKeys.dashboard.tr),
               BottomNavigationBarItem(
                   icon: Padding(
                     padding: const EdgeInsets.all(3.0),
-                    child: SvgPicture.asset(
-                      "assets/bell_icon.svg",
-                      color: controller.selectedIndex.value == 1
-                          ? AppTheme.accentColor1
-                          : AppTheme.black3,
+                    child: Images.svgImageViewAsset(
+                      imagePath: Assets.bellIcon,
                       height: 22,
                       width: 22,
+                      color: controller.selectedIndex.value == 1 ? AppTheme.accentColor1 : AppTheme.black3,
                     ),
                   ),
-                  label: "Notification".tr),
+                  label: StringKeys.notification.tr),
               BottomNavigationBarItem(
                 icon: Padding(
                   padding: const EdgeInsets.all(3.0),
-                  child: SvgPicture.asset(
-                    "assets/wallet_icon.svg",
-                    color: controller.selectedIndex.value == 2
-                        ? AppTheme.accentColor1
-                        : AppTheme.black3,
+                  child: Images.svgImageViewAsset(
+                    imagePath: Assets.walletIcon,
                     height: 22,
                     width: 22,
+                    color: controller.selectedIndex.value == 2 ? AppTheme.accentColor1 : AppTheme.black3,
                   ),
                 ),
-                label: "Wallet".tr,
+                label: StringKeys.wallet.tr,
               ),
               BottomNavigationBarItem(
                 icon: Padding(
                   padding: const EdgeInsets.all(3.0),
-                  child: SvgPicture.asset(
-                    "assets/setting_icon.svg",
-                    color: controller.selectedIndex.value == 3
-                        ? AppTheme.accentColor1
-                        : AppTheme.black3,
+                  child: Images.svgImageViewAsset(
+                    imagePath: Assets.settingIcon,
                     height: 22,
                     width: 22,
+                    color: controller.selectedIndex.value == 3 ? AppTheme.accentColor1 : AppTheme.black3,
                   ),
                 ),
-                label: "Setting".tr,
+                label: StringKeys.setting.tr,
               ),
             ],
             type: BottomNavigationBarType.fixed,
             currentIndex: controller.selectedIndex.value,
             selectedItemColor: AppTheme.accentColor1,
-            onTap: controller.onTapItem,
+            onTap: (value) {
+              controller.onTapItem(value);
+            },
             unselectedItemColor: AppTheme.black3,
             elevation: 20,
           ),

@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:meal_box/configs/app_theme.dart';
+import 'package:meal_box/imports.dart';
 
 class IntroContentView extends GetView {
   final String imagePath;
@@ -34,10 +32,10 @@ class IntroContentView extends GetView {
             children: [
               RichText(
                 text: TextSpan(
-                  text: "Step".tr,
+                  text: StringKeys.step.tr,
                   children: [
                     TextSpan(text: currentPage.toString()),
-                    TextSpan(text: "of".tr),
+                    TextSpan(text: StringKeys.of.tr),
                     TextSpan(text: totalPage.toString()),
                   ],
                   style: TextStyle(

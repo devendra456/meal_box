@@ -4,11 +4,9 @@
 
 import 'dart:convert';
 
-NotificationModel notificationModelFromJson(String str) =>
-    NotificationModel.fromJson(json.decode(str));
+NotificationModel notificationModelFromJson(String str) => NotificationModel.fromJson(json.decode(str));
 
-String notificationModelToJson(NotificationModel data) =>
-    json.encode(data.toJson());
+String notificationModelToJson(NotificationModel data) => json.encode(data.toJson());
 
 class NotificationModel {
   NotificationModel({
@@ -19,13 +17,12 @@ class NotificationModel {
 
   int status;
   bool success;
-  List<Datum> data;
+  List<NotificationData> data;
 
-  factory NotificationModel.fromJson(Map<String, dynamic> json) =>
-      NotificationModel(
+  factory NotificationModel.fromJson(Map<String, dynamic> json) => NotificationModel(
         status: json["status"],
         success: json["success"],
-        data: List<Datum>.from(json["data"].map((x) => Datum.fromJson(x))),
+        data: List<NotificationData>.from(json["data"].map((x) => NotificationData.fromJson(x))),
       );
 
   Map<String, dynamic> toJson() => {
@@ -35,8 +32,8 @@ class NotificationModel {
       };
 }
 
-class Datum {
-  Datum({
+class NotificationData {
+  NotificationData({
     required this.id,
     required this.isNew,
     required this.time,
@@ -48,7 +45,7 @@ class Datum {
   String time;
   String content;
 
-  factory Datum.fromJson(Map<String, dynamic> json) => Datum(
+  factory NotificationData.fromJson(Map<String, dynamic> json) => NotificationData(
         id: json["id"],
         isNew: json["isNew"],
         time: json["time"],

@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
-import 'package:meal_box/app/modules/home/controllers/dashboard_tab_controller.dart';
-import 'package:meal_box/configs/app_theme.dart';
+import 'package:meal_box/imports.dart';
 
 class DashboardTabView extends GetView<DashboardTabController> {
   const DashboardTabView({Key? key}) : super(key: key);
@@ -15,8 +11,8 @@ class DashboardTabView extends GetView<DashboardTabController> {
           width: double.infinity,
           height: 24,
         ),
-        Image.asset(
-          "assets/intro_image3.png",
+        Images.imageAssets(
+          imagePath: Assets.introImage3,
           width: MediaQuery.of(context).size.width * .7,
         ),
         Expanded(
@@ -56,18 +52,16 @@ class DashboardTabView extends GetView<DashboardTabController> {
                           alignment: Alignment.center,
                           width: double.infinity,
                           height: double.infinity,
-                          child: SvgPicture.asset(
-                            "assets/dashboard_icon1.svg",
+                          child: Images.svgImageViewAsset(
+                            imagePath: Assets.dashboardIcon1,
                           ),
                         ),
                       ),
                       Flexible(
                         flex: 1,
                         child: Text(
-                          "MyMealPlan".tr,
-                          style: TextStyle(
-                              color: AppTheme.black1,
-                              fontWeight: FontWeight.w600),
+                          StringKeys.myMealPlan.tr,
+                          style: TextStyle(color: AppTheme.black1, fontWeight: FontWeight.w600),
                         ),
                       ),
                     ],
@@ -100,18 +94,14 @@ class DashboardTabView extends GetView<DashboardTabController> {
                           alignment: Alignment.center,
                           width: double.infinity,
                           height: double.infinity,
-                          child: SvgPicture.asset(
-                            "assets/dashboard_icon2.svg",
-                          ),
+                          child: Images.svgImageViewAsset(imagePath: Assets.dashboardIcon2),
                         ),
                       ),
                       Flexible(
                         flex: 1,
                         child: Text(
-                          "OfferMeal".tr,
-                          style: TextStyle(
-                              color: AppTheme.black1,
-                              fontWeight: FontWeight.w600),
+                          StringKeys.offerMeal.tr,
+                          style: TextStyle(color: AppTheme.black1, fontWeight: FontWeight.w600),
                         ),
                       ),
                     ],
@@ -144,18 +134,16 @@ class DashboardTabView extends GetView<DashboardTabController> {
                           alignment: Alignment.center,
                           width: double.infinity,
                           height: double.infinity,
-                          child: SvgPicture.asset(
-                            "assets/dashboard_icon3.svg",
+                          child: Images.svgImageViewAsset(
+                            imagePath: Assets.dashboardIcon3,
                           ),
                         ),
                       ),
                       Flexible(
                         flex: 1,
                         child: Text(
-                          "MealForOthers".tr,
-                          style: TextStyle(
-                              color: AppTheme.black1,
-                              fontWeight: FontWeight.w600),
+                          StringKeys.mealForOthers.tr,
+                          style: TextStyle(color: AppTheme.black1, fontWeight: FontWeight.w600),
                         ),
                       ),
                     ],

@@ -1,10 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:meal_box/app/modules/intro/views/intro_content_view.dart';
-import 'package:meal_box/app/routes/app_pages.dart';
-import 'package:meal_box/configs/app_theme.dart';
-
-import '../controllers/intro_controller.dart';
+import 'package:meal_box/imports.dart';
 
 class IntroView extends GetView<IntroController> {
   const IntroView({Key? key}) : super(key: key);
@@ -17,26 +11,10 @@ class IntroView extends GetView<IntroController> {
             Flexible(
               child: PageView(
                 children: [
-                  IntroContentView(
-                      imagePath: "assets/intro_image1.png",
-                      content: "introScreenContent1".tr,
-                      totalPage: 4,
-                      currentPage: 1),
-                  IntroContentView(
-                      imagePath: "assets/intro_image2.png",
-                      content: "introScreenContent2".tr,
-                      totalPage: 4,
-                      currentPage: 2),
-                  IntroContentView(
-                      imagePath: "assets/intro_image3.png",
-                      content: "introScreenContent3".tr,
-                      totalPage: 4,
-                      currentPage: 3),
-                  IntroContentView(
-                      imagePath: "assets/intro_image4.png",
-                      content: "introScreenContent4".tr,
-                      totalPage: 4,
-                      currentPage: 4)
+                  IntroContentView(imagePath: Assets.introImage1, content: StringKeys.introScreenContent1.tr, totalPage: 4, currentPage: 1),
+                  IntroContentView(imagePath: Assets.introImage2, content: StringKeys.introScreenContent2.tr, totalPage: 4, currentPage: 2),
+                  IntroContentView(imagePath: Assets.introImage3, content: StringKeys.introScreenContent3.tr, totalPage: 4, currentPage: 3),
+                  IntroContentView(imagePath: Assets.introImage4, content: StringKeys.introScreenContent4.tr, totalPage: 4, currentPage: 4),
                 ],
                 physics: const BouncingScrollPhysics(),
                 controller: controller.pageController,
@@ -53,13 +31,7 @@ class IntroView extends GetView<IntroController> {
                     width: 120,
                     decoration: ShapeDecoration(
                       shape: const StadiumBorder(),
-                      gradient: LinearGradient(
-                          colors: [
-                            AppTheme.accentColor1,
-                            AppTheme.accentColor2
-                          ],
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter),
+                      gradient: kLinearGradient,
                     ),
                     child: MaterialButton(
                       onPressed: () {
@@ -67,9 +39,8 @@ class IntroView extends GetView<IntroController> {
                       },
                       shape: const StadiumBorder(),
                       child: Text(
-                        "NEXT".tr,
-                        style: TextStyle(
-                            color: AppTheme.white, fontWeight: FontWeight.w700),
+                        StringKeys.next.tr,
+                        style: TextStyle(color: AppTheme.white, fontWeight: FontWeight.w700),
                       ),
                     ),
                   ),
@@ -81,7 +52,7 @@ class IntroView extends GetView<IntroController> {
                       Get.toNamed(Routes.login);
                     },
                     child: Text(
-                      "SKIP".tr,
+                      StringKeys.skip.tr,
                     ),
                     style: ButtonStyle(
                       shape: MaterialStateProperty.all(

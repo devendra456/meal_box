@@ -1,9 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:meal_box/commons/common_widgets.dart';
-import 'package:meal_box/configs/app_theme.dart';
 
-import '../controllers/history_controller.dart';
+import 'package:meal_box/imports.dart';
 
 class HistoryView extends GetView<HistoryController> {
   const HistoryView({Key? key}) : super(key: key);
@@ -11,7 +7,7 @@ class HistoryView extends GetView<HistoryController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CommonWidgets.appHeader(title: "History".tr),
+      appBar: CommonWidgets.appHeader(title: StringKeys.history.tr),
       body: controller.obx((data) {
         if (data!.data.isNotEmpty) {
           return ListView.builder(
@@ -36,8 +32,8 @@ class HistoryView extends GetView<HistoryController> {
                       ),
                       child: Text(
                         data.data[index].isPlanActive
-                            ? "CurrentPlan".tr
-                            : "PlanExpired".tr,
+                            ? StringKeys.currentPlan.tr
+                            : StringKeys.planExpired.tr,
                         style: TextStyle(
                           color: AppTheme.white,
                         ),
@@ -133,7 +129,7 @@ class HistoryView extends GetView<HistoryController> {
                                       color: AppTheme.lightAccent1,
                                     ),
                                     child: Text(
-                                      "ViewDetails".tr,
+                                      StringKeys.viewDetails.tr,
                                       style: TextStyle(
                                         color: AppTheme.black1,
                                         fontSize: 12,
@@ -160,7 +156,7 @@ class HistoryView extends GetView<HistoryController> {
         } else {
           return Center(
             child: Text(
-              "HistoryNotFound".tr,
+              StringKeys.historyNotFound.tr,
               style: TextStyle(
                 fontWeight: FontWeight.w600,
                 fontSize: 18,

@@ -1,9 +1,6 @@
-import 'package:get/get.dart';
-import 'package:meal_box/app/modules/MyMealPlan/models/my_meal_plan_model.dart';
-import 'package:meal_box/app/modules/MyMealPlan/providers/my_meal_plan_provider.dart';
+import 'package:meal_box/imports.dart';
 
-class HistoryController extends GetxController
-    with StateMixin<MyMealPlanModel> {
+class HistoryController extends GetxController with StateMixin<MyMealPlanModel> {
   @override
   void onInit() {
     super.onInit();

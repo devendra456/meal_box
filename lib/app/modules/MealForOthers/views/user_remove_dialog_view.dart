@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:meal_box/app/modules/MealForOthers/models/user_list_model.dart';
-import 'package:meal_box/commons/common_widgets.dart';
+import 'package:meal_box/commons/images.dart';
 import 'package:meal_box/configs/app_theme.dart';
 
 class UserRemoveDialogView extends GetView {
@@ -32,7 +32,7 @@ class UserRemoveDialogView extends GetView {
                   children: [
                     SizedBox(
                       child: ClipRRect(
-                        child: CommonWidgets.imageView(),
+                        child: Images.networkImageView(),
                         borderRadius: BorderRadius.circular(4),
                       ),
                       height: 72,
@@ -174,17 +174,8 @@ class UserRemoveDialogView extends GetView {
                 Container(
                   height: 36,
                   decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                        colors: [AppTheme.accentColor1, AppTheme.accentColor2],
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter),
-                    boxShadow: [
-                      BoxShadow(
-                          color: AppTheme.black3,
-                          offset: const Offset(0.5, 0.5),
-                          blurRadius: 1,
-                          spreadRadius: 0.5)
-                    ],
+                    gradient: LinearGradient(colors: [AppTheme.accentColor1, AppTheme.accentColor2], begin: Alignment.topCenter, end: Alignment.bottomCenter),
+                    boxShadow: [BoxShadow(color: AppTheme.black3, offset: const Offset(0.5, 0.5), blurRadius: 1, spreadRadius: 0.5)],
                     borderRadius: BorderRadius.circular(4),
                   ),
                   child: MaterialButton(

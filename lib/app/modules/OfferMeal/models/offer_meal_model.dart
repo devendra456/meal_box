@@ -18,12 +18,12 @@ class OfferMealModel {
 
   int status;
   bool success;
-  List<Datum> data;
+  List<OfferMealData> data;
 
   factory OfferMealModel.fromJson(Map<String, dynamic> json) => OfferMealModel(
         status: json["status"],
         success: json["success"],
-        data: List<Datum>.from(json["data"].map((x) => Datum.fromJson(x))),
+        data: List<OfferMealData>.from(json["data"].map((x) => OfferMealData.fromJson(x))),
       );
 
   Map<String, dynamic> toJson() => {
@@ -33,8 +33,8 @@ class OfferMealModel {
       };
 }
 
-class Datum {
-  Datum({
+class OfferMealData {
+  OfferMealData({
     required this.id,
     required this.userName,
     required this.profilePic,
@@ -56,7 +56,7 @@ class Datum {
   String mobile;
   bool isSelected;
 
-  factory Datum.fromJson(Map<String, dynamic> json) => Datum(
+  factory OfferMealData.fromJson(Map<String, dynamic> json) => OfferMealData(
         id: json["id"],
         userName: json["userName"],
         profilePic: json["profilePic"],

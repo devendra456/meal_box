@@ -1,12 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
-import 'package:meal_box/app/modules/register/views/field_spacing_view.dart';
-import 'package:meal_box/commons/common_widgets.dart';
-import 'package:meal_box/commons/images.dart';
-import 'package:meal_box/configs/app_theme.dart';
-
-import '../controllers/profile_controller.dart';
+import 'package:meal_box/imports.dart';
 
 class ProfileView extends GetView<ProfileController> {
   const ProfileView({Key? key}) : super(key: key);
@@ -14,7 +6,7 @@ class ProfileView extends GetView<ProfileController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CommonWidgets.appHeader(title: "Profile"),
+      appBar: CommonWidgets.appHeader(title: StringKeys.profile.tr),
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Padding(
@@ -46,9 +38,10 @@ class ProfileView extends GetView<ProfileController> {
                         height: 24,
                         width: 24,
                         padding: const EdgeInsets.all(6),
-                        child: SvgPicture.asset(
+                        child: /*SvgPicture.asset(
                           "assets/edit_icon.svg",
-                        ),
+                        ),*/
+                            Images.svgImageViewAsset(imagePath: Assets.editIcon, boxFit: BoxFit.contain),
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           border: Border.all(
@@ -72,7 +65,7 @@ class ProfileView extends GetView<ProfileController> {
                 ),
               ),
               Text(
-                "Devendra Maurya",
+                StaticStrings.name,
                 style: TextStyle(
                   color: AppTheme.black1,
                   fontWeight: FontWeight.w600,
@@ -82,7 +75,7 @@ class ProfileView extends GetView<ProfileController> {
               Padding(
                 padding: const EdgeInsets.only(top: 4, bottom: 32),
                 child: Text(
-                  "#STU1123",
+                  StaticStrings.uniqueID,
                   style: TextStyle(
                     color: AppTheme.black3,
                   ),
@@ -95,7 +88,7 @@ class ProfileView extends GetView<ProfileController> {
                 child: TextField(
                   decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: "FullName".tr,
+                    hintText: StringKeys.fullName.tr,
                     hintStyle: TextStyle(fontSize: 14, color: AppTheme.black3),
                     contentPadding: const EdgeInsets.symmetric(horizontal: 24),
                   ),
@@ -114,7 +107,7 @@ class ProfileView extends GetView<ProfileController> {
                 child: TextField(
                   decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: "PhoneNumber".tr,
+                    hintText: StringKeys.phoneNumber.tr,
                     hintStyle: TextStyle(fontSize: 14, color: AppTheme.black3),
                     contentPadding: const EdgeInsets.symmetric(horizontal: 24),
                   ),
@@ -136,7 +129,7 @@ class ProfileView extends GetView<ProfileController> {
                   child: Row(
                     children: [
                       Text(
-                        "ChooseCity".tr,
+                        StringKeys.chooseCity.tr,
                         style: TextStyle(fontSize: 14, color: AppTheme.black3),
                       ),
                       const Spacer(),
@@ -159,7 +152,7 @@ class ProfileView extends GetView<ProfileController> {
                   child: Row(
                     children: [
                       Text(
-                        "ChooseRegion".tr,
+                        StringKeys.chooseRegion.tr,
                         style: TextStyle(fontSize: 14, color: AppTheme.black3),
                       ),
                       const Spacer(),
@@ -183,7 +176,7 @@ class ProfileView extends GetView<ProfileController> {
                     children: [
                       Expanded(
                         child: Text(
-                          "School/Organization".tr,
+                          StringKeys.schoolOrganization.tr,
                           maxLines: 1,
                           style: TextStyle(fontSize: 14, color: AppTheme.black3),
                         ),
@@ -192,7 +185,7 @@ class ProfileView extends GetView<ProfileController> {
                         onPressed: () {
                           controller.changeSchoolName();
                         },
-                        child: Text("Change".tr),
+                        child: Text(StringKeys.change.tr),
                       )
                     ],
                   ),
@@ -214,7 +207,7 @@ class ProfileView extends GetView<ProfileController> {
                       shape: const StadiumBorder(),
                       onPressed: () {},
                       child: Text(
-                        "save&change".tr,
+                        StringKeys.saveAndChange.tr,
                         style: TextStyle(color: AppTheme.white, fontWeight: FontWeight.w700, fontSize: 14),
                       ),
                     ),

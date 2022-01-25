@@ -1,17 +1,12 @@
 class Assets {
   /*-----------------------Static Links------------------------------*/
-
   static const dummyImageURL = "https://picsum.photos/1920/1080";
-
   /*-----------------------Directories------------------------------*/
-
   static const imageDirectory = "assets/";
   static const fontDirectory = "fonts/";
   static const jsonDirectory = "jsons/";
   static const dummyAssetsDirectory = "dummy_assets/";
-
   /*-----------------------Svg Images-------------------------------*/
-
   static const appLogo = "${imageDirectory}app_logo.svg";
   static const foregroundImage = "${imageDirectory}foreground.svg";
   static const schoolImage = "${imageDirectory}school_image.svg";
@@ -29,15 +24,37 @@ class Assets {
   static const walletIcon = "${imageDirectory}wallet_icon.svg";
   static const settingIcon = "${imageDirectory}setting_icon.svg";
   static const hamburgerIcon = "${imageDirectory}hamburger_icon.svg";
-
+  static const loginScreenImage = "${imageDirectory}login_screen_image.svg";
+  static const userIcon = "${imageDirectory}user_icon.svg";
+  static const lockIcon = "${imageDirectory}lock_icon.svg";
+  static const eyeIcon = "${imageDirectory}eye_icon.svg";
+  static const facebookIcon = "${imageDirectory}facebook_icon.svg";
+  static const googleIcon = "${imageDirectory}google_icon.svg";
+  static const twitterIcon = "${imageDirectory}twitter_icon.svg";
+  static const userImage = "${imageDirectory}user_image.svg";
+  static const deleteIcon = "${imageDirectory}delete_icon.svg";
+  static const addIcon = "${imageDirectory}add_icon.svg";
+  static const noMealPlan = "${imageDirectory}no_meal_plan.svg";
+  static const shareIcon = "${imageDirectory}share_icon.svg";
+  static const singleIcon = "${imageDirectory}single_icon.svg";
+  static const callIcon = "${imageDirectory}call_icon.svg";
+  static const payIcon = "${imageDirectory}pay_icon.svg";
+  static const verifyOTPImage = "${imageDirectory}verify_otp_image.svg";
+  static const editIcon = "${imageDirectory}edit_icon.svg";
+  static const searchIcon = "${imageDirectory}search_icon.svg";
+  static const moneyIcon = "${imageDirectory}money_icon.svg";
   /*-----------------------PNG Images-------------------------------*/
-
   static const introImage1 = "${imageDirectory}intro_image1.png";
   static const introImage2 = "${imageDirectory}intro_image2.png";
   static const introImage3 = "${imageDirectory}intro_image3.png";
   static const introImage4 = "${imageDirectory}intro_image4.png";
-
+  static const torchOffIcon = "${imageDirectory}torch_off_icon.png";
+  static const torchOnIcon = "${imageDirectory}torch_on_icon.png";
+  static const doneImage = "${imageDirectory}done_image.png";
   /*-----------------------JSON-------------------------------*/
-
   static const notificationJSON = "${jsonDirectory}notification.json";
+  static const userListJSON = "${jsonDirectory}userList.json";
+  static const myMealPlanJSON = "${jsonDirectory}my_meal_plan.json";
+  static const offerMealJSON = "${jsonDirectory}offerMeal.json";
+  static const schoolsNameJSON = "${jsonDirectory}schools_name.json";
 }

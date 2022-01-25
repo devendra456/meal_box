@@ -1,9 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:meal_box/app/routes/app_pages.dart';
-import 'package:meal_box/configs/app_theme.dart';
-import 'package:meal_box/utils/my_storage.dart';
-
+import 'package:meal_box/imports.dart';
 class LogoutDialog extends GetView {
   const LogoutDialog({Key? key}) : super(key: key);
 
@@ -27,7 +22,7 @@ class LogoutDialog extends GetView {
                   width: 8,
                 ),
                 Text(
-                  "Are_you_sure?".tr,
+                  StringKeys.areYouSure.tr,
                   style: TextStyle(
                     color: AppTheme.black1,
                     fontWeight: FontWeight.w600,
@@ -44,7 +39,7 @@ class LogoutDialog extends GetView {
                     Get.back();
                   },
                   child: Text(
-                    "NO".tr,
+                    StringKeys.no.tr,
                     style: TextStyle(
                       color: AppTheme.black3,
                     ),
@@ -60,7 +55,7 @@ class LogoutDialog extends GetView {
                     MyStorage().insert(MyStorage.isUserLogin, false);
                     Get.offNamed(Routes.login);
                   },
-                  child: Text("YES".tr),
+                  child: Text(StringKeys.yes.tr),
                 ),
               ],
             )

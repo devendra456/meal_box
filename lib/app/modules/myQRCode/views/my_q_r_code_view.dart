@@ -1,13 +1,4 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
-import 'package:meal_box/commons/common_widgets.dart';
-import 'package:meal_box/commons/images.dart';
-import 'package:meal_box/configs/app_theme.dart';
-import 'package:qr_flutter/qr_flutter.dart';
-
-import '../controllers/my_q_r_code_controller.dart';
+import 'package:meal_box/imports.dart';
 
 class MyQRCodeView extends GetView<MyQRCodeController> {
   const MyQRCodeView({Key? key}) : super(key: key);
@@ -16,13 +7,14 @@ class MyQRCodeView extends GetView<MyQRCodeController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CommonWidgets.appHeader(
-        title: "MyQRCode".tr,
+        title: StringKeys.myQRCode.tr,
         actionButton: IconButton(
           onPressed: () {},
-          icon: SvgPicture.asset(
-            "assets/share_icon.svg",
-            height: 20,
+          icon: Images.svgImageViewAsset(
+            imagePath: Assets.shareIcon,
+            boxFit: BoxFit.contain,
             width: 20,
+            height: 20,
           ),
         ),
       ),
@@ -36,7 +28,7 @@ class MyQRCodeView extends GetView<MyQRCodeController> {
         ),
         backgroundColor: AppTheme.accentColor1,
         label: Text(
-          "ScanQRCode".tr,
+          StringKeys.scanQRCode.tr,
           style: TextStyle(
             fontWeight: FontWeight.bold,
             color: AppTheme.white,
@@ -70,7 +62,7 @@ class MyQRCodeView extends GetView<MyQRCodeController> {
               height: 8,
             ),
             Text(
-              "Devendra Maurya",
+              StaticStrings.name,
               style: TextStyle(
                 color: AppTheme.black1,
                 fontWeight: FontWeight.w600,
@@ -80,7 +72,7 @@ class MyQRCodeView extends GetView<MyQRCodeController> {
             Padding(
               padding: const EdgeInsets.only(top: 4, bottom: 32),
               child: Text(
-                "#STU1123",
+                StaticStrings.uniqueID,
                 style: TextStyle(
                   color: AppTheme.black3,
                 ),
@@ -94,13 +86,13 @@ class MyQRCodeView extends GetView<MyQRCodeController> {
                 borderRadius: BorderRadius.circular(8),
               ),
               child: QrImage(
-                data: '#STU1123',
+                data: StaticStrings.uniqueID,
                 version: 1,
                 gapless: false,
                 errorStateBuilder: (cxt, err) {
                   return Center(
                     child: Text(
-                      "somethingWentWrong".tr,
+                      StringKeys.somethingWentWrong.tr,
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontWeight: FontWeight.w600,

@@ -15,14 +15,14 @@ abstract class Routes {
   static const offerMeal = _Paths.offerMeal;
   static const mealForOthers = _Paths.mealForOthers;
   static const createNewPlan = _Paths.createNewPlan;
-  static const PROFILE = _Paths.PROFILE;
-  static const CHANGE_PASSWORD = _Paths.CHANGE_PASSWORD;
-  static const MY_Q_R_CODE = _Paths.MY_Q_R_CODE;
-  static const HISTORY = _Paths.HISTORY;
-  static const ADD_USER = _Paths.ADD_USER;
-  static const QR_CODE_SCANNER = _Paths.QR_CODE_SCANNER;
-  static const SEND_MONEY = _Paths.SEND_MONEY;
-  static const OFFER_HISTORY = _Paths.OFFER_HISTORY;
+  static const profile = _Paths.profile;
+  static const changePassword = _Paths.changePassword;
+  static const myQRCode = _Paths.myQRCode;
+  static const history = _Paths.history;
+  static const addUser = _Paths.addUser;
+  static const qrCodeScanner = _Paths.qrCodeScanner;
+  static const sendMoney = _Paths.sendMoney;
+  static const offerHistory = _Paths.offerHistory;
 }
 
 abstract class _Paths {
@@ -37,12 +37,12 @@ abstract class _Paths {
   static const offerMeal = '/offer-meal';
   static const mealForOthers = '/meal-for-others';
   static const createNewPlan = '/create-new-plan';
-  static const PROFILE = '/profile';
-  static const CHANGE_PASSWORD = '/change-password';
-  static const MY_Q_R_CODE = '/my-q-r-code';
-  static const HISTORY = '/history';
-  static const ADD_USER = '/add-user';
-  static const QR_CODE_SCANNER = '/qr-code-scanner';
-  static const SEND_MONEY = '/send-money';
-  static const OFFER_HISTORY = '/offer-history';
+  static const profile = '/profile';
+  static const changePassword = '/change-password';
+  static const myQRCode = '/my-q-r-code';
+  static const history = '/history';
+  static const addUser = '/add-user';
+  static const qrCodeScanner = '/qr-code-scanner';
+  static const sendMoney = '/send-money';
+  static const offerHistory = '/offer-history';
 }

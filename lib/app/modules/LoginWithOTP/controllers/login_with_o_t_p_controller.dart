@@ -1,5 +1,4 @@
-import 'package:get/get.dart';
-import 'package:meal_box/app/routes/app_pages.dart';
+import 'package:meal_box/imports.dart';
 
 class LoginWithOTPController extends GetxController {
   void goToOTPVerify() {

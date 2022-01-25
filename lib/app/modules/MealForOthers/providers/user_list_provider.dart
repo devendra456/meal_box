@@ -1,12 +1,8 @@
-import 'dart:convert';
-
-import 'package:flutter/services.dart';
-import 'package:get/get.dart';
-import 'package:meal_box/app/modules/MealForOthers/models/user_list_model.dart';
+import 'package:meal_box/imports.dart';
 
 class UserListProvider extends GetConnect {
   Future<UserListModel> getUsersList() async {
-    final response = await rootBundle.loadString("jsons/userList.json");
+    final response = await rootBundle.loadString(Assets.userListJSON);
     return UserListModel.fromJson(jsonDecode(response));
   }
 }

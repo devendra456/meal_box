@@ -1,6 +1,4 @@
-import 'package:get/get.dart';
-
-import '../controllers/send_money_controller.dart';
+import 'package:meal_box/imports.dart';
 
 class SendMoneyBinding extends Bindings {
   @override

@@ -1,12 +1,4 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
-import 'package:meal_box/commons/common_widgets.dart';
-import 'package:meal_box/configs/app_theme.dart';
-import 'package:meal_box/utils/my_storage.dart';
-
-import '../controllers/my_meal_plan_controller.dart';
+import 'package:meal_box/imports.dart';
 
 class MyMealPlanView extends GetView<MyMealPlanController> {
   const MyMealPlanView({Key? key}) : super(key: key);
@@ -14,7 +6,7 @@ class MyMealPlanView extends GetView<MyMealPlanController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CommonWidgets.appHeader(
-        title: "MyMealPlan".tr,
+        title: StringKeys.myMealPlan.tr,
         actionButton: addMealButton(),
       ),
       body: controller.obx((data) {
@@ -32,17 +24,13 @@ class MyMealPlanView extends GetView<MyMealPlanController> {
                         vertical: 6,
                       ),
                       decoration: BoxDecoration(
-                        color: data.data[index].isPlanActive
-                            ? AppTheme.green
-                            : AppTheme.red,
+                        color: data.data[index].isPlanActive ? AppTheme.green : AppTheme.red,
                         borderRadius: const BorderRadius.only(
                           topRight: Radius.circular(8),
                         ),
                       ),
                       child: Text(
-                        data.data[index].isPlanActive
-                            ? "CurrentPlan".tr
-                            : "PlanExpired".tr,
+                        data.data[index].isPlanActive ? StringKeys.currentPlan.tr : StringKeys.planExpired.tr,
                         style: TextStyle(
                           color: AppTheme.white,
                         ),
@@ -98,10 +86,7 @@ class MyMealPlanView extends GetView<MyMealPlanController> {
                                       color: AppTheme.lightBlue,
                                       child: Text(
                                         data.data[index].validity,
-                                        style: TextStyle(
-                                            color: AppTheme.black1,
-                                            fontSize: 12,
-                                            fontWeight: FontWeight.bold),
+                                        style: TextStyle(color: AppTheme.black1, fontSize: 12, fontWeight: FontWeight.bold),
                                         maxLines: 1,
                                       ),
                                     )
@@ -114,8 +99,7 @@ class MyMealPlanView extends GetView<MyMealPlanController> {
                               Column(
                                 mainAxisSize: MainAxisSize.max,
                                 crossAxisAlignment: CrossAxisAlignment.center,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
                                   Align(
                                     alignment: Alignment.topCenter,
@@ -138,7 +122,7 @@ class MyMealPlanView extends GetView<MyMealPlanController> {
                                       color: AppTheme.lightAccent1,
                                     ),
                                     child: Text(
-                                      "ViewDetails".tr,
+                                      StringKeys.viewDetails.tr,
                                       style: TextStyle(
                                         color: AppTheme.black1,
                                         fontSize: 12,
@@ -167,15 +151,20 @@ class MyMealPlanView extends GetView<MyMealPlanController> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SvgPicture.asset(
+                /*SvgPicture.asset(
                   "assets/no_meal_plan.svg",
                   width: Get.width * 0.5,
+                ),*/
+                Images.svgImageViewAsset(
+                  imagePath: Assets.noMealPlan,
+                  width: Get.width * 0.5,
+                  boxFit: BoxFit.contain,
                 ),
                 const SizedBox(
                   height: 16,
                 ),
                 Text(
-                  "NoMealPlanSelected".tr,
+                  StringKeys.noMealPlanSelected.tr,
                   style: TextStyle(
                     fontSize: 16,
                     color: AppTheme.black2,
@@ -187,20 +176,8 @@ class MyMealPlanView extends GetView<MyMealPlanController> {
                   height: 40,
                   decoration: ShapeDecoration(
                       shape: const StadiumBorder(),
-                      gradient: LinearGradient(
-                          colors: [
-                            AppTheme.accentColor1,
-                            AppTheme.accentColor2
-                          ],
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter),
-                      shadows: [
-                        BoxShadow(
-                            color: AppTheme.black3,
-                            offset: const Offset(0.5, 0.5),
-                            blurRadius: 1,
-                            spreadRadius: 0.5)
-                      ]),
+                      gradient: LinearGradient(colors: [AppTheme.accentColor1, AppTheme.accentColor2], begin: Alignment.topCenter, end: Alignment.bottomCenter),
+                      shadows: [BoxShadow(color: AppTheme.black3, offset: const Offset(0.5, 0.5), blurRadius: 1, spreadRadius: 0.5)]),
                   child: MaterialButton(
                     onPressed: () {
                       controller.goToCreateNewPage();
@@ -208,11 +185,8 @@ class MyMealPlanView extends GetView<MyMealPlanController> {
                     padding: const EdgeInsets.all(0),
                     shape: const StadiumBorder(),
                     child: Text(
-                      "CREATE_NEW_MEAL_PLAN".tr,
-                      style: TextStyle(
-                          color: AppTheme.white,
-                          fontWeight: FontWeight.w700,
-                          fontSize: 14),
+                      StringKeys.createNewMealPlan.tr,
+                      style: TextStyle(color: AppTheme.white, fontWeight: FontWeight.w700, fontSize: 14),
                     ),
                   ),
                 ),
@@ -226,26 +200,13 @@ class MyMealPlanView extends GetView<MyMealPlanController> {
 
   Widget addMealButton() {
     return Container(
-      padding: EdgeInsets.only(
-          left: MyStorage().get(MyStorage.appLocale) == "en" ? 4 : 16,
-          right: MyStorage().get(MyStorage.appLocale) == "en" ? 16 : 4,
-          top: 16,
-          bottom: 16),
+      padding: EdgeInsets.only(left: MyStorage().get(MyStorage.appLocale) == "en" ? 4 : 16, right: MyStorage().get(MyStorage.appLocale) == "en" ? 16 : 4, top: 16, bottom: 16),
       child: Container(
         width: 72,
         decoration: ShapeDecoration(
             shape: const StadiumBorder(),
-            gradient: LinearGradient(
-                colors: [AppTheme.accentColor1, AppTheme.accentColor2],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter),
-            shadows: [
-              BoxShadow(
-                  color: AppTheme.black3,
-                  offset: const Offset(0.5, 0.5),
-                  blurRadius: 1,
-                  spreadRadius: 0.5)
-            ]),
+            gradient: LinearGradient(colors: [AppTheme.accentColor1, AppTheme.accentColor2], begin: Alignment.topCenter, end: Alignment.bottomCenter),
+            shadows: [BoxShadow(color: AppTheme.black3, offset: const Offset(0.5, 0.5), blurRadius: 1, spreadRadius: 0.5)]),
         child: MaterialButton(
           onPressed: () {
             controller.goToCreateNewPage();
@@ -261,11 +222,8 @@ class MyMealPlanView extends GetView<MyMealPlanController> {
                 color: AppTheme.white,
               ),
               Text(
-                "AddMeal".tr,
-                style: TextStyle(
-                    color: AppTheme.white,
-                    fontWeight: FontWeight.w700,
-                    fontSize: 10),
+                StringKeys.addMeal.tr,
+                style: TextStyle(color: AppTheme.white, fontWeight: FontWeight.w700, fontSize: 10),
               ),
               const SizedBox(
                 width: 4,

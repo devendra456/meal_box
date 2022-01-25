@@ -1,8 +1,5 @@
 
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:meal_box/configs/app_theme.dart';
-
+import 'package:meal_box/imports.dart';
 class DoneDialogView extends GetView {
   final String title;
   final String subTitle;
@@ -19,10 +16,10 @@ class DoneDialogView extends GetView {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Image.asset(
+            /*Image.asset(
               "assets/done_image.png",
               height: Get.height * 0.12,
-            ),
+            ),*/Images.imageAssets(imagePath: Assets.doneImage,boxFit: BoxFit.contain,height: Get.height*0.12),
             Text(
               title,
               style: TextStyle(
@@ -66,7 +63,7 @@ class DoneDialogView extends GetView {
                   borderRadius: BorderRadius.circular(4),
                 ),
                 child: Text(
-                  "OK".tr,
+                  StringKeys.ok.tr,
                 ),
                 textColor: AppTheme.white,
               ),

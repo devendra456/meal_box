@@ -1,6 +1,5 @@
-import 'package:get/get.dart';
 
-import '../controllers/my_meal_plan_controller.dart';
+import 'package:meal_box/imports.dart';
 
 class MyMealPlanBinding extends Bindings {
   @override

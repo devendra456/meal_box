@@ -1,7 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:qr_code_scanner/qr_code_scanner.dart';
 
+import 'package:meal_box/imports.dart';
 class QrCodeScannerController extends GetxController {
   final GlobalKey qrKey = GlobalKey(debugLabel: "QR");
   Barcode? barcode;

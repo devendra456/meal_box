@@ -1,13 +1,4 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
-import 'package:meal_box/commons/common_widgets.dart';
-import 'package:meal_box/commons/images.dart';
-import 'package:meal_box/configs/app_theme.dart';
-import 'package:meal_box/utils/my_storage.dart';
-
-import '../controllers/meal_for_others_controller.dart';
+import 'package:meal_box/imports.dart';
 
 class MealForOthersView extends GetView<MealForOthersController> {
   const MealForOthersView({Key? key}) : super(key: key);
@@ -16,8 +7,8 @@ class MealForOthersView extends GetView<MealForOthersController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CommonWidgets.appHeader(
-        title: "UsersList".tr,
-        actionButton: adduser(),
+        title: StringKeys.usersList.tr,
+        actionButton: addUserButton(),
       ),
       body: controller.obx((data) {
         if (data!.data.isNotEmpty) {
@@ -90,7 +81,7 @@ class MealForOthersView extends GetView<MealForOthersController> {
                                         maxLines: 1,
                                         softWrap: false,
                                         text: TextSpan(
-                                          text: "RegistrationID".tr + ": ",
+                                          text: StringKeys.registrationID.tr + ": ",
                                           style: TextStyle(
                                             color: AppTheme.black1,
                                             fontSize: 12,
@@ -116,7 +107,7 @@ class MealForOthersView extends GetView<MealForOthersController> {
                                               maxLines: 1,
                                               softWrap: false,
                                               text: TextSpan(
-                                                text: "City".tr + ": ",
+                                                text: StringKeys.city.tr + ": ",
                                                 style: TextStyle(
                                                   color: AppTheme.black1,
                                                   fontSize: 12,
@@ -140,7 +131,7 @@ class MealForOthersView extends GetView<MealForOthersController> {
                                               maxLines: 1,
                                               softWrap: false,
                                               text: TextSpan(
-                                                text: "Region".tr + ": ",
+                                                text: StringKeys.region.tr + ": ",
                                                 style: TextStyle(
                                                   color: AppTheme.black1,
                                                   fontSize: 12,
@@ -185,14 +176,14 @@ class MealForOthersView extends GetView<MealForOthersController> {
                                         const RoundedRectangleBorder(),
                                       ),
                                     ),
-                                    icon: SvgPicture.asset(
-                                      "assets/history_icon"
-                                      ".svg",
+                                    icon: Images.svgImageViewAsset(
+                                      imagePath: Assets.historyIcon,
+                                      boxFit: BoxFit.contain,
                                       height: 13,
                                       width: 13,
                                     ),
                                     label: Text(
-                                      "ViewHistory".tr,
+                                      StringKeys.viewHistory.tr,
                                       style: const TextStyle(
                                         fontSize: 13,
                                       ),
@@ -209,13 +200,14 @@ class MealForOthersView extends GetView<MealForOthersController> {
                                         const RoundedRectangleBorder(),
                                       ),
                                     ),
-                                    icon: SvgPicture.asset(
-                                      "assets/add_icon.svg",
+                                    icon: Images.svgImageViewAsset(
+                                      imagePath: Assets.addIcon,
+                                      boxFit: BoxFit.contain,
                                       height: 13,
                                       width: 13,
                                     ),
                                     label: Text(
-                                      "CreateNewPlan".tr,
+                                      StringKeys.createNewUser.tr,
                                       style: const TextStyle(
                                         color: Color.fromARGB(255, 90, 153, 239),
                                         fontSize: 13,
@@ -241,13 +233,14 @@ class MealForOthersView extends GetView<MealForOthersController> {
                           mainAxisAlignment: MainAxisAlignment.start,
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            SvgPicture.asset(
-                              "assets/delete_icon.svg",
-                              height: 12,
-                              width: 12,
+                            Images.svgImageViewAsset(
+                              imagePath: Assets.deleteIcon,
+                              boxFit: BoxFit.contain,
+                              height: 13,
+                              width: 13,
                             ),
                             Text(
-                              "Remove".tr,
+                              StringKeys.remove.tr,
                               style: const TextStyle(
                                 color: Color.fromARGB(255, 239, 15, 23),
                                 fontSize: 10,
@@ -270,15 +263,16 @@ class MealForOthersView extends GetView<MealForOthersController> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SvgPicture.asset(
-                  "assets/user_image.svg",
+                Images.svgImageViewAsset(
+                  imagePath: Assets.historyIcon,
+                  boxFit: BoxFit.contain,
                   width: Get.width * 0.3,
                 ),
                 const SizedBox(
                   height: 16,
                 ),
                 Text(
-                  "UsersNotFound".tr,
+                  StringKeys.usersNotFound.tr,
                   style: TextStyle(
                     fontSize: 16,
                     color: AppTheme.black2,
@@ -299,7 +293,7 @@ class MealForOthersView extends GetView<MealForOthersController> {
                     padding: const EdgeInsets.all(0),
                     shape: const StadiumBorder(),
                     child: Text(
-                      "CREATE_NEW_USER".tr,
+                      StringKeys.createNewUser.tr,
                       style: TextStyle(color: AppTheme.white, fontWeight: FontWeight.w700, fontSize: 14),
                     ),
                   ),
@@ -312,7 +306,7 @@ class MealForOthersView extends GetView<MealForOthersController> {
     );
   }
 
-  Widget adduser() {
+  Widget addUserButton() {
     return Container(
       padding: EdgeInsets.only(left: MyStorage().get(MyStorage.appLocale) == "en" ? 4 : 16, right: MyStorage().get(MyStorage.appLocale) == "en" ? 16 : 4, top: 16, bottom: 16),
       child: Container(
@@ -336,7 +330,7 @@ class MealForOthersView extends GetView<MealForOthersController> {
                 color: AppTheme.white,
               ),
               Text(
-                "AddUser".tr,
+                StringKeys.addUser.tr,
                 style: TextStyle(color: AppTheme.white, fontWeight: FontWeight.w700, fontSize: 10),
               ),
               const SizedBox(

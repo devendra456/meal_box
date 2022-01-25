@@ -1,10 +1,4 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
-import 'package:meal_box/configs/app_theme.dart';
-import 'package:meal_box/dialogs/done_dialog_view.dart';
-
+import 'package:meal_box/imports.dart';
 class SendMoneyBottomSheetView extends GetView {
   const SendMoneyBottomSheetView({Key? key}) : super(key: key);
 
@@ -17,7 +11,7 @@ class SendMoneyBottomSheetView extends GetView {
         child: Column(
           children: [
             Text(
-              "Your Wallet Amount",
+              StringKeys.yourWalletAmount.tr,
               style: TextStyle(
                 fontSize: 16,
                 color: AppTheme.black1,
@@ -27,7 +21,7 @@ class SendMoneyBottomSheetView extends GetView {
               height: 4,
             ),
             Text(
-              "SAR 300.25",
+              StaticStrings.amount,
               style: TextStyle(
                 color: AppTheme.green,
                 fontSize: 18,
@@ -39,7 +33,7 @@ class SendMoneyBottomSheetView extends GetView {
             ),
             Align(
               child: Text(
-                "Enter Amount",
+                StringKeys.enterAmount.tr,
                 style: TextStyle(
                   color: AppTheme.black1,
                 ),
@@ -71,7 +65,7 @@ class SendMoneyBottomSheetView extends GetView {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16.0),
                     child: Text(
-                      "SAR",
+                      StaticStrings.currency,
                       style: TextStyle(
                         color: AppTheme.black1,
                         fontSize: 16,
@@ -94,10 +88,10 @@ class SendMoneyBottomSheetView extends GetView {
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                    child: SvgPicture.asset(
+                    child: /*SvgPicture.asset(
                       "assets/money_icon.svg",
                       height: 16,
-                    ),
+                    ),*/Images.svgImageViewAsset(imagePath: Assets.moneyIcon,height: 16,boxFit: BoxFit.contain,),
                   )
                 ],
               ),
@@ -110,9 +104,8 @@ class SendMoneyBottomSheetView extends GetView {
                 //Get.back();
                 Get.dialog(
                   const DoneDialogView(
-                      "You are great!",
-                      "Money Has Been "
-                          "Sent To Your Selected User Account"),
+                      StaticStrings.paymentDone,
+                      StaticStrings.paymentDone1),
                 );
               },
               child: Container(
@@ -158,14 +151,14 @@ class SendMoneyBottomSheetView extends GetView {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            "Total Amount",
+                            StringKeys.totalAmount,
                             style: TextStyle(
                               fontSize: 12,
                               color: AppTheme.white,
                             ),
                           ),
                           Text(
-                            "SAR 200.00",
+                            StaticStrings.amount,
                             style: TextStyle(
                               fontSize: 14,
                               color: AppTheme.white,
@@ -176,15 +169,16 @@ class SendMoneyBottomSheetView extends GetView {
                       ),
                     ),
                     const Spacer(),
-                    SvgPicture.asset(
+                   /* SvgPicture.asset(
                       "assets/money_icon.svg",
                       height: 16,
-                    ),
+                    ),*/
+                    Images.svgImageViewAsset(imagePath: Assets.moneyIcon,height: 16,boxFit: BoxFit.contain,),
                     const SizedBox(
                       width: 8,
                     ),
                     Text(
-                      "Send Now",
+                      StringKeys.sendNow,
                       style: TextStyle(
                         fontWeight: FontWeight.w600,
                         color: AppTheme.black1,

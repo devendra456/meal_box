@@ -1,6 +1,4 @@
-import 'package:get/get.dart';
-
-import '../controllers/meal_for_others_controller.dart';
+import 'package:meal_box/imports.dart';
 
 class MealForOthersBinding extends Bindings {
   @override

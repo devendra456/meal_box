@@ -1,10 +1,4 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
-import 'package:meal_box/configs/app_theme.dart';
-
-import '../controllers/login_controller.dart';
+import 'package:meal_box/imports.dart';
 
 class LoginView extends GetView<LoginController> {
   const LoginView({Key? key}) : super(key: key);
@@ -24,48 +18,47 @@ class LoginView extends GetView<LoginController> {
               ),
               SizedBox(
                 height: Get.height * .24,
-                child: SvgPicture.asset("assets/login_screen_image.svg"),
+                child: Images.svgImageViewAsset(
+                  imagePath: Assets.loginScreenImage,
+                  boxFit: BoxFit.contain,
+                ),
               ),
               const SizedBox(
                 height: 16,
               ),
               Text(
-                "Welcome".tr,
-                style: TextStyle(
-                    fontWeight: FontWeight.w800,
-                    fontSize: 24,
-                    color: AppTheme.black1),
+                StringKeys.welcome_.tr,
+                style: TextStyle(fontWeight: FontWeight.w800, fontSize: 24, color: AppTheme.black1),
               ),
               const SizedBox(
                 height: 4,
               ),
               Text(
-                "PleaseLoginToYourMealApp".tr,
+                StringKeys.pleaseLoginToYourMealApp.tr,
                 style: TextStyle(color: AppTheme.black1),
               ),
               const SizedBox(
                 height: 16,
               ),
               Padding(
-                padding: const EdgeInsets.only(
-                    left: 32, right: 32, top: 16, bottom: 8),
+                padding: const EdgeInsets.only(left: 32, right: 32, top: 16, bottom: 8),
                 child: Material(
                   elevation: 1.5,
                   color: Colors.white,
-                  shape: StadiumBorder(
-                      side: BorderSide(color: AppTheme.black1, width: 0.1)),
+                  shape: StadiumBorder(side: BorderSide(color: AppTheme.black1, width: 0.1)),
                   child: TextField(
                     decoration: InputDecoration(
                         border: InputBorder.none,
-                        prefixIconConstraints:
-                            const BoxConstraints(minWidth: 24, minHeight: 24),
+                        prefixIconConstraints: const BoxConstraints(minWidth: 24, minHeight: 24),
                         prefixIcon: Padding(
                           padding: const EdgeInsets.only(left: 24.0, right: 12),
-                          child: SvgPicture.asset("assets/user_icon.svg"),
+                          child: Images.svgImageViewAsset(
+                            imagePath: Assets.userIcon,
+                            boxFit: BoxFit.contain,
+                          ),
                         ),
-                        hintText: "Email".tr,
-                        hintStyle:
-                            TextStyle(fontSize: 14, color: AppTheme.black3)),
+                        hintText: StringKeys.email.tr,
+                        hintStyle: TextStyle(fontSize: 14, color: AppTheme.black3)),
                     keyboardType: TextInputType.emailAddress,
                     enableSuggestions: true,
                     autocorrect: true,
@@ -79,28 +72,30 @@ class LoginView extends GetView<LoginController> {
                 child: Material(
                   elevation: 1.5,
                   color: Colors.white,
-                  shape: StadiumBorder(
-                      side: BorderSide(color: AppTheme.black1, width: 0.1)),
+                  shape: StadiumBorder(side: BorderSide(color: AppTheme.black1, width: 0.1)),
                   child: TextField(
                     decoration: InputDecoration(
                         border: InputBorder.none,
                         prefixIcon: Padding(
                           padding: const EdgeInsets.only(left: 24.0, right: 12),
-                          child: SvgPicture.asset("assets/lock_icon.svg"),
+                          child: Images.svgImageViewAsset(
+                            imagePath: Assets.lockIcon,
+                            boxFit: BoxFit.contain,
+                          ),
                         ),
-                        prefixIconConstraints:
-                            const BoxConstraints(minWidth: 24, maxHeight: 24),
+                        prefixIconConstraints: const BoxConstraints(minWidth: 24, maxHeight: 24),
                         suffixIcon: InkWell(
                           onTap: () {},
                           child: Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 12.0),
-                            child: SvgPicture.asset("assets/eye_icon.svg"),
+                            padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                            child: Images.svgImageViewAsset(
+                              imagePath: Assets.eyeIcon,
+                              boxFit: BoxFit.contain,
+                            ),
                           ),
                         ),
-                        hintText: "Password".tr,
-                        hintStyle:
-                            TextStyle(color: AppTheme.black3, fontSize: 14)),
+                        hintText: StringKeys.password.tr,
+                        hintStyle: TextStyle(color: AppTheme.black3, fontSize: 14)),
                     obscureText: true,
                     enableSuggestions: true,
                     autocorrect: true,
@@ -119,15 +114,11 @@ class LoginView extends GetView<LoginController> {
                           controller.goToLoginWithOTP();
                         },
                         child: Text(
-                          "LoginWithOTP".tr,
-                          style: TextStyle(
-                              color: AppTheme.black1,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w100),
+                          StringKeys.loginWithOTP.tr,
+                          style: TextStyle(color: AppTheme.black1, fontSize: 12, fontWeight: FontWeight.w100),
                         ),
                         style: ButtonStyle(
-                          shape:
-                              MaterialStateProperty.all(const StadiumBorder()),
+                          shape: MaterialStateProperty.all(const StadiumBorder()),
                         ),
                       ),
                     ),
@@ -137,15 +128,10 @@ class LoginView extends GetView<LoginController> {
                       child: TextButton(
                         onPressed: () {},
                         child: Text(
-                          "ForgetPassword".tr,
-                          style: TextStyle(
-                              color: AppTheme.black1,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w100),
+                          StringKeys.forgetPassword.tr,
+                          style: TextStyle(color: AppTheme.black1, fontSize: 12, fontWeight: FontWeight.w100),
                         ),
-                        style: ButtonStyle(
-                            shape: MaterialStateProperty.all(
-                                const StadiumBorder())),
+                        style: ButtonStyle(shape: MaterialStateProperty.all(const StadiumBorder())),
                       ),
                     )
                   ],
@@ -161,13 +147,7 @@ class LoginView extends GetView<LoginController> {
                     width: double.infinity,
                     decoration: ShapeDecoration(
                       shape: const StadiumBorder(),
-                      gradient: LinearGradient(
-                          colors: [
-                            AppTheme.accentColor1,
-                            AppTheme.accentColor2
-                          ],
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter),
+                      gradient: LinearGradient(colors: [AppTheme.accentColor1, AppTheme.accentColor2], begin: Alignment.topCenter, end: Alignment.bottomCenter),
                     ),
                     child: MaterialButton(
                       onPressed: () {
@@ -175,11 +155,8 @@ class LoginView extends GetView<LoginController> {
                       },
                       shape: const StadiumBorder(),
                       child: Text(
-                        "LOGIN".tr,
-                        style: TextStyle(
-                            color: AppTheme.white,
-                            fontWeight: FontWeight.w700,
-                            fontSize: 14),
+                        StringKeys.login.tr,
+                        style: TextStyle(color: AppTheme.white, fontWeight: FontWeight.w700, fontSize: 14),
                       ),
                     ),
                   ),
@@ -189,23 +166,20 @@ class LoginView extends GetView<LoginController> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "NotHaveAccountYet".tr,
+                    StringKeys.notHaveAccountYet.tr,
                     style: TextStyle(fontSize: 14, color: AppTheme.black1),
                   ),
                   TextButton(
                     onPressed: () {
                       controller.goToRegisterScreen();
                     },
-                    child: Text("Register".tr),
-                    style: ButtonStyle(
-                        shape:
-                            MaterialStateProperty.all(const StadiumBorder())),
+                    child: Text(StringKeys.register.tr),
+                    style: ButtonStyle(shape: MaterialStateProperty.all(const StadiumBorder())),
                   ),
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.only(
-                    left: 48.0, right: 48, top: 16, bottom: 24),
+                padding: const EdgeInsets.only(left: 48.0, right: 48, top: 16, bottom: 24),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -214,7 +188,7 @@ class LoginView extends GetView<LoginController> {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 8.0),
                       child: Text(
-                        "Or".tr,
+                        StringKeys.or.tr,
                         style: TextStyle(fontSize: 12, color: AppTheme.black4),
                       ),
                     ),
@@ -223,15 +197,15 @@ class LoginView extends GetView<LoginController> {
                 ),
               ),
               Padding(
-                padding:
-                    const EdgeInsets.only(left: 32.0, right: 32, bottom: 32),
+                padding: const EdgeInsets.only(left: 32.0, right: 32, bottom: 32),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     MaterialButton(
-                      child: SvgPicture.asset(
-                        "assets/facebook_icon.svg",
+                      child: Images.svgImageViewAsset(
+                        imagePath: Assets.facebookIcon,
                         height: 40,
+                        boxFit: BoxFit.contain,
                       ),
                       onPressed: () {},
                       color: const Color.fromARGB(255, 44, 90, 152),
@@ -241,8 +215,9 @@ class LoginView extends GetView<LoginController> {
                       padding: const EdgeInsets.all(0),
                     ),
                     MaterialButton(
-                      child: SvgPicture.asset(
-                        "assets/google_icon.svg",
+                      child: Images.svgImageViewAsset(
+                        imagePath: Assets.googleIcon,
+                        boxFit: BoxFit.contain,
                         height: 44,
                       ),
                       onPressed: () {},
@@ -253,8 +228,9 @@ class LoginView extends GetView<LoginController> {
                       padding: const EdgeInsets.all(0),
                     ),
                     MaterialButton(
-                      child: SvgPicture.asset(
-                        "assets/twitter_icon.svg",
+                      child: Images.svgImageViewAsset(
+                        imagePath: Assets.twitterIcon,
+                        boxFit: BoxFit.contain,
                         height: 36,
                       ),
                       onPressed: () {},

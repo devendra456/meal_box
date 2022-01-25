@@ -1,8 +1,4 @@
-import 'dart:async';
-
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:pin_code_fields/pin_code_fields.dart';
+import 'package:meal_box/imports.dart';
 
 class OTPVerifyController extends GetxController {
   late TextEditingController pinCodeController;

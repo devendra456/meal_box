@@ -1,12 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
-import 'package:meal_box/commons/common_widgets.dart';
-import 'package:meal_box/commons/images.dart';
-import 'package:meal_box/configs/app_theme.dart';
-import 'package:meal_box/utils/my_storage.dart';
-
-import '../controllers/offer_meal_controller.dart';
+import 'package:meal_box/imports.dart';
 
 class OfferMealView extends GetView<OfferMealController> {
   const OfferMealView({Key? key}) : super(key: key);
@@ -15,7 +7,7 @@ class OfferMealView extends GetView<OfferMealController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CommonWidgets.appHeader(
-        title: "OfferMeal".tr,
+        title: StringKeys.offerMeal.tr,
         actionButton: historyButton(),
       ),
       floatingActionButton: Container(
@@ -34,7 +26,7 @@ class OfferMealView extends GetView<OfferMealController> {
           height: 48,
           shape: const StadiumBorder(),
           child: Text(
-            "Donate 4 student",
+            StaticStrings.donate,
             style: TextStyle(
               color: AppTheme.white,
               fontWeight: FontWeight.w700,
@@ -115,7 +107,7 @@ class OfferMealView extends GetView<OfferMealController> {
                                         maxLines: 1,
                                         softWrap: false,
                                         text: TextSpan(
-                                          text: "RegistrationID".tr + ": ",
+                                          text: StringKeys.registrationID.tr + ": ",
                                           style: TextStyle(
                                             color: AppTheme.black1,
                                             fontSize: 12,
@@ -141,7 +133,7 @@ class OfferMealView extends GetView<OfferMealController> {
                                               maxLines: 1,
                                               softWrap: false,
                                               text: TextSpan(
-                                                text: "City".tr + ": ",
+                                                text: StringKeys.city.tr + ": ",
                                                 style: TextStyle(
                                                   color: AppTheme.black1,
                                                   fontSize: 12,
@@ -165,7 +157,7 @@ class OfferMealView extends GetView<OfferMealController> {
                                               maxLines: 1,
                                               softWrap: false,
                                               text: TextSpan(
-                                                text: "Region".tr + ": ",
+                                                text: StringKeys.region.tr + ": ",
                                                 style: TextStyle(
                                                   color: AppTheme.black1,
                                                   fontSize: 12,
@@ -210,11 +202,17 @@ class OfferMealView extends GetView<OfferMealController> {
                                         const RoundedRectangleBorder(),
                                       ),
                                     ),
-                                    icon: SvgPicture.asset(
+                                    icon: /*SvgPicture.asset(
                                       "assets/call_icon"
                                       ".svg",
                                       height: 13,
                                       width: 13,
+                                    ),*/
+                                        Images.svgImageViewAsset(
+                                      imagePath: Assets.callIcon,
+                                      width: 13,
+                                      height: 13,
+                                      boxFit: BoxFit.contain,
                                     ),
                                     label: Text(
                                       controller.usersList[index].mobile,
@@ -235,13 +233,19 @@ class OfferMealView extends GetView<OfferMealController> {
                                         const RoundedRectangleBorder(),
                                       ),
                                     ),
-                                    icon: SvgPicture.asset(
+                                    icon: /* SvgPicture.asset(
                                       "assets/pay_icon.svg",
                                       height: 13,
                                       width: 13,
+                                    ),*/
+                                        Images.svgImageViewAsset(
+                                      imagePath: Assets.payIcon,
+                                      width: 13,
+                                      height: 13,
+                                      boxFit: BoxFit.contain,
                                     ),
                                     label: Text(
-                                      "SendMoney".tr,
+                                      StringKeys.sendMoney.tr,
                                       style: const TextStyle(
                                         /*color:
                                             Color.fromARGB(255, 90, 153, 239),*/
@@ -280,15 +284,20 @@ class OfferMealView extends GetView<OfferMealController> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SvgPicture.asset(
+                /*SvgPicture.asset(
                   "assets/user_image.svg",
+                  width: Get.width * 0.3,
+                ),*/
+                Images.svgImageViewAsset(
+                  imagePath: Assets.userImage,
+                  boxFit: BoxFit.contain,
                   width: Get.width * 0.3,
                 ),
                 const SizedBox(
                   height: 16,
                 ),
                 Text(
-                  "UsersNotFound".tr,
+                  StringKeys.usersNotFound.tr,
                   style: TextStyle(
                     fontSize: 16,
                     color: AppTheme.black2,
@@ -309,7 +318,7 @@ class OfferMealView extends GetView<OfferMealController> {
                     padding: const EdgeInsets.all(0),
                     shape: const StadiumBorder(),
                     child: Text(
-                      "CREATE_NEW_USER".tr,
+                      StringKeys.createNewUser.tr,
                       style: TextStyle(color: AppTheme.white, fontWeight: FontWeight.w700, fontSize: 14),
                     ),
                   ),
@@ -340,17 +349,24 @@ class OfferMealView extends GetView<OfferMealController> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SvgPicture.asset(
+              /*SvgPicture.asset(
                 "assets/history_icon.svg",
                 color: AppTheme.white,
                 height: 10,
                 width: 10,
+              ),*/
+              Images.svgImageViewAsset(
+                imagePath: Assets.historyIcon,
+                boxFit: BoxFit.contain,
+                height: 10,
+                width: 10,
+                color: AppTheme.white,
               ),
               const SizedBox(
                 width: 4,
               ),
               Text(
-                "History".tr,
+                StringKeys.history.tr,
                 style: TextStyle(color: AppTheme.white, fontWeight: FontWeight.w700, fontSize: 10),
               ),
               const SizedBox(

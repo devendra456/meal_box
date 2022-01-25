@@ -1,5 +1,6 @@
 import 'package:meal_box/imports.dart';
 
+
 class AppDrawerController extends GetxController {
   String langCode = "";
 
@@ -53,25 +54,25 @@ class AppDrawerController extends GetxController {
       case 1:
         {
           Get.back();
-          Get.toNamed(Routes.PROFILE);
+          Get.toNamed(Routes.profile);
           break;
         }
       case 2:
         {
           Get.back();
-          Get.toNamed(Routes.CHANGE_PASSWORD);
+          Get.toNamed(Routes.changePassword);
           break;
         }
       case 3:
         {
           Get.back();
-          Get.toNamed(Routes.MY_Q_R_CODE);
+          Get.toNamed(Routes.myQRCode);
           break;
         }
       case 4:
         {
           Get.back();
-          Get.toNamed(Routes.HISTORY);
+          Get.toNamed(Routes.history);
           break;
         }
     }

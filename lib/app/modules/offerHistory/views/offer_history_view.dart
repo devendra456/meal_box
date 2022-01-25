@@ -1,12 +1,4 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
-import 'package:meal_box/commons/common_widgets.dart';
-import 'package:meal_box/configs/app_theme.dart';
-
-import '../controllers/offer_history_controller.dart';
+import 'package:meal_box/imports.dart';
 
 class OfferHistoryView extends GetView<OfferHistoryController> {
   const OfferHistoryView({Key? key}) : super(key: key);
@@ -14,7 +6,7 @@ class OfferHistoryView extends GetView<OfferHistoryController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CommonWidgets.appHeader(title: "Offer History"),
+      appBar: CommonWidgets.appHeader(title: StringKeys.offerHistory.tr),
       body: ListView.separated(
         padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
         physics: const BouncingScrollPhysics(),
@@ -37,7 +29,7 @@ class OfferHistoryView extends GetView<OfferHistoryController> {
                   Row(
                     children: [
                       Text(
-                        "Single Offer Meal",
+                        StaticStrings.singleOffer,
                         style: TextStyle(
                           color: AppTheme.accentColor1,
                           fontWeight: FontWeight.w600,
@@ -46,13 +38,14 @@ class OfferHistoryView extends GetView<OfferHistoryController> {
                       const SizedBox(
                         width: 8,
                       ),
-                      SvgPicture.asset(
-                        "assets/single_icon.svg",
+                      Images.svgImageViewAsset(
+                        imagePath: Assets.singleIcon,
                         height: 12,
+                        boxFit: BoxFit.contain,
                       ),
                       const Spacer(),
                       Text(
-                        "12/12/2002",
+                        StaticStrings.date,
                         style: TextStyle(
                           color: AppTheme.black2,
                           fontSize: 12,
@@ -67,14 +60,14 @@ class OfferHistoryView extends GetView<OfferHistoryController> {
                     maxLines: 1,
                     softWrap: false,
                     text: TextSpan(
-                      text: "User".tr + ": ",
+                      text: StringKeys.user.tr + ": ",
                       style: TextStyle(
                         color: AppTheme.black1,
                         fontSize: 12,
                       ),
                       children: [
                         TextSpan(
-                          text: "Abdullah",
+                          text: StaticStrings.name,
                           style: TextStyle(
                             color: AppTheme.black2,
                           ),
@@ -89,14 +82,14 @@ class OfferHistoryView extends GetView<OfferHistoryController> {
                         maxLines: 1,
                         softWrap: false,
                         text: TextSpan(
-                          text: "Unique ID" + ": ",
+                          text: StringKeys.uniqueID.tr + ": ",
                           style: TextStyle(
                             color: AppTheme.black1,
                             fontSize: 12,
                           ),
                           children: [
                             TextSpan(
-                              text: "#JHDK32",
+                              text: StaticStrings.uniqueID,
                               style: TextStyle(
                                 color: AppTheme.black2,
                               ),
@@ -109,7 +102,7 @@ class OfferHistoryView extends GetView<OfferHistoryController> {
                       Column(
                         children: [
                           Text(
-                            "Sent Amount",
+                            StringKeys.sentAmount.tr,
                             style: TextStyle(
                               color: AppTheme.black1,
                               fontSize: 12,
@@ -119,7 +112,7 @@ class OfferHistoryView extends GetView<OfferHistoryController> {
                             height: 4,
                           ),
                           Text(
-                            "SAR 200",
+                            StaticStrings.amount,
                             style: TextStyle(
                               color: AppTheme.green,
                               fontSize: 14,

@@ -18,12 +18,12 @@ class UserListModel {
 
   int status;
   bool success;
-  List<Datum> data;
+  List<UserData> data;
 
   factory UserListModel.fromJson(Map<String, dynamic> json) => UserListModel(
         status: json["status"],
         success: json["success"],
-        data: List<Datum>.from(json["data"].map((x) => Datum.fromJson(x))),
+        data: List<UserData>.from(json["data"].map((x) => UserData.fromJson(x))),
       );
 
   Map<String, dynamic> toJson() => {
@@ -33,8 +33,8 @@ class UserListModel {
       };
 }
 
-class Datum {
-  Datum({
+class UserData {
+  UserData({
     required this.id,
     required this.userName,
     required this.profilePic,
@@ -52,7 +52,7 @@ class Datum {
   String city;
   String region;
 
-  factory Datum.fromJson(Map<String, dynamic> json) => Datum(
+  factory UserData.fromJson(Map<String, dynamic> json) => UserData(
         id: json["id"],
         userName: json["userName"],
         profilePic: json["profilePic"],

@@ -1,9 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
-import 'package:meal_box/configs/app_theme.dart';
-
-import '../controllers/login_with_o_t_p_controller.dart';
+import 'package:meal_box/imports.dart';
 
 class LoginWithOTPView extends GetView<LoginWithOTPController> {
   const LoginWithOTPView({Key? key}) : super(key: key);
@@ -22,19 +17,15 @@ class LoginWithOTPView extends GetView<LoginWithOTPController> {
               SizedBox(
                 height: Get.size.height * 0.15,
                 width: Get.size.width * 0.5,
-                child: SvgPicture.asset(
-                  "assets/app_logo.svg",
+                child: Images.svgImageViewAsset(
+                  boxFit: BoxFit.contain,
                 ),
               ),
               Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 32.0, vertical: 32),
+                padding: const EdgeInsets.symmetric(horizontal: 32.0, vertical: 32),
                 child: Text(
-                  "LoginWithOTP".tr,
-                  style: TextStyle(
-                      color: AppTheme.black1,
-                      fontSize: 22,
-                      fontWeight: FontWeight.w600),
+                  StringKeys.loginWithOTP.tr,
+                  style: TextStyle(color: AppTheme.black1, fontSize: 22, fontWeight: FontWeight.w600),
                 ),
               ),
               Padding(
@@ -48,16 +39,13 @@ class LoginWithOTPView extends GetView<LoginWithOTPController> {
                     Material(
                       elevation: 1,
                       color: Colors.white,
-                      shape: StadiumBorder(
-                          side: BorderSide(color: AppTheme.black1, width: 0.1)),
+                      shape: StadiumBorder(side: BorderSide(color: AppTheme.black1, width: 0.1)),
                       child: TextField(
                         decoration: InputDecoration(
                           border: InputBorder.none,
-                          hintText: "EnterYourPhoneNumber".tr,
-                          hintStyle:
-                              TextStyle(fontSize: 14, color: AppTheme.black4),
-                          contentPadding:
-                              const EdgeInsets.symmetric(horizontal: 24),
+                          hintText: StringKeys.enterYourPhoneNumber.tr,
+                          hintStyle: TextStyle(fontSize: 14, color: AppTheme.black4),
+                          contentPadding: const EdgeInsets.symmetric(horizontal: 24),
                         ),
                         keyboardType: TextInputType.phone,
                         autocorrect: true,
@@ -66,11 +54,8 @@ class LoginWithOTPView extends GetView<LoginWithOTPController> {
                       ),
                     ),
                     Text(
-                      "loginWithOTPDisclaimer".tr,
-                      style: TextStyle(
-                          color: AppTheme.black4,
-                          fontSize: 12,
-                          fontStyle: FontStyle.italic),
+                      StringKeys.loginWithOTPDisclaimer.tr,
+                      style: TextStyle(color: AppTheme.black4, fontSize: 12, fontStyle: FontStyle.italic),
                     )
                   ],
                 ),
@@ -85,13 +70,7 @@ class LoginWithOTPView extends GetView<LoginWithOTPController> {
                     width: double.infinity,
                     decoration: ShapeDecoration(
                       shape: const StadiumBorder(),
-                      gradient: LinearGradient(
-                          colors: [
-                            AppTheme.accentColor1,
-                            AppTheme.accentColor2
-                          ],
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter),
+                      gradient: LinearGradient(colors: [AppTheme.accentColor1, AppTheme.accentColor2], begin: Alignment.topCenter, end: Alignment.bottomCenter),
                     ),
                     child: MaterialButton(
                       shape: const StadiumBorder(),
@@ -99,11 +78,8 @@ class LoginWithOTPView extends GetView<LoginWithOTPController> {
                         controller.goToOTPVerify();
                       },
                       child: Text(
-                        "GET_OTP".tr,
-                        style: TextStyle(
-                            color: AppTheme.white,
-                            fontWeight: FontWeight.w700,
-                            fontSize: 14),
+                        StringKeys.getOTP.tr,
+                        style: TextStyle(color: AppTheme.white, fontWeight: FontWeight.w700, fontSize: 14),
                       ),
                     ),
                   ),

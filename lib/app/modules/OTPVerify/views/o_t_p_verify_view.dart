@@ -1,10 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
-import 'package:meal_box/configs/app_theme.dart';
-import 'package:pin_code_fields/pin_code_fields.dart';
-
-import '../controllers/o_t_p_verify_controller.dart';
+import 'package:meal_box/imports.dart';
 
 class OTPVerifyView extends GetView<OTPVerifyController> {
   const OTPVerifyView({Key? key}) : super(key: key);
@@ -22,15 +16,15 @@ class OTPVerifyView extends GetView<OTPVerifyController> {
                 width: double.infinity,
               ),
               Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 24.0, vertical: 24),
-                child: SvgPicture.asset(
+                padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 24),
+                child: /*SvgPicture.asset(
                   "assets/verify_otp_image.svg",
                   height: MediaQuery.of(context).size.height * .3,
-                ),
+                ),*/
+                    Images.svgImageViewAsset(imagePath: Assets.verifyOTPImage, height: Get.height * .3, boxFit: BoxFit.contain),
               ),
               Text(
-                "OTPVerification".tr,
+                StringKeys.otpVerification.tr,
                 style: TextStyle(
                   color: AppTheme.black1,
                   fontWeight: FontWeight.bold,
@@ -44,14 +38,14 @@ class OTPVerifyView extends GetView<OTPVerifyController> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "EnterTheOTPSentTo".tr,
+                    StringKeys.enterTheOTPSentTo.tr,
                     style: TextStyle(
                       color: AppTheme.black3,
                       fontSize: 14,
                     ),
                   ),
                   Text(
-                    "+917897430432",
+                    StaticStrings.mobileNumber,
                     style: TextStyle(
                       color: AppTheme.black3,
                       fontWeight: FontWeight.bold,
@@ -95,18 +89,16 @@ class OTPVerifyView extends GetView<OTPVerifyController> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Don'tReceiveTheOTP".tr,
+                    StringKeys.doNotReceiveTheOTP.tr,
                     style: TextStyle(color: AppTheme.black1),
                   ),
                   TextButton(
                     onPressed: () {},
                     child: Text(
-                      "ResendOTP".tr,
+                      StringKeys.resendOTP.tr,
                       style: const TextStyle(fontWeight: FontWeight.w600),
                     ),
-                    style: ButtonStyle(
-                        shape:
-                            MaterialStateProperty.all(const StadiumBorder())),
+                    style: ButtonStyle(shape: MaterialStateProperty.all(const StadiumBorder())),
                   )
                 ],
               ),
@@ -120,31 +112,16 @@ class OTPVerifyView extends GetView<OTPVerifyController> {
                   width: double.infinity,
                   decoration: ShapeDecoration(
                       shape: const StadiumBorder(),
-                      gradient: LinearGradient(
-                          colors: [
-                            AppTheme.accentColor1,
-                            AppTheme.accentColor2
-                          ],
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter),
-                      shadows: [
-                        BoxShadow(
-                            color: AppTheme.black3,
-                            offset: const Offset(0.7, 0.7),
-                            blurRadius: 2,
-                            spreadRadius: 0.5)
-                      ]),
+                      gradient: LinearGradient(colors: [AppTheme.accentColor1, AppTheme.accentColor2], begin: Alignment.topCenter, end: Alignment.bottomCenter),
+                      shadows: [BoxShadow(color: AppTheme.black3, offset: const Offset(0.7, 0.7), blurRadius: 2, spreadRadius: 0.5)]),
                   child: MaterialButton(
                     onPressed: () {
                       controller.goToHomePage();
                     },
                     shape: const StadiumBorder(),
                     child: Text(
-                      "VERIFY&LOGIN".tr,
-                      style: TextStyle(
-                          color: AppTheme.white,
-                          fontWeight: FontWeight.w700,
-                          fontSize: 14),
+                      StringKeys.verifyAndLogin.tr,
+                      style: TextStyle(color: AppTheme.white, fontWeight: FontWeight.w700, fontSize: 14),
                     ),
                   ),
                 ),

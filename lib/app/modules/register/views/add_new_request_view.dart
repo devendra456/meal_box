@@ -1,7 +1,4 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:meal_box/configs/app_theme.dart';
+import 'package:meal_box/imports.dart';
 
 class AddNewRequestView extends GetView {
   const AddNewRequestView({Key? key}) : super(key: key);
@@ -16,8 +13,7 @@ class AddNewRequestView extends GetView {
           padding: const EdgeInsets.symmetric(horizontal: 24),
           child: Material(
             elevation: 2,
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -25,34 +21,23 @@ class AddNewRequestView extends GetView {
                   height: 32,
                 ),
                 Text(
-                  "AddNewRequest".tr,
-                  style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                      color: AppTheme.black1),
+                  StringKeys.addNewRequest.tr,
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: AppTheme.black1),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(
-                      left: 16, right: 16, top: 16, bottom: 8),
+                  padding: const EdgeInsets.only(left: 16, right: 16, top: 16, bottom: 8),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       TextField(
                         decoration: InputDecoration(
                             border: InputBorder.none,
-                            hintText: "EnterSchools/Organization".tr,
+                            hintText: StringKeys.enterSchoolsOrganization.tr,
                             isDense: true,
-                            contentPadding: const EdgeInsets.symmetric(
-                                horizontal: 20, vertical: 10),
-                            focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(40),
-                                borderSide:
-                                    BorderSide(color: AppTheme.accentColor1)),
-                            enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(40),
-                                borderSide: BorderSide(color: AppTheme.black3)),
-                            hintStyle: TextStyle(
-                                color: AppTheme.black3, fontSize: 14)),
+                            contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                            focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(40), borderSide: BorderSide(color: AppTheme.accentColor1)),
+                            enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(40), borderSide: BorderSide(color: AppTheme.black3)),
+                            hintStyle: TextStyle(color: AppTheme.black3, fontSize: 14)),
                       ),
                       const SizedBox(
                         height: 8,
@@ -60,29 +45,19 @@ class AddNewRequestView extends GetView {
                       TextField(
                         decoration: InputDecoration(
                             border: InputBorder.none,
-                            hintText: "EnterYourE-mail".tr,
+                            hintText: StringKeys.enterYourEmail.tr,
                             isDense: true,
-                            contentPadding: const EdgeInsets.symmetric(
-                                horizontal: 20, vertical: 10),
-                            focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(40),
-                                borderSide:
-                                    BorderSide(color: AppTheme.accentColor1)),
-                            enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(40),
-                                borderSide: BorderSide(color: AppTheme.black3)),
-                            hintStyle: TextStyle(
-                                color: AppTheme.black3, fontSize: 14)),
+                            contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                            focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(40), borderSide: BorderSide(color: AppTheme.accentColor1)),
+                            enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(40), borderSide: BorderSide(color: AppTheme.black3)),
+                            hintStyle: TextStyle(color: AppTheme.black3, fontSize: 14)),
                         keyboardType: TextInputType.emailAddress,
                         autocorrect: true,
                         autofillHints: const [AutofillHints.email],
                       ),
                       Text(
-                        "WeWillInformYouOnThisE-mail".tr,
-                        style: TextStyle(
-                            color: AppTheme.black4,
-                            fontSize: 12,
-                            fontStyle: FontStyle.italic),
+                        StringKeys.weWillInformYouOnThisEmail.tr,
+                        style: TextStyle(color: AppTheme.black4, fontSize: 12, fontStyle: FontStyle.italic),
                       )
                     ],
                   ),
@@ -97,23 +72,14 @@ class AddNewRequestView extends GetView {
                     height: 40,
                     decoration: ShapeDecoration(
                       shape: const StadiumBorder(),
-                      gradient: LinearGradient(
-                          colors: [
-                            AppTheme.accentColor1,
-                            AppTheme.accentColor2
-                          ],
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter),
+                      gradient: LinearGradient(colors: [AppTheme.accentColor1, AppTheme.accentColor2], begin: Alignment.topCenter, end: Alignment.bottomCenter),
                     ),
                     child: MaterialButton(
                       onPressed: () {},
                       shape: const StadiumBorder(),
                       child: Text(
-                        "SEND_REQUEST".tr,
-                        style: TextStyle(
-                            color: AppTheme.white,
-                            fontWeight: FontWeight.w600,
-                            fontSize: 12),
+                        StringKeys.sendRequest.tr,
+                        style: TextStyle(color: AppTheme.white, fontWeight: FontWeight.w600, fontSize: 12),
                       ),
                     ),
                   ),

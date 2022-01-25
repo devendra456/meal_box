@@ -1,6 +1,4 @@
-import 'package:get/get.dart';
-
-import '../controllers/login_with_o_t_p_controller.dart';
+import 'package:meal_box/imports.dart';
 
 class LoginWithOTPBinding extends Bindings {
   @override

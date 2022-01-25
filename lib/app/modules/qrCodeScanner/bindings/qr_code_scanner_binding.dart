@@ -1,6 +1,4 @@
-import 'package:get/get.dart';
-
-import '../controllers/qr_code_scanner_controller.dart';
+import 'package:meal_box/imports.dart';
 
 class QrCodeScannerBinding extends Bindings {
   @override

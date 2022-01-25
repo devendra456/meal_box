@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
+import 'package:meal_box/imports.dart';
 class FieldSpacingView extends GetView {
   const FieldSpacingView({Key? key}) : super(key: key);
 

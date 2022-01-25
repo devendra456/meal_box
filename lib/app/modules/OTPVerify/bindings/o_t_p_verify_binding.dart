@@ -1,6 +1,5 @@
-import 'package:get/get.dart';
 
-import '../controllers/o_t_p_verify_controller.dart';
+import 'package:meal_box/imports.dart';
 
 class OTPVerifyBinding extends Bindings {
   @override

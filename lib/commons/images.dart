@@ -41,7 +41,7 @@ class Images {
   static Widget imageAssets({
     double? height,
     double? width,
-    String imagePath = Assets.appLogo,
+    required String imagePath,
     BoxFit boxFit = BoxFit.cover,
   }) {
     return Image.asset(

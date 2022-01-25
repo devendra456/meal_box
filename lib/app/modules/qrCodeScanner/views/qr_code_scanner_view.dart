@@ -1,12 +1,4 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:meal_box/commons/common_widgets.dart';
-import 'package:meal_box/configs/app_theme.dart';
-import 'package:meal_box/utils/my_storage.dart';
-import 'package:qr_code_scanner/qr_code_scanner.dart';
-
-import '../controllers/qr_code_scanner_controller.dart';
+import 'package:meal_box/imports.dart';
 
 class QrCodeScannerView extends GetView<QrCodeScannerController> {
   const QrCodeScannerView({Key? key}) : super(key: key);
@@ -19,10 +11,7 @@ class QrCodeScannerView extends GetView<QrCodeScannerController> {
         width: 48,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          gradient: LinearGradient(
-              colors: [AppTheme.accentColor1, AppTheme.accentColor2],
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter),
+          gradient: LinearGradient(colors: [AppTheme.accentColor1, AppTheme.accentColor2], begin: Alignment.topCenter, end: Alignment.bottomCenter),
         ),
         child: MaterialButton(
           shape: RoundedRectangleBorder(
@@ -34,8 +23,8 @@ class QrCodeScannerView extends GetView<QrCodeScannerController> {
           },
           child: Obx(
             () => controller.isTorchOn.value
-                ? Image.asset("assets/torch_off_icon.png")
-                : Image.asset("assets/torch_on_icon.png"),
+                ? /*Image.asset("assets/torch_off_icon.png")*/ Images.imageAssets(imagePath: Assets.torchOffIcon, boxFit: BoxFit.contain)
+                : /*Image.asset("assets/torch_on_icon.png")*/ Images.imageAssets(imagePath: Assets.torchOnIcon, boxFit: BoxFit.contain),
           ),
         ),
       ),
@@ -77,7 +66,7 @@ class QrCodeScannerView extends GetView<QrCodeScannerController> {
             top: Get.size.height * 0.12,
             child: SafeArea(
               child: Text(
-                "Scan QR Code",
+                StringKeys.scanQRCode.tr,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontWeight: FontWeight.bold,

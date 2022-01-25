@@ -19,13 +19,13 @@ class MyMealPlanModel {
 
   int status;
   bool success;
-  List<Datum> data;
+  List<MealData> data;
 
   factory MyMealPlanModel.fromJson(Map<String, dynamic> json) =>
       MyMealPlanModel(
         status: json["status"],
         success: json["success"],
-        data: List<Datum>.from(json["data"].map((x) => Datum.fromJson(x))),
+        data: List<MealData>.from(json["data"].map((x) => MealData.fromJson(x))),
       );
 
   Map<String, dynamic> toJson() => {
@@ -35,8 +35,8 @@ class MyMealPlanModel {
       };
 }
 
-class Datum {
-  Datum({
+class MealData {
+  MealData({
     required this.id,
     required this.isPlanActive,
     required this.restaurantName,
@@ -52,7 +52,7 @@ class Datum {
   String validity;
   List<String> menus;
 
-  factory Datum.fromJson(Map<String, dynamic> json) => Datum(
+  factory MealData.fromJson(Map<String, dynamic> json) => MealData(
         id: json["id"],
         isPlanActive: json["isPlanActive"],
         restaurantName: json["restaurantName"],

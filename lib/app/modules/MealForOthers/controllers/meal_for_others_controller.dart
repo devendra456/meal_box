@@ -1,11 +1,6 @@
-import 'package:get/get.dart';
-import 'package:meal_box/app/modules/MealForOthers/models/user_list_model.dart';
-import 'package:meal_box/app/modules/MealForOthers/providers/user_list_provider.dart';
-import 'package:meal_box/app/modules/MealForOthers/views/user_remove_dialog_view.dart';
-import 'package:meal_box/app/routes/app_pages.dart';
+import 'package:meal_box/imports.dart';
 
-class MealForOthersController extends GetxController
-    with StateMixin<UserListModel> {
+class MealForOthersController extends GetxController with StateMixin<UserListModel> {
   @override
   void onInit() {
     getUsersList();
@@ -13,7 +8,7 @@ class MealForOthersController extends GetxController
   }
 
   void goToCreateUser() {
-    Get.toNamed(Routes.ADD_USER);
+    Get.toNamed(Routes.addUser);
   }
 
   void getUsersList() {
@@ -27,11 +22,11 @@ class MealForOthersController extends GetxController
     );
   }
 
-  void removeUser(Datum data) {
+  void removeUser(UserData data) {
     Get.dialog(UserRemoveDialogView(data));
   }
 
   void viewHistory() {
-    Get.toNamed(Routes.HISTORY);
+    Get.toNamed(Routes.history);
   }
 }

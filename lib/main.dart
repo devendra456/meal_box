@@ -1,12 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
-import 'package:meal_box/constants.dart';
-import 'package:meal_box/utils/app_translation.dart';
 
-import 'app/routes/app_pages.dart';
-import 'configs/app_theme.dart';
+import 'imports.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

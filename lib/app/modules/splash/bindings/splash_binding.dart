@@ -1,7 +1,5 @@
-import 'package:get/get.dart';
-import 'package:meal_box/utils/network_controller.dart';
 
-import '../controllers/splash_controller.dart';
+import 'package:meal_box/imports.dart';
 
 class SplashBinding extends Bindings {
   @override

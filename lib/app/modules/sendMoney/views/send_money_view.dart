@@ -1,10 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:meal_box/commons/common_widgets.dart';
-import 'package:meal_box/commons/images.dart';
-import 'package:meal_box/configs/app_theme.dart';
-
-import '../controllers/send_money_controller.dart';
+import 'package:meal_box/imports.dart';
 
 class SendMoneyView extends GetView<SendMoneyController> {
   const SendMoneyView({Key? key}) : super(key: key);
@@ -12,7 +6,7 @@ class SendMoneyView extends GetView<SendMoneyController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CommonWidgets.appHeader(title: "Send Money"),
+      appBar: CommonWidgets.appHeader(title: StringKeys.sendMoney.tr),
       floatingActionButton: Container(
         height: 48,
         decoration: ShapeDecoration(
@@ -33,7 +27,7 @@ class SendMoneyView extends GetView<SendMoneyController> {
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: RichText(
                 text: TextSpan(
-                  text: "Total Amount",
+                  text: StringKeys.totalAmount.tr,
                   style: TextStyle(
                     color: AppTheme.white,
                     fontSize: 12,
@@ -41,7 +35,7 @@ class SendMoneyView extends GetView<SendMoneyController> {
                   children: [
                     const TextSpan(text: ": "),
                     TextSpan(
-                      text: "SAR 200",
+                      text: StaticStrings.amount,
                       style: TextStyle(
                         color: AppTheme.white,
                         fontWeight: FontWeight.w600,
@@ -70,7 +64,7 @@ class SendMoneyView extends GetView<SendMoneyController> {
                 ),
               ),
               height: 48,
-              child: const Text("SEND NOW"),
+              child: Text(StringKeys.sendNow.tr),
               textColor: AppTheme.white,
             )
           ],
@@ -112,7 +106,7 @@ class SendMoneyView extends GetView<SendMoneyController> {
                                   Flexible(
                                     flex: 1,
                                     child: Text(
-                                      "Devendra Maurya",
+                                      StaticStrings.name,
                                       style: TextStyle(
                                         fontWeight: FontWeight.w600,
                                         color: AppTheme.black1,
@@ -130,8 +124,7 @@ class SendMoneyView extends GetView<SendMoneyController> {
                                 height: 6,
                               ),
                               Text(
-                                "S.V.M. Inter Collage Sagra Sunder "
-                                "Pratapgarh",
+                                StaticStrings.schoolName,
                                 style: TextStyle(
                                   color: AppTheme.black2,
                                   fontSize: 12,
@@ -145,14 +138,14 @@ class SendMoneyView extends GetView<SendMoneyController> {
                                 maxLines: 1,
                                 softWrap: false,
                                 text: TextSpan(
-                                  text: "RegistrationID".tr + ": ",
+                                  text: StringKeys.registrationID.tr + ": ",
                                   style: TextStyle(
                                     color: AppTheme.black1,
                                     fontSize: 12,
                                   ),
                                   children: [
                                     TextSpan(
-                                      text: "#JKG875",
+                                      text: StaticStrings.uniqueID,
                                       style: TextStyle(
                                         color: AppTheme.black2,
                                       ),
@@ -171,14 +164,14 @@ class SendMoneyView extends GetView<SendMoneyController> {
                                       maxLines: 1,
                                       softWrap: false,
                                       text: TextSpan(
-                                        text: "City".tr + ": ",
+                                        text: StringKeys.city.tr + ": ",
                                         style: TextStyle(
                                           color: AppTheme.black1,
                                           fontSize: 12,
                                         ),
                                         children: [
                                           TextSpan(
-                                            text: "Pratapgarh",
+                                            text: StaticStrings.distic,
                                             style: TextStyle(
                                               color: AppTheme.black2,
                                             ),
@@ -195,14 +188,14 @@ class SendMoneyView extends GetView<SendMoneyController> {
                                       maxLines: 1,
                                       softWrap: false,
                                       text: TextSpan(
-                                        text: "Region".tr + ": ",
+                                        text: StringKeys.region.tr + ": ",
                                         style: TextStyle(
                                           color: AppTheme.black1,
                                           fontSize: 12,
                                         ),
                                         children: [
                                           TextSpan(
-                                            text: "India",
+                                            text: StaticStrings.region,
                                             style: TextStyle(
                                               color: AppTheme.black2,
                                             ),

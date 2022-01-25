@@ -1,12 +1,7 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:meal_box/app/modules/MealForOthers/models/user_list_model.dart';
-import 'package:meal_box/commons/images.dart';
-import 'package:meal_box/configs/app_theme.dart';
+import 'package:meal_box/imports.dart';
 
 class UserRemoveDialogView extends GetView {
-  final Datum data;
+  final UserData data;
 
   const UserRemoveDialogView(this.data, {Key? key}) : super(key: key);
 
@@ -72,7 +67,7 @@ class UserRemoveDialogView extends GetView {
                             maxLines: 1,
                             softWrap: false,
                             text: TextSpan(
-                              text: "RegistrationID".tr + ": ",
+                              text: StringKeys.registrationID.tr + ": ",
                               style: TextStyle(
                                 color: AppTheme.black1,
                                 fontSize: 12,
@@ -98,7 +93,7 @@ class UserRemoveDialogView extends GetView {
                                   maxLines: 1,
                                   softWrap: false,
                                   text: TextSpan(
-                                    text: "City".tr + ": ",
+                                    text: StringKeys.city.tr + ": ",
                                     style: TextStyle(
                                       color: AppTheme.black1,
                                       fontSize: 12,
@@ -122,7 +117,7 @@ class UserRemoveDialogView extends GetView {
                                   maxLines: 1,
                                   softWrap: false,
                                   text: TextSpan(
-                                    text: "Region".tr + ": ",
+                                    text: StringKeys.region.tr + ": ",
                                     style: TextStyle(
                                       color: AppTheme.black1,
                                       fontSize: 12,
@@ -153,7 +148,7 @@ class UserRemoveDialogView extends GetView {
                 vertical: 16,
               ),
               child: Text(
-                "AreYouSureWantToRemoveThisUser?".tr,
+                StringKeys.areYouSureWantToRemoveThisUser.tr,
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w600,
@@ -168,7 +163,7 @@ class UserRemoveDialogView extends GetView {
                 OutlinedButton(
                   onPressed: () {},
                   child: Text(
-                    "NO".tr + ", " + "Cancel".tr,
+                    StringKeys.no.tr + ", " + StringKeys.cancel.tr,
                   ),
                 ),
                 Container(
@@ -184,7 +179,7 @@ class UserRemoveDialogView extends GetView {
                       borderRadius: BorderRadius.circular(4),
                     ),
                     child: Text(
-                      "YES".tr + ", " + "Remove".tr,
+                      StringKeys.yes.tr + ", " + StringKeys.remove.tr,
                     ),
                     textColor: AppTheme.white,
                   ),

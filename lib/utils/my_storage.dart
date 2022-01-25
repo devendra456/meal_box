@@ -1,4 +1,5 @@
-import 'package:get_storage/get_storage.dart';
+
+import 'package:meal_box/imports.dart';
 
 class MyStorage {
   static final MyStorage _myStorage = MyStorage._internal();

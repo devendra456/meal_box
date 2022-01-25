@@ -1,10 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
-import 'package:meal_box/app/modules/register/views/field_spacing_view.dart';
-import 'package:meal_box/configs/app_theme.dart';
-
-import '../controllers/register_controller.dart';
+import 'package:meal_box/imports.dart';
 
 class RegisterView extends GetView<RegisterController> {
   const RegisterView({Key? key}) : super(key: key);
@@ -17,7 +11,10 @@ class RegisterView extends GetView<RegisterController> {
           fit: StackFit.expand,
           children: [
             Positioned(
-              child: SvgPicture.asset("assets/foreground.svg"),
+              child: /*SvgPicture.asset(Assets.foregroundImage)*/ Images.svgImageViewAsset(
+                imagePath: Assets.foregroundImage,
+                boxFit: BoxFit.contain,
+              ),
               top: 48,
               right: -104,
             ),
@@ -32,14 +29,11 @@ class RegisterView extends GetView<RegisterController> {
                       height: 24,
                     ),
                     Text(
-                      "Registration".tr,
-                      style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                          color: AppTheme.black1),
+                      StringKeys.registration.tr,
+                      style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: AppTheme.black1),
                     ),
                     Text(
-                      "PleaseFillTheCoupleOfDetails".tr,
+                      StringKeys.pleaseFillTheCoupleOfDetails.tr,
                       style: TextStyle(color: AppTheme.black2, fontSize: 12),
                     ),
                     const SizedBox(
@@ -48,16 +42,13 @@ class RegisterView extends GetView<RegisterController> {
                     Material(
                       elevation: 1,
                       color: Colors.white,
-                      shape: StadiumBorder(
-                          side: BorderSide(color: AppTheme.black1, width: 0.1)),
+                      shape: StadiumBorder(side: BorderSide(color: AppTheme.black1, width: 0.1)),
                       child: TextField(
                         decoration: InputDecoration(
                           border: InputBorder.none,
-                          hintText: "FullName".tr,
-                          hintStyle:
-                              TextStyle(fontSize: 14, color: AppTheme.black3),
-                          contentPadding:
-                              const EdgeInsets.symmetric(horizontal: 24),
+                          hintText: StringKeys.fullName.tr,
+                          hintStyle: TextStyle(fontSize: 14, color: AppTheme.black3),
+                          contentPadding: const EdgeInsets.symmetric(horizontal: 24),
                         ),
                         keyboardType: TextInputType.name,
                         autocorrect: true,
@@ -70,16 +61,13 @@ class RegisterView extends GetView<RegisterController> {
                     Material(
                       elevation: 1,
                       color: Colors.white,
-                      shape: StadiumBorder(
-                          side: BorderSide(color: AppTheme.black1, width: 0.1)),
+                      shape: StadiumBorder(side: BorderSide(color: AppTheme.black1, width: 0.1)),
                       child: TextField(
                         decoration: InputDecoration(
                           border: InputBorder.none,
-                          hintText: "PhoneNumber".tr,
-                          hintStyle:
-                              TextStyle(fontSize: 14, color: AppTheme.black3),
-                          contentPadding:
-                              const EdgeInsets.symmetric(horizontal: 24),
+                          hintText: StringKeys.phoneNumber.tr,
+                          hintStyle: TextStyle(fontSize: 14, color: AppTheme.black3),
+                          contentPadding: const EdgeInsets.symmetric(horizontal: 24),
                         ),
                         keyboardType: TextInputType.phone,
                         autocorrect: true,
@@ -92,16 +80,13 @@ class RegisterView extends GetView<RegisterController> {
                     Material(
                       elevation: 1,
                       color: Colors.white,
-                      shape: StadiumBorder(
-                          side: BorderSide(color: AppTheme.black1, width: 0.1)),
+                      shape: StadiumBorder(side: BorderSide(color: AppTheme.black1, width: 0.1)),
                       child: TextField(
                         decoration: InputDecoration(
                           border: InputBorder.none,
-                          hintText: "Email".tr,
-                          hintStyle:
-                              TextStyle(fontSize: 14, color: AppTheme.black3),
-                          contentPadding:
-                              const EdgeInsets.symmetric(horizontal: 24),
+                          hintText: StringKeys.email.tr,
+                          hintStyle: TextStyle(fontSize: 14, color: AppTheme.black3),
+                          contentPadding: const EdgeInsets.symmetric(horizontal: 24),
                         ),
                         keyboardType: TextInputType.emailAddress,
                         autocorrect: true,
@@ -114,17 +99,15 @@ class RegisterView extends GetView<RegisterController> {
                     Material(
                       elevation: 1,
                       color: Colors.white,
-                      shape: StadiumBorder(
-                          side: BorderSide(color: AppTheme.black1, width: 0.1)),
+                      shape: StadiumBorder(side: BorderSide(color: AppTheme.black1, width: 0.1)),
                       child: Container(
                         padding: const EdgeInsets.symmetric(horizontal: 24),
                         height: 48,
                         child: Row(
                           children: [
                             Text(
-                              "ChooseCity".tr,
-                              style: TextStyle(
-                                  fontSize: 14, color: AppTheme.black3),
+                              StringKeys.chooseCity.tr,
+                              style: TextStyle(fontSize: 14, color: AppTheme.black3),
                             ),
                             const Spacer(),
                             Icon(
@@ -139,17 +122,15 @@ class RegisterView extends GetView<RegisterController> {
                     Material(
                       elevation: 1,
                       color: Colors.white,
-                      shape: StadiumBorder(
-                          side: BorderSide(color: AppTheme.black1, width: 0.1)),
+                      shape: StadiumBorder(side: BorderSide(color: AppTheme.black1, width: 0.1)),
                       child: Container(
                         padding: const EdgeInsets.symmetric(horizontal: 24),
                         height: 48,
                         child: Row(
                           children: [
                             Text(
-                              "ChooseRegion".tr,
-                              style: TextStyle(
-                                  fontSize: 14, color: AppTheme.black3),
+                              StringKeys.chooseRegion.tr,
+                              style: TextStyle(fontSize: 14, color: AppTheme.black3),
                             ),
                             const Spacer(),
                             Icon(
@@ -164,8 +145,7 @@ class RegisterView extends GetView<RegisterController> {
                     Material(
                       elevation: 1,
                       color: Colors.white,
-                      shape: StadiumBorder(
-                          side: BorderSide(color: AppTheme.black1, width: 0.1)),
+                      shape: StadiumBorder(side: BorderSide(color: AppTheme.black1, width: 0.1)),
                       child: Container(
                         padding: const EdgeInsets.symmetric(horizontal: 24),
                         height: 48,
@@ -173,17 +153,16 @@ class RegisterView extends GetView<RegisterController> {
                           children: [
                             Expanded(
                               child: Text(
-                                "School/Organization".tr,
+                                StringKeys.schoolOrganization.tr,
                                 maxLines: 1,
-                                style: TextStyle(
-                                    fontSize: 14, color: AppTheme.black3),
+                                style: TextStyle(fontSize: 14, color: AppTheme.black3),
                               ),
                             ),
                             TextButton(
                                 onPressed: () {
                                   controller.openSchoolDialog();
                                 },
-                                child: Text("Choose".tr))
+                                child: Text(StringKeys.choose.tr))
                           ],
                         ),
                       ),
@@ -192,16 +171,13 @@ class RegisterView extends GetView<RegisterController> {
                     Material(
                       elevation: 1,
                       color: Colors.white,
-                      shape: StadiumBorder(
-                          side: BorderSide(color: AppTheme.black1, width: 0.1)),
+                      shape: StadiumBorder(side: BorderSide(color: AppTheme.black1, width: 0.1)),
                       child: TextField(
                         decoration: InputDecoration(
                           border: InputBorder.none,
-                          hintText: "Password".tr,
-                          hintStyle:
-                              TextStyle(fontSize: 14, color: AppTheme.black3),
-                          contentPadding:
-                              const EdgeInsets.symmetric(horizontal: 24),
+                          hintText: StringKeys.password.tr,
+                          hintStyle: TextStyle(fontSize: 14, color: AppTheme.black3),
+                          contentPadding: const EdgeInsets.symmetric(horizontal: 24),
                         ),
                         obscureText: true,
                         textInputAction: TextInputAction.next,
@@ -212,16 +188,13 @@ class RegisterView extends GetView<RegisterController> {
                     Material(
                       elevation: 1,
                       color: Colors.white,
-                      shape: StadiumBorder(
-                          side: BorderSide(color: AppTheme.black1, width: 0.1)),
+                      shape: StadiumBorder(side: BorderSide(color: AppTheme.black1, width: 0.1)),
                       child: TextField(
                         decoration: InputDecoration(
                           border: InputBorder.none,
-                          hintText: "ConfirmPassword".tr,
-                          hintStyle:
-                              TextStyle(fontSize: 14, color: AppTheme.black3),
-                          contentPadding:
-                              const EdgeInsets.symmetric(horizontal: 24),
+                          hintText: StringKeys.confirmPassword.tr,
+                          hintStyle: TextStyle(fontSize: 14, color: AppTheme.black3),
+                          contentPadding: const EdgeInsets.symmetric(horizontal: 24),
                         ),
                         obscureText: true,
                       ),
@@ -236,23 +209,14 @@ class RegisterView extends GetView<RegisterController> {
                           width: double.infinity,
                           decoration: ShapeDecoration(
                             shape: const StadiumBorder(),
-                            gradient: LinearGradient(
-                                colors: [
-                                  AppTheme.accentColor1,
-                                  AppTheme.accentColor2
-                                ],
-                                begin: Alignment.topCenter,
-                                end: Alignment.bottomCenter),
+                            gradient: LinearGradient(colors: [AppTheme.accentColor1, AppTheme.accentColor2], begin: Alignment.topCenter, end: Alignment.bottomCenter),
                           ),
                           child: MaterialButton(
                             shape: const StadiumBorder(),
                             onPressed: () {},
                             child: Text(
-                              "SIGN_UP".tr,
-                              style: TextStyle(
-                                  color: AppTheme.white,
-                                  fontWeight: FontWeight.w700,
-                                  fontSize: 14),
+                              StringKeys.signUp.tr,
+                              style: TextStyle(color: AppTheme.white, fontWeight: FontWeight.w700, fontSize: 14),
                             ),
                           ),
                         ),
@@ -262,18 +226,15 @@ class RegisterView extends GetView<RegisterController> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          "HaveAnAccount".tr,
-                          style:
-                              TextStyle(fontSize: 14, color: AppTheme.black1),
+                          StringKeys.haveAnAccount.tr,
+                          style: TextStyle(fontSize: 14, color: AppTheme.black1),
                         ),
                         TextButton(
                           onPressed: () {
                             controller.gotoLoginScreen();
                           },
-                          child: Text("LoginHere".tr),
-                          style: ButtonStyle(
-                              shape: MaterialStateProperty.all(
-                                  const StadiumBorder())),
+                          child: Text(StringKeys.loginHere.tr),
+                          style: ButtonStyle(shape: MaterialStateProperty.all(const StadiumBorder())),
                         ),
                       ],
                     ),

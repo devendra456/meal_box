@@ -1,20 +1,3 @@
-import 'package:get/get.dart';
+import 'package:meal_box/imports.dart';
 
-class OfferHistoryController extends GetxController {
-  //TODO: Implement OfferHistoryController
-
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {}
-  void increment() => count.value++;
-}
+class OfferHistoryController extends GetxController {}

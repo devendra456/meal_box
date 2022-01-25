@@ -1,10 +1,6 @@
-import 'package:get/get.dart';
-import 'package:meal_box/app/modules/OfferMeal/models/offer_meal_model.dart';
-import 'package:meal_box/app/modules/OfferMeal/providers/offer_meal_provider.dart';
-import 'package:meal_box/app/routes/app_pages.dart';
+import 'package:meal_box/imports.dart';
 
-class OfferMealController
-    extends GetxController /*with StateMixin<OfferMealModel>*/ {
+class OfferMealController extends GetxController /*with StateMixin<OfferMealModel>*/ {
   RxList<dynamic> usersList = [].obs;
 
   @override
@@ -34,10 +30,10 @@ class OfferMealController
   }
 
   void goToSendMoneyPage() {
-    Get.toNamed(Routes.SEND_MONEY);
+    Get.toNamed(Routes.sendMoney);
   }
 
   void goToOfferHistoryPage() {
-    Get.toNamed(Routes.OFFER_HISTORY);
+    Get.toNamed(Routes.offerHistory);
   }
 }

@@ -1,8 +1,4 @@
-import 'dart:async';
-
-import 'package:connectivity/connectivity.dart';
-import 'package:get/get.dart';
-import 'package:meal_box/commons/common_widgets.dart';
+import 'package:meal_box/imports.dart';
 
 class NetworkController extends GetxController {
   var connectionStatus = 0.obs;

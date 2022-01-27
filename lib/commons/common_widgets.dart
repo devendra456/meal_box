@@ -1,6 +1,42 @@
 import 'package:meal_box/imports.dart';
 
 class CommonWidgets {
+
+  static Widget gradientTextButton({
+    required VoidCallback onPressed,
+    String buttonText = "Button",
+    double height = 48,
+    double width = double.infinity,
+    double elevation = 4,
+    TextStyle textStyle = const TextStyle(
+      color: AppTheme.white,
+      fontWeight: FontWeight.w700,
+      fontSize: 14,
+    ),
+    ShapeBorder shapeBorder = const StadiumBorder(),
+  }) {
+    return Material(
+      elevation: elevation,
+      shape: shapeBorder,
+      child: Container(
+        height: height,
+        width: width,
+        decoration: ShapeDecoration(
+          shape: shapeBorder,
+          gradient: kLinearGradient,
+        ),
+        child: MaterialButton(
+          onPressed: onPressed,
+          shape: shapeBorder,
+          child: Text(
+            buttonText,
+            style: textStyle,
+          ),
+        ),
+      ),
+    );
+  }
+
   static AppBar appHeader({
     required final String title,
     final Widget actionButton = const SizedBox(),
@@ -19,7 +55,7 @@ class CommonWidgets {
             bottom: 12,
             top: 12,
           ),
-          child: Icon(
+          child: const Icon(
             Icons.chevron_left,
             color: AppTheme.black1,
             size: 28,
@@ -28,43 +64,10 @@ class CommonWidgets {
       ),
       title: Text(
         title,
-        style: TextStyle(color: AppTheme.black1, fontSize: 18, fontWeight: FontWeight.w700),
+        style: const TextStyle(color: AppTheme.black1, fontSize: 18, fontWeight: FontWeight.w700),
       ),
       centerTitle: true,
       actions: [actionButton],
-    );
-  }
-
-  static showSuccessMessage(String message, {String status = "Success"}) {
-    Get.snackbar(
-      status,
-      message,
-      backgroundColor: AppTheme.green,
-      colorText: AppTheme.white,
-      borderRadius: 8,
-      duration: const Duration(seconds: 3),
-    );
-  }
-
-  static showInfoMessage(String message, {String status = "Info"}) {
-    Get.snackbar(
-      status,
-      message,
-      backgroundColor: AppTheme.yellow,
-      colorText: AppTheme.white,
-      borderRadius: 8,
-      duration: const Duration(seconds: 3),
-    );
-  }
-
-  static showErrorMessage(String message, {String status = "Error"}) {
-    Get.snackbar(
-      status,
-      message,
-      backgroundColor: AppTheme.red,
-      colorText: AppTheme.white,
-      borderRadius: 8,
-      duration: const Duration(seconds: 3),
     );
   }
 }

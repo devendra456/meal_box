@@ -43,7 +43,12 @@ class Assets {
   static const editIcon = "${imageDirectory}edit_icon.svg";
   static const searchIcon = "${imageDirectory}search_icon.svg";
   static const moneyIcon = "${imageDirectory}money_icon.svg";
-  /*-----------------------PNG Images-------------------------------*/
+  static const likeFilled = "${imageDirectory}like_filled.svg";
+  static const likeOutlined = "${imageDirectory}like_outlined.svg";
+  static const offerStripBottom = "${imageDirectory}offer_strip_bottom.svg";
+  static const offerStripTop = "${imageDirectory}offer_strip_top.svg";
+  static const star = "${imageDirectory}star.svg";
+  /*-----------------------PNG/JPG Images-------------------------------*/
   static const introImage1 = "${imageDirectory}intro_image1.png";
   static const introImage2 = "${imageDirectory}intro_image2.png";
   static const introImage3 = "${imageDirectory}intro_image3.png";
@@ -51,6 +56,12 @@ class Assets {
   static const torchOffIcon = "${imageDirectory}torch_off_icon.png";
   static const torchOnIcon = "${imageDirectory}torch_on_icon.png";
   static const doneImage = "${imageDirectory}done_image.png";
+
+  /// dummy images
+  static const capture7 = "${dummyAssetsDirectory}Capture7.PNG";
+  static const capture8 = "${dummyAssetsDirectory}Capture8.PNG";
+  static const capture9 = "${dummyAssetsDirectory}Capture9.PNG";
+  static const dummyFood = "${dummyAssetsDirectory}dummy_food.jpg";
   /*-----------------------JSON-------------------------------*/
   static const notificationJSON = "${jsonDirectory}notification.json";
   static const userListJSON = "${jsonDirectory}userList.json";

@@ -1,4 +1,3 @@
-
 import 'imports.dart';
 
 void main() async {
@@ -21,17 +20,16 @@ void main() async {
       initialRoute: AppPages.initial,
       getPages: AppPages.routes,
       translations: AppTranslations(),
-      //locale: Locale(MyStorage().get(MyStorage.appLocale) ?? 'en'),
       locale: Locale(kAppLocal),
       fallbackLocale: const Locale('en', 'US'),
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-          primarySwatch: MaterialColor(
+          primarySwatch: const MaterialColor(
             AppTheme.primaryColor,
             AppTheme.primaryMap,
           ),
           fontFamily: "SF_PRO",
-          appBarTheme: AppBarTheme(color: AppTheme.white),
+          appBarTheme: const AppBarTheme(color: AppTheme.white),
           splashColor: AppTheme.splashColor),
     ),
   );

@@ -28,14 +28,14 @@ class LoginView extends GetView<LoginController> {
               ),
               Text(
                 StringKeys.welcome_.tr,
-                style: TextStyle(fontWeight: FontWeight.w800, fontSize: 24, color: AppTheme.black1),
+                style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 24, color: AppTheme.black1),
               ),
               const SizedBox(
                 height: 4,
               ),
               Text(
                 StringKeys.pleaseLoginToYourMealApp.tr,
-                style: TextStyle(color: AppTheme.black1),
+                style: const TextStyle(color: AppTheme.black1),
               ),
               const SizedBox(
                 height: 16,
@@ -45,7 +45,7 @@ class LoginView extends GetView<LoginController> {
                 child: Material(
                   elevation: 1.5,
                   color: Colors.white,
-                  shape: StadiumBorder(side: BorderSide(color: AppTheme.black1, width: 0.1)),
+                  shape: const StadiumBorder(side: BorderSide(color: AppTheme.black1, width: 0.1)),
                   child: TextField(
                     decoration: InputDecoration(
                         border: InputBorder.none,
@@ -58,7 +58,7 @@ class LoginView extends GetView<LoginController> {
                           ),
                         ),
                         hintText: StringKeys.email.tr,
-                        hintStyle: TextStyle(fontSize: 14, color: AppTheme.black3)),
+                        hintStyle: const TextStyle(fontSize: 14, color: AppTheme.black3)),
                     keyboardType: TextInputType.emailAddress,
                     enableSuggestions: true,
                     autocorrect: true,
@@ -72,7 +72,7 @@ class LoginView extends GetView<LoginController> {
                 child: Material(
                   elevation: 1.5,
                   color: Colors.white,
-                  shape: StadiumBorder(side: BorderSide(color: AppTheme.black1, width: 0.1)),
+                  shape: const StadiumBorder(side: BorderSide(color: AppTheme.black1, width: 0.1)),
                   child: TextField(
                     decoration: InputDecoration(
                         border: InputBorder.none,
@@ -95,7 +95,7 @@ class LoginView extends GetView<LoginController> {
                           ),
                         ),
                         hintText: StringKeys.password.tr,
-                        hintStyle: TextStyle(color: AppTheme.black3, fontSize: 14)),
+                        hintStyle: const TextStyle(color: AppTheme.black3, fontSize: 14)),
                     obscureText: true,
                     enableSuggestions: true,
                     autocorrect: true,
@@ -115,7 +115,7 @@ class LoginView extends GetView<LoginController> {
                         },
                         child: Text(
                           StringKeys.loginWithOTP.tr,
-                          style: TextStyle(color: AppTheme.black1, fontSize: 12, fontWeight: FontWeight.w100),
+                          style: const TextStyle(color: AppTheme.black1, fontSize: 12, fontWeight: FontWeight.w100),
                         ),
                         style: ButtonStyle(
                           shape: MaterialStateProperty.all(const StadiumBorder()),
@@ -129,7 +129,7 @@ class LoginView extends GetView<LoginController> {
                         onPressed: () {},
                         child: Text(
                           StringKeys.forgetPassword.tr,
-                          style: TextStyle(color: AppTheme.black1, fontSize: 12, fontWeight: FontWeight.w100),
+                          style: const TextStyle(color: AppTheme.black1, fontSize: 12, fontWeight: FontWeight.w100),
                         ),
                         style: ButtonStyle(shape: MaterialStateProperty.all(const StadiumBorder())),
                       ),
@@ -145,8 +145,8 @@ class LoginView extends GetView<LoginController> {
                   child: Container(
                     height: 48,
                     width: double.infinity,
-                    decoration: ShapeDecoration(
-                      shape: const StadiumBorder(),
+                    decoration: const ShapeDecoration(
+                      shape: StadiumBorder(),
                       gradient: LinearGradient(colors: [AppTheme.accentColor1, AppTheme.accentColor2], begin: Alignment.topCenter, end: Alignment.bottomCenter),
                     ),
                     child: MaterialButton(
@@ -156,7 +156,7 @@ class LoginView extends GetView<LoginController> {
                       shape: const StadiumBorder(),
                       child: Text(
                         StringKeys.login.tr,
-                        style: TextStyle(color: AppTheme.white, fontWeight: FontWeight.w700, fontSize: 14),
+                        style: const TextStyle(color: AppTheme.white, fontWeight: FontWeight.w700, fontSize: 14),
                       ),
                     ),
                   ),
@@ -167,7 +167,7 @@ class LoginView extends GetView<LoginController> {
                 children: [
                   Text(
                     StringKeys.notHaveAccountYet.tr,
-                    style: TextStyle(fontSize: 14, color: AppTheme.black1),
+                    style: const TextStyle(fontSize: 14, color: AppTheme.black1),
                   ),
                   TextButton(
                     onPressed: () {
@@ -189,7 +189,7 @@ class LoginView extends GetView<LoginController> {
                       padding: const EdgeInsets.symmetric(horizontal: 8.0),
                       child: Text(
                         StringKeys.or.tr,
-                        style: TextStyle(fontSize: 12, color: AppTheme.black4),
+                        style: const TextStyle(fontSize: 12, color: AppTheme.black4),
                       ),
                     ),
                     const Expanded(child: Divider())

@@ -29,6 +29,7 @@ flutter:
   assets:
     - assets/
     - jsons/
+    - dummy_assets/
   fonts:
     - family: SF_PRO
       fonts:

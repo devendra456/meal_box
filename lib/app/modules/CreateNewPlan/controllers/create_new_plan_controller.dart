@@ -4,6 +4,7 @@ class CreateNewPlanController extends GetxController {
   var selectedRadio = 0.obs;
   var viewPagerController = PageController(initialPage: 0);
   var selectedMonth = null.obs;
+  var currentDate = DateTime.now().toIso8601String().split("T").first;
 
   final List<String> listOfMonth = [
     "Jan",
@@ -28,6 +29,24 @@ class CreateNewPlanController extends GetxController {
     "Thu",
     "Fri",
     "Sat",
+  ];
+
+  final List<String> bannerImageList = [
+    Assets.capture7,
+    Assets.capture8,
+    Assets.capture9,
+    Assets.capture7,
+    Assets.capture8,
+    Assets.capture9,
+  ];
+
+  final List<String> menuList = [
+    "Veg Sandwich",
+    "Chicken Sandwich",
+    "Panner Rolls",
+    "Chicken Biryani",
+    "Dumplings",
+    "Chicken Burger",
   ];
 
   DateTime selectedDate = DateTime.now();

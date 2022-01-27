@@ -8,8 +8,7 @@ class NetworkController extends GetxController {
   @override
   void onInit() {
     initConnectivity();
-    _connectivitySubscription =
-        connectivity.onConnectivityChanged.listen(_updateConnectionStatus);
+    _connectivitySubscription = connectivity.onConnectivityChanged.listen(_updateConnectionStatus);
     super.onInit();
   }
 
@@ -23,8 +22,7 @@ class NetworkController extends GetxController {
     return _updateConnectionStatus(connectivityResult!);
   }
 
-  Future<void> _updateConnectionStatus(
-      ConnectivityResult connectivityResult) async {
+  Future<void> _updateConnectionStatus(ConnectivityResult connectivityResult) async {
     switch (connectivityResult) {
       case ConnectivityResult.mobile:
         {
@@ -42,8 +40,7 @@ class NetworkController extends GetxController {
           break;
         }
       default:
-        CommonWidgets.showErrorMessage("Failed to get network connection!",
-            status: "Network Error");
+        Messages.showErrorMessage("Failed to get network connection!", status: "Network Error");
         break;
     }
   }

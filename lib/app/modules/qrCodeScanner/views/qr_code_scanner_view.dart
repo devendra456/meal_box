@@ -9,7 +9,7 @@ class QrCodeScannerView extends GetView<QrCodeScannerController> {
       floatingActionButton: Container(
         height: 48,
         width: 48,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           shape: BoxShape.circle,
           gradient: LinearGradient(colors: [AppTheme.accentColor1, AppTheme.accentColor2], begin: Alignment.topCenter, end: Alignment.bottomCenter),
         ),
@@ -46,7 +46,7 @@ class QrCodeScannerView extends GetView<QrCodeScannerController> {
               controller.controller = qrController;
               controller.controller!.scannedDataStream.listen((event) {
                 controller.barcode = event;
-                CommonWidgets.showSuccessMessage(event.code.toString());
+                Messages.showSuccessMessage(event.code.toString());
               });
             },
           ),
@@ -54,7 +54,7 @@ class QrCodeScannerView extends GetView<QrCodeScannerController> {
             left: MyStorage().get(MyStorage.appLocale) == "en" ? 8 : null,
             right: MyStorage().get(MyStorage.appLocale) == "en" ? null : 8,
             top: 8,
-            child: SafeArea(
+            child: const SafeArea(
               child: CloseButton(
                 color: AppTheme.white,
               ),
@@ -68,7 +68,7 @@ class QrCodeScannerView extends GetView<QrCodeScannerController> {
               child: Text(
                 StringKeys.scanQRCode.tr,
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   color: AppTheme.white,
                   fontSize: 18,

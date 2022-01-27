@@ -1,33 +1,34 @@
 import 'package:meal_box/imports.dart';
 
-
 class AppDrawerController extends GetxController {
   String langCode = "";
 
-  BoxDecoration unselectedBoxDecoration = BoxDecoration(border: Border.all(color: AppTheme.black3, width: 0.3), shape: BoxShape.circle, boxShadow: [
+  BoxDecoration unselectedBoxDecoration = BoxDecoration(border: Border.all(color: AppTheme.black3, width: 0.3), shape: BoxShape.circle, boxShadow: const [
     BoxShadow(
       color: AppTheme.black3,
       blurRadius: 2,
       spreadRadius: 0.5,
-      offset: const Offset(0.7, 0.7),
+      offset: Offset(0.7, 0.7),
     ),
     BoxShadow(
       color: AppTheme.white,
     ),
   ]);
 
-  BoxDecoration selectedBoxDecoration =
-      BoxDecoration(shape: BoxShape.circle, gradient: LinearGradient(colors: [AppTheme.accentColor1, AppTheme.accentColor2], begin: Alignment.topCenter, end: Alignment.bottomCenter), boxShadow: [
-    BoxShadow(
-      color: AppTheme.black3,
-      blurRadius: 2,
-      spreadRadius: 0.5,
-      offset: const Offset(0.7, 0.7),
-    ),
-    BoxShadow(
-      color: AppTheme.white,
-    ),
-  ]);
+  BoxDecoration selectedBoxDecoration = const BoxDecoration(
+      shape: BoxShape.circle,
+      gradient: LinearGradient(colors: [AppTheme.accentColor1, AppTheme.accentColor2], begin: Alignment.topCenter, end: Alignment.bottomCenter),
+      boxShadow: [
+        BoxShadow(
+          color: AppTheme.black3,
+          blurRadius: 2,
+          spreadRadius: 0.5,
+          offset: Offset(0.7, 0.7),
+        ),
+        BoxShadow(
+          color: AppTheme.white,
+        ),
+      ]);
 
   @override
   void onInit() {
@@ -41,11 +42,13 @@ class AppDrawerController extends GetxController {
       Locale updatedLocale = const Locale('en', 'US');
       MyStorage().insert(MyStorage.appLocale, 'en');
       Get.updateLocale(updatedLocale);
+
     } else if (langCode == 'en') {
       langCode = 'ar';
       Locale updatedLocale = const Locale('ar', 'SA');
       MyStorage().insert(MyStorage.appLocale, 'ar');
       Get.updateLocale(updatedLocale);
+
     }
   }
 
